@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LitMatch – AI Book Matchmaker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>LitMatch 📚</h1>
+  <button id="langToggle">العربية</button>
+</header>
+
+<section class="landing">
+  <h2>Discover your Reader Personality</h2>
+  <button onclick="startQuiz()">Start Quiz</button>
+</section>
+
+<section id="quizSection" class="hidden">
+  <form id="quizForm">
+    <!-- 8 questions, each with 4 options -->
+    <div class="question">
+      <p>1. Which do you prefer?</p>
+      <label><input type="radio" name="q1" value="Deep Thinker">Deep thinking</label>
+      <label><input type="radio" name="q1" value="Escapist Dreamer">Escaping into stories</label>
+      <label><input type="radio" name="q1" value="Motivational Seeker">Motivation & growth</label>
+      <label><input type="radio" name="q1" value="Knowledge Explorer">Learning new things</label>
+    </div>
+    <div class="question">
+      <p>2. Your weekend activity?</p>
+      <label><input type="radio" name="q2" value="Emotional Story Lover">Read novels</label>
+      <label><input type="radio" name="q2" value="Curious Analyst">Study psychology</label>
+      <label><input type="radio" name="q2" value="Visionary Builder">Plan projects</label>
+      <label><input type="radio" name="q2" value="Spiritual Reflector">Meditate / reflect</label>
+    </div>
+    <div class="question">
+      <p>3. What inspires you most?</p>
+      <label><input type="radio" name="q3" value="Motivational Seeker">Success stories</label>
+      <label><input type="radio" name="q3" value="Deep Thinker">Philosophy</label>
+      <label><input type="radio" name="q3" value="Escapist Dreamer">Fantasy worlds</label>
+      <label><input type="radio" name="q3" value="Knowledge Explorer">Science & history</label>
+    </div>
+    <div class="question">
+      <p>4. How do you deal with stress?</p>
+      <label><input type="radio" name="q4" value="Spiritual Reflector">Meditation / reflection</label>
+      <label><input type="radio" name="q4" value="Emotional Story Lover">Read stories</label>
+      <label><input type="radio" name="q4" value="Visionary Builder">Plan ahead</label>
+      <label><input type="radio" name="q4" value="Curious Analyst">Analyze causes</label>
+    </div>
+    <div class="question">
+      <p>5. Choose your ideal companion:</p>
+      <label><input type="radio" name="q5" value="Escapist Dreamer">Imaginative friend</label>
+      <label><input type="radio" name="q5" value="Motivational Seeker">Ambitious friend</label>
+      <label><input type="radio" name="q5" value="Deep Thinker">Philosopher friend</label>
+      <label><input type="radio" name="q5" value="Knowledge Explorer">Curious friend</label>
+    </div>
+    <div class="question">
+      <p>6. Preferred reading medium?</p>
+      <label><input type="radio" name="q6" value="Curious Analyst">Research / articles</label>
+      <label><input type="radio" name="q6" value="Emotional Story Lover">Novels / stories</label>
+      <label><input type="radio" name="q6" value="Visionary Builder">Business / strategy books</label>
+      <label><input type="radio" name="q6" value="Spiritual Reflector">Spiritual / mindfulness</label>
+    </div>
+    <div class="question">
+      <p>7. How do you spend free time?</p>
+      <label><input type="radio" name="q7" value="Escapist Dreamer">Gaming / movies / fantasy</label>
+      <label><input type="radio" name="q7" value="Motivational Seeker">Self-improvement</label>
+      <label><input type="radio" name="q7" value="Knowledge Explorer">Learning / research</label>
+      <label><input type="radio" name="q7" value="Deep Thinker">Reflection / philosophy</label>
+    </div>
+    <div class="question">
+      <p>8. What type of stories attract you most?</p>
+      <label><input type="radio" name="q8" value="Emotional Story Lover">Human & emotional</label>
+      <label><input type="radio" name="q8" value="Curious Analyst">Psychology / mystery</label>
+      <label><input type="radio" name="q8" value="Visionary Builder">Leadership / strategy</label>
+      <label><input type="radio" name="q8" value="Spiritual Reflector">Spiritual / reflection</label>
+    </div>
+
+    <button type="button" onclick="calculateResult()">See My Books</button>
+  </form>
+</section>
+
+<section id="results" class="hidden">
+  <h2 id="readerType"></h2>
+  <p id="readerDescription"></p>
+  <div id="bookContainer" class="cards"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
