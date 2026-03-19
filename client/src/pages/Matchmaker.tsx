@@ -23,6 +23,7 @@ const UI_TEXT = {
     readLink: "Read / PDF",
     retakeQuiz: "Back to Home",
     goBack: "Restart Quiz",
+    backBtn: "Back",
     by: "by",
   },
   ar: {
@@ -38,6 +39,7 @@ const UI_TEXT = {
     readLink: "اقرأ / PDF",
     retakeQuiz: "العودة للرئيسية",
     goBack: "إعادة الاختبار",
+    backBtn: "رجوع",
     by: "بقلم",
   }
 };
@@ -405,6 +407,7 @@ export default function Matchmaker() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, AnswerValue>>({});
   const [resultType, setResultType] = useState<AnswerValue | null>(null);
+  const [direction, setDirection] = useState<number>(1);
 
   const t = UI_TEXT[language];
 
@@ -413,6 +416,7 @@ export default function Matchmaker() {
   };
 
   const startQuiz = () => {
+    setDirection(1);
     setStep("quiz");
     setCurrentQuestionIndex(0);
     setAnswers({});
@@ -421,11 +425,26 @@ export default function Matchmaker() {
   const handleAnswer = (value: AnswerValue) => {
     const newAnswers = { ...answers, [QUIZ_QUESTIONS[currentQuestionIndex].id]: value };
     setAnswers(newAnswers);
+    setDirection(1);
 
-    if (currentQuestionIndex < QUIZ_QUESTIONS.length - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
-    } else {
-      calculateResults(newAnswers);
+    // Give a very small delay so the user can briefly see their selection highlighted
+    setTimeout(() => {
+      if (currentQuestionIndex < QUIZ_QUESTIONS.length - 1) {
+        setCurrentQuestionIndex((prev) => prev + 1);
+      } else {
+        calculateResults(newAnswers);
+      }
+    }, 250);
+  };
+
+  const goBack = () => {
+    setDirection(-1);
+    if (step === "quiz") {
+      if (currentQuestionIndex > 0) {
+        setCurrentQuestionIndex(prev => prev - 1);
+      } else {
+        setStep("home");
+      }
     }
   };
 
@@ -449,11 +468,13 @@ export default function Matchmaker() {
   };
 
   const resetQuizToHome = () => {
+    setDirection(-1);
     setStep("home");
     setResultType(null);
   };
 
   const goBackToQuiz = () => {
+    setDirection(-1);
     setStep("quiz");
     setCurrentQuestionIndex(0);
     setAnswers({});
@@ -462,6 +483,29 @@ export default function Matchmaker() {
 
   const currentQuestion = QUIZ_QUESTIONS[currentQuestionIndex];
   const isRtl = language === "ar";
+  
+  // Custom variants for sliding forward or backward based on direction state
+  const quizVariants = {
+    enter: (dir: number) => {
+      // Adjust x offset based on RTL and direction
+      const offset = 30 * dir;
+      return {
+        x: isRtl ? -offset : offset,
+        opacity: 0,
+      };
+    },
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => {
+      const offset = -30 * dir;
+      return {
+        x: isRtl ? -offset : offset,
+        opacity: 0,
+      };
+    }
+  };
 
   return (
     <div 
@@ -490,14 +534,16 @@ export default function Matchmaker() {
       </header>
 
       <main className="flex-1 flex flex-col items-center justify-center p-6 relative z-10">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" custom={direction}>
           {step === "home" && (
             <motion.div
               key="home"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              custom={direction}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              variants={quizVariants}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-2xl w-full text-center space-y-8 py-12"
             >
               <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4 text-primary">
@@ -527,16 +573,26 @@ export default function Matchmaker() {
           {step === "quiz" && (
             <motion.div
               key="quiz"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-3xl w-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
-              <div className="mb-8 flex items-center justify-between text-sm font-medium text-muted-foreground">
-                <span className="tracking-widest uppercase">
-                  {t.questionOf(currentQuestionIndex + 1, QUIZ_QUESTIONS.length)}
-                </span>
+              <div className="mb-6 flex items-center justify-between text-sm font-medium text-muted-foreground">
+                <div className="flex items-center gap-4">
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={goBack}
+                    className="hover:bg-primary/5 text-primary rounded-full px-4"
+                  >
+                    {isRtl ? <ArrowRight className="ml-2 w-4 h-4" /> : <ArrowLeft className="mr-2 w-4 h-4" />}
+                    {t.backBtn}
+                  </Button>
+                  <span className="tracking-widest uppercase hidden sm:inline-block">
+                    {t.questionOf(currentQuestionIndex + 1, QUIZ_QUESTIONS.length)}
+                  </span>
+                </div>
                 <div className="flex gap-1.5" dir="ltr">
                   {QUIZ_QUESTIONS.map((_, idx) => (
                     <div 
@@ -547,12 +603,14 @@ export default function Matchmaker() {
                 </div>
               </div>
 
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={currentQuestionIndex}
-                  initial={{ opacity: 0, x: isRtl ? -20 : 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: isRtl ? 20 : -20 }}
+                  custom={direction}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  variants={quizVariants}
                   transition={{ duration: 0.4 }}
                 >
                   <Card className="border-border/60 shadow-xl overflow-hidden bg-card/80 backdrop-blur-md">
@@ -564,17 +622,28 @@ export default function Matchmaker() {
                       <div className="space-y-4">
                         {currentQuestion.options.map((option, idx) => {
                           const Icon = option.icon;
+                          const isSelected = answers[currentQuestion.id] === option.value;
+                          
                           return (
                             <button
                               key={idx}
                               onClick={() => handleAnswer(option.value as AnswerValue)}
-                              className="w-full text-start p-6 rounded-xl border border-border/50 hover:border-primary hover:bg-primary/5 group transition-all duration-300 flex items-center gap-5 hover:-translate-y-0.5"
+                              className={`w-full text-start p-6 rounded-xl border group transition-all duration-300 flex items-center gap-5 hover:-translate-y-0.5 
+                                ${isSelected 
+                                  ? "border-primary bg-primary/5 shadow-sm" 
+                                  : "border-border/50 hover:border-primary hover:bg-primary/5"
+                                }`}
                               data-testid={`button-answer-${currentQuestion.id}-${option.value}`}
                             >
-                              <div className="w-12 h-12 shrink-0 rounded-full bg-secondary/50 group-hover:bg-primary text-secondary-foreground group-hover:text-primary-foreground flex items-center justify-center transition-colors">
+                              <div className={`w-12 h-12 shrink-0 rounded-full flex items-center justify-center transition-colors 
+                                ${isSelected 
+                                  ? "bg-primary text-primary-foreground" 
+                                  : "bg-secondary/50 group-hover:bg-primary text-secondary-foreground group-hover:text-primary-foreground"
+                                }`}
+                              >
                                 <Icon className="w-5 h-5" />
                               </div>
-                              <span className="text-lg font-medium group-hover:text-primary transition-colors">
+                              <span className={`text-lg font-medium transition-colors ${isSelected ? "text-primary" : "group-hover:text-primary"}`}>
                                 {option[language]}
                               </span>
                             </button>
@@ -591,9 +660,12 @@ export default function Matchmaker() {
           {step === "results" && resultType && (
             <motion.div
               key="results"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], staggerChildren: 0.2 }}
+              custom={direction}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              variants={quizVariants}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], staggerChildren: 0.2 }}
               className="max-w-6xl w-full py-10"
             >
               <div className="text-center mb-16 space-y-4">
