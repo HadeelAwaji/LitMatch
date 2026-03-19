@@ -886,7 +886,6 @@ export default function Matchmaker() {
                 </p>
               </div>
 
-              {/* Added responsive grid classes: 1 col on mobile, 2 on tablet, 3 on desktop, 5 on large screens to fit all 5 books nicely */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
                 {RESULTS_DATA[resultType].books.map((book, idx) => (
                   <motion.div
