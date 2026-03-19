@@ -21,6 +21,7 @@ const UI_TEXT = {
     whyItFits: "Why it fits you:",
     descriptionText: "Description:",
     readLink: "Read / PDF",
+    noPdf: "No free PDF available",
     retakeQuiz: "Back to Home",
     goBack: "Restart Quiz",
     backBtn: "Back",
@@ -37,6 +38,7 @@ const UI_TEXT = {
     whyItFits: "لماذا يناسبك:",
     descriptionText: "الوصف:",
     readLink: "اقرأ / PDF",
+    noPdf: "لا يوجد ملف PDF مجاني متاح",
     retakeQuiz: "العودة للرئيسية",
     goBack: "إعادة الاختبار",
     backBtn: "رجوع",
@@ -180,7 +182,8 @@ const RESULTS_DATA = {
         author: { en: "George Orwell", ar: "جورج أورويل" },
         description: { en: "A dystopian social science fiction novel and cautionary tale.", ar: "رواية خيال علمي اجتماعي بائسة وحكاية تحذيرية." },
         reason: { en: "Challenges your views on society, truth, and freedom.", ar: "تتحدى وجهات نظرك حول المجتمع والحقيقة والحرية." },
-        link: "https://www.gutenberg.org/ebooks/1524",
+        link: "https://gutenberg.net.au/ebooks01/0100021h.html",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780451524935-M.jpg",
         coverColor: "bg-[#1E293B]"
       },
       {
@@ -188,6 +191,8 @@ const RESULTS_DATA = {
         author: { en: "Donna Tartt", ar: "دونا تارت" },
         description: { en: "An inverted detective story exploring beauty, terror, and morality.", ar: "قصة بوليسية مقلوبة تستكشف الجمال والرعب والأخلاق." },
         reason: { en: "Masterfully atmospheric dark academia exploring moral ambiguity.", ar: "أكاديمية مظلمة رائعة الجو تستكشف الغموض الأخلاقي." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9781400031702-M.jpg",
         coverColor: "bg-[#333333]"
       },
       {
@@ -195,7 +200,8 @@ const RESULTS_DATA = {
         author: { en: "Tayeb Salih", ar: "الطيب صالح" },
         description: { en: "A classic post-colonial Arabic novel exploring East-West relations.", ar: "رواية عربية كلاسيكية عن ما بعد الاستعمار تستكشف العلاقات بين الشرق والغرب." },
         reason: { en: "Offers profound philosophical insights into identity and culture.", ar: "تقدم رؤى فلسفية عميقة حول الهوية والثقافة." },
-        link: "https://archive.org/",
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780141187204-M.jpg",
         coverColor: "bg-[#711E1E]"
       },
       {
@@ -203,6 +209,8 @@ const RESULTS_DATA = {
         author: { en: "Naguib Mahfouz", ar: "نجيب محفوظ" },
         description: { en: "An allegorical novel tracing the history of human existence.", ar: "رواية رمزية تتتبع تاريخ الوجود البشري." },
         reason: { en: "Deep, symbolic, and thought-provoking classic literature.", ar: "كلاسيكية أدبية عميقة ورمزية ومثيرة للتفكير." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780385264731-M.jpg",
         coverColor: "bg-[#4A2E1B]"
       }
     ]
@@ -219,7 +227,8 @@ const RESULTS_DATA = {
         author: { en: "Frank Herbert", ar: "فرانك هربرت" },
         description: { en: "An epic science fiction masterpiece set on a desert planet.", ar: "تحفة خيال علمي ملحمية تدور أحداثها على كوكب صحراوي." },
         reason: { en: "Unmatched world-building that completely absorbs you.", ar: "بناء عالم لا مثيل له يمتصك بالكامل." },
-        link: "https://archive.org/",
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780441172719-M.jpg",
         coverColor: "bg-[#C48C5E]"
       },
       {
@@ -227,6 +236,8 @@ const RESULTS_DATA = {
         author: { en: "Erin Morgenstern", ar: "إيرين مورجينستيرن" },
         description: { en: "A phantasmagorical fairy tale set in a magical circus.", ar: "حكاية خرافية خيالية تدور أحداثها في سيرك سحري." },
         reason: { en: "A sensory-rich experience full of magic and wonder.", ar: "تجربة غنية بالحواس مليئة بالسحر والعجب." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780307739920-M.jpg",
         coverColor: "bg-[#2A2A2A]"
       },
       {
@@ -234,7 +245,8 @@ const RESULTS_DATA = {
         author: { en: "Various", ar: "مؤلفون مختلفون" },
         description: { en: "A collection of Middle Eastern folk tales compiled in Arabic.", ar: "مجموعة من الحكايات الشعبية الشرق أوسطية جمعت باللغة العربية." },
         reason: { en: "The ultimate collection of enchanting and magical escapist stories.", ar: "المجموعة المطلقة من القصص الساحرة والخيالية." },
-        link: "https://www.gutenberg.org/",
+        link: "https://www.gutenberg.org/ebooks/19860",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780140449389-M.jpg",
         coverColor: "bg-[#8B5CF6]"
       },
       {
@@ -242,6 +254,8 @@ const RESULTS_DATA = {
         author: { en: "Ahmed Khaled Tawfik", ar: "أحمد خالد توفيق" },
         description: { en: "A chilling futuristic thriller exploring social division.", ar: "قصة إثارة مستقبلية مرعبة تستكشف الانقسام الاجتماعي." },
         reason: { en: "A gripping alternate reality that keeps you hooked.", ar: "واقع بديل مشوق يبقيك منتبهاً." },
+        link: "https://www.hindawi.org/books/42946571/",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789774088874-M.jpg",
         coverColor: "bg-[#334155]"
       }
     ]
@@ -258,7 +272,8 @@ const RESULTS_DATA = {
         author: { en: "James Clear", ar: "جيمس كلير" },
         description: { en: "An easy and proven way to build good habits and break bad ones.", ar: "طريقة سهلة ومثبتة لبناء عادات جيدة وكسر العادات السيئة." },
         reason: { en: "Provides clear, actionable steps for everyday self-improvement.", ar: "يقدم خطوات واضحة وقابلة للتنفيذ لتحسين الذات يومياً." },
-        link: "https://archive.org/",
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780735211292-M.jpg",
         coverColor: "bg-[#EAB308]"
       },
       {
@@ -266,6 +281,8 @@ const RESULTS_DATA = {
         author: { en: "Viktor E. Frankl", ar: "فيكتور إي. فرانكل" },
         description: { en: "A profound memoir of finding purpose in the darkest of times.", ar: "مذكرات عميقة حول إيجاد الهدف في أحلك الأوقات." },
         reason: { en: "Offers deep inspiration and shifts your life perspective.", ar: "يقدم إلهاماً عميقاً ويغير نظرتك للحياة." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780807014295-M.jpg",
         coverColor: "bg-[#15803D]"
       },
       {
@@ -273,7 +290,8 @@ const RESULTS_DATA = {
         author: { en: "Muhammad al-Ghazali", ar: "محمد الغزالي" },
         description: { en: "Islamic perspective on self-help inspired by Dale Carnegie.", ar: "منظور إسلامي لتطوير الذات مستوحى من ديل كارنيجي." },
         reason: { en: "Practical spiritual and mental guidance for a better life.", ar: "إرشادات روحية وعقلية عملية لحياة أفضل." },
-        link: "https://archive.org/",
+        link: "https://www.hindawi.org/books/64515239/",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771427508-M.jpg",
         coverColor: "bg-[#047857]"
       },
       {
@@ -281,6 +299,8 @@ const RESULTS_DATA = {
         author: { en: "Ali Bin Jaber Al-Fifi", ar: "علي بن جابر الفيفي" },
         description: { en: "A journey to the depths of spirituality and self-peace.", ar: "رحلة إلى أعماق الروحانية والسلام الذاتي." },
         reason: { en: "Highly motivating for spiritual and emotional well-being.", ar: "محفز للغاية للرفاهية الروحية والعاطفية." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9786038202570-M.jpg",
         coverColor: "bg-[#3B82F6]"
       }
     ]
@@ -298,6 +318,7 @@ const RESULTS_DATA = {
         description: { en: "The ultimate classic romance dealing with manners and matrimony.", ar: "الرومانسية الكلاسيكية المطلقة التي تتناول الأخلاق والزواج." },
         reason: { en: "A beautifully written, timeless love story with sharp wit.", ar: "قصة حب خالدة ومكتوبة بشكل جميل بذكاء حاد." },
         link: "https://www.gutenberg.org/ebooks/1342",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780141439518-M.jpg",
         coverColor: "bg-[#BE185D]"
       },
       {
@@ -305,6 +326,8 @@ const RESULTS_DATA = {
         author: { en: "Taylor Jenkins Reid", ar: "تايلور جينكينز ريد" },
         description: { en: "A glamorous, heartbreaking tale of Hollywood love and secrets.", ar: "قصة ساحرة ومفجعة عن حب هوليوود وأسرارها." },
         reason: { en: "Delivers the emotional depth and passionate romance you crave.", ar: "يقدم العمق العاطفي والرومانسية العاطفية التي تتوق إليها." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9781501161933-M.jpg",
         coverColor: "bg-[#9D174D]"
       },
       {
@@ -312,6 +335,8 @@ const RESULTS_DATA = {
         author: { en: "Ahlam Mosteghanemi", ar: "أحلام مستغانمي" },
         description: { en: "A tale of love, pride, and sorrow in the Arab world.", ar: "حكاية حب وكبرياء وحزن في العالم العربي." },
         reason: { en: "Richly poetic and highly emotional romantic literature.", ar: "أدب رومانسي شاعري غني وعاطفي للغاية." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789953893351-M.jpg",
         coverColor: "bg-[#111827]"
       },
       {
@@ -319,6 +344,8 @@ const RESULTS_DATA = {
         author: { en: "Khawla Hamdi", ar: "خولة حمدي" },
         description: { en: "A touching love story crossing religious and cultural bounds.", ar: "قصة حب مؤثرة تتخطى الحدود الدينية والثقافية." },
         reason: { en: "A poignant exploration of love overcoming major obstacles.", ar: "استكشاف مؤثر للحب الذي يتغلب على العقبات الكبرى." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789973059850-M.jpg",
         coverColor: "bg-[#7E22CE]"
       }
     ]
@@ -335,6 +362,8 @@ const RESULTS_DATA = {
         author: { en: "Khaled Hosseini", ar: "خالد حسيني" },
         description: { en: "A heartbreaking story of friendship and redemption in Afghanistan.", ar: "قصة مفجعة عن الصداقة والفداء في أفغانستان." },
         reason: { en: "Deeply immerses you in a rich culture and poignant history.", ar: "يغمرك بعمق في ثقافة غنية وتاريخ مؤثر." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9781594631931-M.jpg",
         coverColor: "bg-[#B45309]"
       },
       {
@@ -342,6 +371,8 @@ const RESULTS_DATA = {
         author: { en: "Min Jin Lee", ar: "مين جين لي" },
         description: { en: "A sweeping saga of a Korean family living in Japan.", ar: "ملحمة شاملة لعائلة كورية تعيش في اليابان." },
         reason: { en: "A beautifully detailed exploration of immigrant identities and resilience.", ar: "استكشاف مفصل بشكل جميل لهويات المهاجرين والمرونة." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9781455563920-M.jpg",
         coverColor: "bg-[#0F766E]"
       },
       {
@@ -349,6 +380,8 @@ const RESULTS_DATA = {
         author: { en: "Radwa Ashour", ar: "رضوى عاشور" },
         description: { en: "A masterpiece chronicling the fall of Moorish Spain.", ar: "تحفة فنية تؤرخ لسقوط إسبانيا المغاربية." },
         reason: { en: "An incredible historical journey through a fascinating culture.", ar: "رحلة تاريخية مذهلة عبر ثقافة رائعة." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780815609111-M.jpg",
         coverColor: "bg-[#854D0E]"
       },
       {
@@ -356,7 +389,8 @@ const RESULTS_DATA = {
         author: { en: "Youssef Ziedan", ar: "يوسف زيدان" },
         description: { en: "A tale of religious conflict and personal turmoil in the 5th century.", ar: "حكاية عن الصراع الديني والاضطراب الشخصي في القرن الخامس." },
         reason: { en: "Rich historical setting that vividly transports you to the past.", ar: "بيئة تاريخية غنية تنقلك بوضوح إلى الماضي." },
-        link: "https://archive.org/",
+        link: "https://www.hindawi.org/books/98370960/",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771442112-M.jpg",
         coverColor: "bg-[#431407]"
       }
     ]
@@ -373,6 +407,8 @@ const RESULTS_DATA = {
         author: { en: "Suzanne Collins", ar: "سوزان كولنز" },
         description: { en: "A thrilling dystopian survival game with political undertones.", ar: "لعبة بقاء بائسة ومثيرة ذات دلالات سياسية." },
         reason: { en: "Incredibly fast-paced with non-stop action and high stakes.", ar: "سريع الوتيرة بشكل لا يصدق مع حركة لا تتوقف ومخاطر عالية." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780439023481-M.jpg",
         coverColor: "bg-[#991B1B]"
       },
       {
@@ -380,6 +416,8 @@ const RESULTS_DATA = {
         author: { en: "Dan Brown", ar: "دان براون" },
         description: { en: "A breathless global treasure hunt full of puzzles.", ar: "بحث عالمي يحبس الأنفاس عن كنز مليء بالألغاز." },
         reason: { en: "A perfect blend of mystery, action, and suspenseful plot twists.", ar: "مزيج مثالي من الغموض والحركة وتحولات الحبكة المشوقة." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780307474278-M.jpg",
         coverColor: "bg-[#57534E]"
       },
       {
@@ -387,6 +425,8 @@ const RESULTS_DATA = {
         author: { en: "Ahmed Khaireddine", ar: "أحمد خيري العمري" },
         description: { en: "A dynamic narrative intertwining history and modern struggle.", ar: "سرد ديناميكي يتشابك فيه التاريخ والنضال الحديث." },
         reason: { en: "Keeps you engaged with its energetic flow and compelling story.", ar: "يبقيك متفاعلاً مع تدفقه الحيوي وقصته المقنعة." },
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9786144195742-M.jpg",
         coverColor: "bg-[#065F46]"
       },
       {
@@ -394,12 +434,41 @@ const RESULTS_DATA = {
         author: { en: "Ahmed Mourad", ar: "أحمد مراد" },
         description: { en: "A psychological thriller involving murder, madness, and mystery.", ar: "قصة إثارة نفسية تتضمن القتل والجنون والغموض." },
         reason: { en: "A mind-bending, suspenseful ride that you won't be able to put down.", ar: "رحلة مشوقة ومذهلة للعقل لن تتمكن من التوقف عن قراءتها." },
-        link: "https://archive.org/",
+        link: null,
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789770931535-M.jpg",
         coverColor: "bg-[#1E3A8A]"
       }
     ]
   }
 };
+
+const BookCover = ({ src, title, color }: { src?: string, title: string, color: string }) => {
+  const [error, setError] = useState(!src);
+  
+  return (
+    <div className={`h-60 ${color} shrink-0 relative flex items-center justify-center overflow-hidden`}>
+      {!error && src && (
+        <img 
+          src={src} 
+          alt={title} 
+          onError={() => setError(true)}
+          className="w-full h-full object-cover object-top z-20"
+        />
+      )}
+      {error && (
+        <>
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="relative z-10 w-32 h-44 bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl flex flex-col items-center justify-center p-4 text-center">
+             <BookOpen className="w-8 h-8 text-white/80 mb-2" />
+             <span className="text-white/90 font-serif font-bold text-xs leading-tight">
+               {title}
+             </span>
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
 
 export default function Matchmaker() {
   const [step, setStep] = useState<Step>("home");
@@ -427,7 +496,6 @@ export default function Matchmaker() {
     setAnswers(newAnswers);
     setDirection(1);
 
-    // Give a very small delay so the user can briefly see their selection highlighted
     setTimeout(() => {
       if (currentQuestionIndex < QUIZ_QUESTIONS.length - 1) {
         setCurrentQuestionIndex((prev) => prev + 1);
@@ -484,10 +552,8 @@ export default function Matchmaker() {
   const currentQuestion = QUIZ_QUESTIONS[currentQuestionIndex];
   const isRtl = language === "ar";
   
-  // Custom variants for sliding forward or backward based on direction state
   const quizVariants = {
     enter: (dir: number) => {
-      // Adjust x offset based on RTL and direction
       const offset = 30 * dir;
       return {
         x: isRtl ? -offset : offset,
@@ -688,15 +754,13 @@ export default function Matchmaker() {
                     className="flex"
                   >
                     <Card className="flex flex-col w-full border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                      <div className={`h-48 ${book.coverColor} shrink-0 relative flex items-center justify-center overflow-hidden`}>
-                        <div className="absolute inset-0 bg-black/10"></div>
-                        <div className="relative z-10 w-28 h-40 bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl flex flex-col items-center justify-center p-3 text-center transform group-hover:scale-105 transition-transform duration-500">
-                           <BookOpen className="w-6 h-6 text-white/80 mb-2" />
-                           <span className="text-white/90 font-serif font-bold text-[10px] leading-tight">
-                             {book.title[language]}
-                           </span>
-                        </div>
-                      </div>
+                      
+                      <BookCover 
+                        src={book.coverUrl} 
+                        title={book.title[language]} 
+                        color={book.coverColor} 
+                      />
+
                       <CardContent className="p-6 flex flex-col flex-1">
                         <div className="mb-4">
                           <h4 className="text-lg font-bold font-serif mb-1 group-hover:text-primary transition-colors leading-tight" data-testid={`text-book-title-${idx}`}>
@@ -716,8 +780,8 @@ export default function Matchmaker() {
                           </p>
                         </div>
 
-                        {book.link && (
-                          <div className="mt-6 pt-4 border-t border-border/30">
+                        <div className="mt-6 pt-4 border-t border-border/30 text-center">
+                          {book.link ? (
                             <Button 
                               variant="secondary" 
                               className="w-full gap-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -728,8 +792,12 @@ export default function Matchmaker() {
                                 {t.readLink}
                               </a>
                             </Button>
-                          </div>
-                        )}
+                          ) : (
+                            <span className="text-xs text-muted-foreground italic py-2 inline-block">
+                              {t.noPdf}
+                            </span>
+                          )}
+                        </div>
                       </CardContent>
                     </Card>
                   </motion.div>
