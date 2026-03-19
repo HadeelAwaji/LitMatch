@@ -21,8 +21,8 @@ const UI_TEXT = {
     whyItFits: "Why it fits you:",
     descriptionText: "Description:",
     readPdf: "Read / PDF",
-    borrowArchive: "Borrow on Archive.org",
-    viewGoogle: "View on Google Books",
+    borrowArchive: "Borrow",
+    viewGoogle: "Preview",
     retakeQuiz: "Back to Home",
     goBack: "Restart Quiz",
     backBtn: "Back",
@@ -39,8 +39,8 @@ const UI_TEXT = {
     whyItFits: "لماذا يناسبك:",
     descriptionText: "الوصف:",
     readPdf: "اقرأ / PDF",
-    borrowArchive: "استعارة من Archive.org",
-    viewGoogle: "عرض في كتب جوجل",
+    borrowArchive: "استعارة",
+    viewGoogle: "معاينة",
     retakeQuiz: "العودة للرئيسية",
     goBack: "إعادة الاختبار",
     backBtn: "رجوع",
@@ -190,7 +190,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780451524935&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
-        coverColor: "bg-[#1E293B]"
       },
       {
         title: { en: "The Secret History", ar: "التاريخ السري" },
@@ -201,7 +200,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9781400031702&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9781400031702-L.jpg",
-        coverColor: "bg-[#333333]"
       },
       {
         title: { en: "Season of Migration to the North", ar: "موسم الهجرة إلى الشمال" },
@@ -210,9 +208,8 @@ const RESULTS_DATA = {
         reason: { en: "Offers profound philosophical insights into identity and culture.", ar: "تقدم رؤى فلسفية عميقة حول الهوية والثقافة." },
         link: "https://archive.org/search?query=Season+of+Migration+to+the+North",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780141187204&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780141187204-L.jpg",
-        coverColor: "bg-[#711E1E]"
+        coverUrl: "https://books.google.com/books/content?vid=ISBN9781590173029&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+        fallbackCover: "https://covers.openlibrary.org/b/isbn/9781590173029-L.jpg",
       },
       {
         title: { en: "Children of the Alley", ar: "أولاد حارتنا" },
@@ -223,7 +220,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780385264731&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780385264731-L.jpg",
-        coverColor: "bg-[#4A2E1B]"
       },
       {
         title: { en: "Notes from Underground", ar: "رسائل من تحت الأرض" },
@@ -234,7 +230,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780679734529&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780679734529-L.jpg",
-        coverColor: "bg-[#27272A]"
       }
     ]
   },
@@ -254,7 +249,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780441172719&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
-        coverColor: "bg-[#C48C5E]"
       },
       {
         title: { en: "The Night Circus", ar: "السيرك الليلي" },
@@ -265,7 +259,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780307739920&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780307739920-L.jpg",
-        coverColor: "bg-[#2A2A2A]"
       },
       {
         title: { en: "One Thousand and One Nights", ar: "ألف ليلة وليلة" },
@@ -276,7 +269,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780140449389&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780140449389-L.jpg",
-        coverColor: "bg-[#8B5CF6]"
       },
       {
         title: { en: "Utopia", ar: "يوتوبيا" },
@@ -287,7 +279,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9789774088874&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9789774088874-L.jpg",
-        coverColor: "bg-[#334155]"
       },
       {
         title: { en: "The Hobbit", ar: "الهوبيت" },
@@ -298,7 +289,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780547928227&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
-        coverColor: "bg-[#064E3B]"
       }
     ]
   },
@@ -318,7 +308,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780735211292&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
-        coverColor: "bg-[#EAB308]"
       },
       {
         title: { en: "Man's Search for Meaning", ar: "الإنسان يبحث عن المعنى" },
@@ -329,7 +318,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780807014295&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780807014295-L.jpg",
-        coverColor: "bg-[#15803D]"
       },
       {
         title: { en: "Renew Your Life", ar: "جدد حياتك" },
@@ -340,7 +328,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9789771427508&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9789771427508-L.jpg",
-        coverColor: "bg-[#047857]"
       },
       {
         title: { en: "Because You Are God", ar: "لأنك الله" },
@@ -351,7 +338,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9786038202570&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9786038202570-L.jpg",
-        coverColor: "bg-[#3B82F6]"
       },
       {
         title: { en: "Meditations", ar: "التأملات" },
@@ -362,7 +348,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780812968255&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780812968255-L.jpg",
-        coverColor: "bg-[#451A03]"
       }
     ]
   },
@@ -382,7 +367,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780141439518&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
-        coverColor: "bg-[#BE185D]"
       },
       {
         title: { en: "The Seven Husbands of Evelyn Hugo", ar: "أزواج إيفلين هيوغو السبعة" },
@@ -393,7 +377,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9781501161933&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9781501161933-L.jpg",
-        coverColor: "bg-[#9D174D]"
       },
       {
         title: { en: "Black Suits You so Well", ar: "الأسود يليق بك" },
@@ -404,7 +387,6 @@ const RESULTS_DATA = {
         linkType: "search" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9789953893351&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9789953893351-L.jpg",
-        coverColor: "bg-[#111827]"
       },
       {
         title: { en: "In My Heart is a Hebrew Female", ar: "في قلبي أنثى عبرية" },
@@ -415,7 +397,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9789973059850&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9789973059850-L.jpg",
-        coverColor: "bg-[#7E22CE]"
       },
       {
         title: { en: "Jane Eyre", ar: "جين أير" },
@@ -426,7 +407,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780141441146&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
-        coverColor: "bg-[#4C1D95]"
       }
     ]
   },
@@ -446,7 +426,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9781594631931&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9781594631931-L.jpg",
-        coverColor: "bg-[#B45309]"
       },
       {
         title: { en: "Pachinko", ar: "باتشينكو" },
@@ -457,7 +436,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9781455563920&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9781455563920-L.jpg",
-        coverColor: "bg-[#0F766E]"
       },
       {
         title: { en: "The Granada Trilogy", ar: "ثلاثية غرناطة" },
@@ -468,7 +446,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780815609111&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780815609111-L.jpg",
-        coverColor: "bg-[#854D0E]"
       },
       {
         title: { en: "Azazeel", ar: "عزازيل" },
@@ -479,7 +456,6 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9789771442112&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9789771442112-L.jpg",
-        coverColor: "bg-[#431407]"
       },
       {
         title: { en: "Things Fall Apart", ar: "أشياء تتداعى" },
@@ -490,7 +466,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780385474542&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780385474542-L.jpg",
-        coverColor: "bg-[#78350F]"
       }
     ]
   },
@@ -510,7 +485,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780439023481&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg",
-        coverColor: "bg-[#991B1B]"
       },
       {
         title: { en: "The Da Vinci Code", ar: "شفرة دا فينشي" },
@@ -521,7 +495,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780307474278&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
-        coverColor: "bg-[#57534E]"
       },
       {
         title: { en: "Bilal's Code", ar: "شفرة بلال" },
@@ -532,7 +505,6 @@ const RESULTS_DATA = {
         linkType: "search" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9786144195742&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9786144195742-L.jpg",
-        coverColor: "bg-[#065F46]"
       },
       {
         title: { en: "The Blue Elephant", ar: "الفيل الأزرق" },
@@ -543,7 +515,6 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9789770931535&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9789770931535-L.jpg",
-        coverColor: "bg-[#1E3A8A]"
       },
       {
         title: { en: "The Martian", ar: "المريخي" },
@@ -554,17 +525,16 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
         coverUrl: "https://books.google.com/books/content?vid=ISBN9780553418026&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         fallbackCover: "https://covers.openlibrary.org/b/isbn/9780553418026-L.jpg",
-        coverColor: "bg-[#991B1B]"
       }
     ]
   }
 };
 
-const BookCover = ({ primarySrc, fallbackSrc, title, color }: { primarySrc?: string, fallbackSrc?: string, title: string, color: string }) => {
+const BookCover = ({ primarySrc, fallbackSrc, title, author }: { primarySrc?: string, fallbackSrc?: string, title: string, author: string }) => {
   const [imageError, setImageError] = useState<"none" | "primary" | "both">("none");
   
   return (
-    <div className={`h-[220px] ${color} shrink-0 relative flex items-center justify-center overflow-hidden bg-muted`}>
+    <div className="h-[220px] shrink-0 relative flex items-center justify-center overflow-hidden bg-[#e0dcd3]">
       {imageError === "none" && primarySrc && (
         <img 
           src={primarySrc} 
@@ -582,15 +552,14 @@ const BookCover = ({ primarySrc, fallbackSrc, title, color }: { primarySrc?: str
         />
       )}
       {(imageError === "both" || (!primarySrc && !fallbackSrc)) && (
-        <>
-          <div className="absolute inset-0 bg-black/10"></div>
-          <div className="relative z-10 w-32 h-44 bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl flex flex-col items-center justify-center p-4 text-center">
-             <BookOpen className="w-8 h-8 text-white/80 mb-2" />
-             <span className="text-white/90 font-serif font-bold text-xs leading-tight">
-               {title}
-             </span>
-          </div>
-        </>
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
+           <span className="font-serif font-medium text-lg leading-tight text-[#4a463e] mb-2">
+             {title}
+           </span>
+           <span className="font-sans text-xs italic text-[#7a7465]">
+             {author}
+           </span>
+        </div>
       )}
     </div>
   )
@@ -673,14 +642,6 @@ export default function Matchmaker() {
     setCurrentQuestionIndex(0);
     setAnswers({});
     setResultType(null);
-  };
-
-  const getLinkIcon = (type: LinkType) => {
-    switch(type) {
-      case "borrow": return <BookMarked className="w-4 h-4" />;
-      case "search": return <Search className="w-4 h-4" />;
-      case "pdf": default: return <ExternalLink className="w-4 h-4" />;
-    }
   };
 
   const getLinkText = (type: LinkType) => {
@@ -895,16 +856,16 @@ export default function Matchmaker() {
                     transition={{ delay: 0.3 + idx * 0.1, duration: 0.5 }}
                     className="flex"
                   >
-                    <Card className="flex flex-col w-full border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
+                    <Card className="flex flex-col w-full border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group bg-card">
                       
                       <BookCover 
                         primarySrc={book.coverUrl}
                         fallbackSrc={book.fallbackCover} 
-                        title={book.title[language]} 
-                        color={book.coverColor} 
+                        title={book.title[language]}
+                        author={book.author[language]}
                       />
 
-                      <CardContent className="p-6 flex flex-col flex-1">
+                      <CardContent className="p-5 flex flex-col flex-1">
                         <div className="mb-4">
                           <h4 className="text-lg font-bold font-serif mb-1 group-hover:text-primary transition-colors leading-tight" data-testid={`text-book-title-${idx}`}>
                             {book.title[language]}
@@ -923,14 +884,14 @@ export default function Matchmaker() {
                           </p>
                         </div>
 
-                        <div className="mt-6 pt-4 border-t border-border/30 text-center">
+                        <div className="mt-5 pt-4 border-t border-border/30 text-center">
                           <Button 
                             variant="secondary" 
-                            className="w-full gap-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+                            size="sm"
+                            className="w-full rounded-full hover:bg-primary hover:text-primary-foreground transition-colors font-medium"
                             asChild
                           >
                             <a href={book.link} target="_blank" rel="noopener noreferrer">
-                              {getLinkIcon(book.linkType)}
                               {getLinkText(book.linkType)}
                             </a>
                           </Button>
