@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Sparkles, Feather, ArrowRight, RefreshCcw, Languages, ExternalLink, ArrowLeft, BookMarked, Search } from "lucide-react";
+import { BookOpen, Sparkles, Feather, ArrowRight, RefreshCcw, Languages, ExternalLink, ArrowLeft } from "lucide-react";
 import heroBg from "@/assets/images/hero-bg.png";
 
 type Step = "home" | "quiz" | "results";
@@ -180,6 +180,7 @@ const RESULTS_DATA = {
       en: "You seek books that challenge your perspective, feature complex prose, and linger in your mind long after you've closed the cover.",
       ar: "تبحث عن الكتب التي تتحدى وجهة نظرك، وتتميز بنثر معقد، وتبقى في ذهنك طويلاً بعد أن تغلق الغلاف."
     },
+    placeholderColor: "bg-[#2c3e50]", // Warm Navy
     books: [
       {
         title: { en: "1984", ar: "١٩٨٤" },
@@ -188,8 +189,7 @@ const RESULTS_DATA = {
         reason: { en: "Challenges your views on society, truth, and freedom.", ar: "تتحدى وجهات نظرك حول المجتمع والحقيقة والحرية." },
         link: "https://gutenberg.net.au/ebooks01/0100021h.html",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780451524935&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1348990566l/5470.jpg",
       },
       {
         title: { en: "The Secret History", ar: "التاريخ السري" },
@@ -198,8 +198,6 @@ const RESULTS_DATA = {
         reason: { en: "Masterfully atmospheric dark academia exploring moral ambiguity.", ar: "أكاديمية مظلمة رائعة الجو تستكشف الغموض الأخلاقي." },
         link: "https://archive.org/search?query=The+Secret+History+Donna+Tartt",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9781400031702&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9781400031702-L.jpg",
       },
       {
         title: { en: "Season of Migration to the North", ar: "موسم الهجرة إلى الشمال" },
@@ -208,8 +206,6 @@ const RESULTS_DATA = {
         reason: { en: "Offers profound philosophical insights into identity and culture.", ar: "تقدم رؤى فلسفية عميقة حول الهوية والثقافة." },
         link: "https://archive.org/search?query=Season+of+Migration+to+the+North",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9781590173029&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9781590173029-L.jpg",
       },
       {
         title: { en: "Children of the Alley", ar: "أولاد حارتنا" },
@@ -218,8 +214,6 @@ const RESULTS_DATA = {
         reason: { en: "Deep, symbolic, and thought-provoking classic literature.", ar: "كلاسيكية أدبية عميقة ورمزية ومثيرة للتفكير." },
         link: "https://archive.org/search?query=Children+of+the+Alley+Naguib+Mahfouz",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780385264731&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780385264731-L.jpg",
       },
       {
         title: { en: "Notes from Underground", ar: "رسائل من تحت الأرض" },
@@ -228,8 +222,6 @@ const RESULTS_DATA = {
         reason: { en: "A brilliant, unfiltered look into the complexity of the human mind.", ar: "نظرة رائعة وغير مفلترة في تعقيد العقل البشري." },
         link: "https://www.gutenberg.org/ebooks/600",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780679734529&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780679734529-L.jpg",
       }
     ]
   },
@@ -239,6 +231,7 @@ const RESULTS_DATA = {
       en: "You read to journey to other worlds, experience thrilling adventures, and let your imagination soar. Reality is highly overrated.",
       ar: "أنت تقرأ لتسافر إلى عوالم أخرى، وتختبر مغامرات مثيرة، وتدع خيالك يحلق. الواقع مبالغ في تقديره."
     },
+    placeholderColor: "bg-[#b05c52]", // Muted Terracotta
     books: [
       {
         title: { en: "Dune", ar: "كثيب (ديون)" },
@@ -247,8 +240,7 @@ const RESULTS_DATA = {
         reason: { en: "Unmatched world-building that completely absorbs you.", ar: "بناء عالم لا مثيل له يمتصك بالكامل." },
         link: "https://archive.org/search?query=Dune+Frank+Herbert",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780441172719&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
+        coverUrl: "https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg",
       },
       {
         title: { en: "The Night Circus", ar: "السيرك الليلي" },
@@ -257,8 +249,7 @@ const RESULTS_DATA = {
         reason: { en: "A sensory-rich experience full of magic and wonder.", ar: "تجربة غنية بالحواس مليئة بالسحر والعجب." },
         link: "https://archive.org/search?query=The+Night+Circus",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780307739920&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780307739920-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1387124618l/9361589.jpg",
       },
       {
         title: { en: "One Thousand and One Nights", ar: "ألف ليلة وليلة" },
@@ -267,8 +258,6 @@ const RESULTS_DATA = {
         reason: { en: "The ultimate collection of enchanting and magical escapist stories.", ar: "المجموعة المطلقة من القصص الساحرة والخيالية." },
         link: "https://www.gutenberg.org/ebooks/19860",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780140449389&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780140449389-L.jpg",
       },
       {
         title: { en: "Utopia", ar: "يوتوبيا" },
@@ -277,8 +266,6 @@ const RESULTS_DATA = {
         reason: { en: "A gripping alternate reality that keeps you hooked.", ar: "واقع بديل مشوق يبقيك منتبهاً." },
         link: "https://www.hindawi.org/books/42946571/",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9789774088874&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9789774088874-L.jpg",
       },
       {
         title: { en: "The Hobbit", ar: "الهوبيت" },
@@ -287,8 +274,7 @@ const RESULTS_DATA = {
         reason: { en: "The perfect journey into a richly detailed magical world.", ar: "الرحلة المثالية إلى عالم سحري غني بالتفاصيل." },
         link: "https://archive.org/search?query=The+Hobbit+Tolkien",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780547928227&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1546071216l/5907.jpg",
       }
     ]
   },
@@ -298,6 +284,7 @@ const RESULTS_DATA = {
       en: "You view reading as a tool for growth. You want actionable insights, real-world wisdom, and the inspiration to become your best self.",
       ar: "أنت تنظر إلى القراءة كأداة للنمو. تريد رؤى قابلة للتنفيذ، وحكمة من العالم الحقيقي، والإلهام لتصبح أفضل نسخة من نفسك."
     },
+    placeholderColor: "bg-[#7a8b76]", // Sage Green
     books: [
       {
         title: { en: "Atomic Habits", ar: "العادات الذرية" },
@@ -306,8 +293,7 @@ const RESULTS_DATA = {
         reason: { en: "Provides clear, actionable steps for everyday self-improvement.", ar: "يقدم خطوات واضحة وقابلة للتنفيذ لتحسين الذات يومياً." },
         link: "https://archive.org/search?query=Atomic+Habits+James+Clear",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780735211292&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1535115320l/40121378.jpg",
       },
       {
         title: { en: "Man's Search for Meaning", ar: "الإنسان يبحث عن المعنى" },
@@ -316,8 +302,7 @@ const RESULTS_DATA = {
         reason: { en: "Offers deep inspiration and shifts your life perspective.", ar: "يقدم إلهاماً عميقاً ويغير نظرتك للحياة." },
         link: "https://archive.org/search?query=Mans+Search+for+Meaning",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780807014295&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780807014295-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1535419394l/4069.jpg",
       },
       {
         title: { en: "Renew Your Life", ar: "جدد حياتك" },
@@ -326,8 +311,6 @@ const RESULTS_DATA = {
         reason: { en: "Practical spiritual and mental guidance for a better life.", ar: "إرشادات روحية وعقلية عملية لحياة أفضل." },
         link: "https://www.hindawi.org/books/64515239/",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9789771427508&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9789771427508-L.jpg",
       },
       {
         title: { en: "Because You Are God", ar: "لأنك الله" },
@@ -336,8 +319,6 @@ const RESULTS_DATA = {
         reason: { en: "Highly motivating for spiritual and emotional well-being.", ar: "محفز للغاية للرفاهية الروحية والعاطفية." },
         link: "https://archive.org/search?query=%D9%84%D8%A3%D9%86%D9%83+%D8%A7%D9%84%D9%84%D9%87",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9786038202570&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9786038202570-L.jpg",
       },
       {
         title: { en: "Meditations", ar: "التأملات" },
@@ -346,8 +327,7 @@ const RESULTS_DATA = {
         reason: { en: "Timeless wisdom on self-discipline and inner strength.", ar: "حكمة خالدة حول الانضباط الذاتي والقوة الداخلية." },
         link: "https://www.gutenberg.org/ebooks/2680",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780812968255&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780812968255-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1421618636l/30659.jpg",
       }
     ]
   },
@@ -357,6 +337,7 @@ const RESULTS_DATA = {
       en: "You are drawn to stories of deep connection, passion, and emotional journeys. You read to feel the soaring highs of love.",
       ar: "تنجذب إلى قصص الاتصال العميق والعاطفة والرحلات العاطفية. تقرأ لتشعر بأعلى مستويات الحب."
     },
+    placeholderColor: "bg-[#b88691]", // Dusty Rose
     books: [
       {
         title: { en: "Pride and Prejudice", ar: "كبرياء وتحامل" },
@@ -365,8 +346,7 @@ const RESULTS_DATA = {
         reason: { en: "A beautifully written, timeless love story with sharp wit.", ar: "قصة حب خالدة ومكتوبة بشكل جميل بذكاء حاد." },
         link: "https://www.gutenberg.org/ebooks/1342",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780141439518&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1320399351l/1885.jpg",
       },
       {
         title: { en: "The Seven Husbands of Evelyn Hugo", ar: "أزواج إيفلين هيوغو السبعة" },
@@ -375,8 +355,6 @@ const RESULTS_DATA = {
         reason: { en: "Delivers the emotional depth and passionate romance you crave.", ar: "يقدم العمق العاطفي والرومانسية العاطفية التي تتوق إليها." },
         link: "https://archive.org/search?query=The+Seven+Husbands+of+Evelyn+Hugo",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9781501161933&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9781501161933-L.jpg",
       },
       {
         title: { en: "Black Suits You so Well", ar: "الأسود يليق بك" },
@@ -385,8 +363,6 @@ const RESULTS_DATA = {
         reason: { en: "Richly poetic and highly emotional romantic literature.", ar: "أدب رومانسي شاعري غني وعاطفي للغاية." },
         link: "https://www.google.com/search?q=Black+Suits+You+so+Well+book",
         linkType: "search" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9789953893351&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9789953893351-L.jpg",
       },
       {
         title: { en: "In My Heart is a Hebrew Female", ar: "في قلبي أنثى عبرية" },
@@ -395,8 +371,6 @@ const RESULTS_DATA = {
         reason: { en: "A poignant exploration of love overcoming major obstacles.", ar: "استكشاف مؤثر للحب الذي يتغلب على العقبات الكبرى." },
         link: "https://archive.org/search?query=%D9%81%D9%8A+%D9%82%D9%84%D8%A8%D9%8A+%D8%A3%D9%86%D8%AB%D9%89+%D8%B9%D8%A8%D8%B1%D9%8A%D8%A9",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9789973059850&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9789973059850-L.jpg",
       },
       {
         title: { en: "Jane Eyre", ar: "جين أير" },
@@ -405,8 +379,7 @@ const RESULTS_DATA = {
         reason: { en: "A deeply emotional story of love, morality, and independence.", ar: "قصة عاطفية عميقة عن الحب والأخلاق والاستقلال." },
         link: "https://www.gutenberg.org/ebooks/1260",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780141441146&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1557343311l/10210.jpg",
       }
     ]
   },
@@ -416,6 +389,7 @@ const RESULTS_DATA = {
       en: "You read to travel without moving. You love discovering new cultures, historical eras, and diverse human experiences.",
       ar: "أنت تقرأ لتسافر دون أن تتحرك. تحب اكتشاف ثقافات جديدة وعصور تاريخية وتجارب إنسانية متنوعة."
     },
+    placeholderColor: "bg-[#d4a373]", // Warm Ochre
     books: [
       {
         title: { en: "The Kite Runner", ar: "عداء الطائرة الورقية" },
@@ -424,8 +398,7 @@ const RESULTS_DATA = {
         reason: { en: "Deeply immerses you in a rich culture and poignant history.", ar: "يغمرك بعمق في ثقافة غنية وتاريخ مؤثر." },
         link: "https://archive.org/search?query=The+Kite+Runner",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9781594631931&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9781594631931-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1579036753l/77203.jpg",
       },
       {
         title: { en: "Pachinko", ar: "باتشينكو" },
@@ -434,8 +407,7 @@ const RESULTS_DATA = {
         reason: { en: "A beautifully detailed exploration of immigrant identities and resilience.", ar: "استكشاف مفصل بشكل جميل لهويات المهاجرين والمرونة." },
         link: "https://archive.org/search?query=Pachinko+Min+Jin+Lee",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9781455563920&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9781455563920-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1462393298l/29983711.jpg",
       },
       {
         title: { en: "The Granada Trilogy", ar: "ثلاثية غرناطة" },
@@ -444,8 +416,6 @@ const RESULTS_DATA = {
         reason: { en: "An incredible historical journey through a fascinating culture.", ar: "رحلة تاريخية مذهلة عبر ثقافة رائعة." },
         link: "https://archive.org/search?query=The+Granada+Trilogy",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780815609111&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780815609111-L.jpg",
       },
       {
         title: { en: "Azazeel", ar: "عزازيل" },
@@ -454,8 +424,6 @@ const RESULTS_DATA = {
         reason: { en: "Rich historical setting that vividly transports you to the past.", ar: "بيئة تاريخية غنية تنقلك بوضوح إلى الماضي." },
         link: "https://www.hindawi.org/books/98370960/",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9789771442112&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9789771442112-L.jpg",
       },
       {
         title: { en: "Things Fall Apart", ar: "أشياء تتداعى" },
@@ -464,8 +432,7 @@ const RESULTS_DATA = {
         reason: { en: "An essential cultural narrative that expands your worldview.", ar: "سرد ثقافي أساسي يوسع نظرتك للعالم." },
         link: "https://archive.org/search?query=Things+Fall+Apart+Chinua+Achebe",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780385474542&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780385474542-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1352082529l/37781.jpg",
       }
     ]
   },
@@ -475,6 +442,7 @@ const RESULTS_DATA = {
       en: "You need fast-paced plots, high stakes, and adrenaline. You want stories that keep you on the edge of your seat.",
       ar: "أنت بحاجة إلى حبكات سريعة الوتيرة، ومخاطر عالية، وأدرينالين. تريد قصصاً تبقيك على حافة مقعدك."
     },
+    placeholderColor: "bg-[#4a4e69]", // Deep Slate
     books: [
       {
         title: { en: "The Hunger Games", ar: "مباريات الجوع" },
@@ -483,8 +451,7 @@ const RESULTS_DATA = {
         reason: { en: "Incredibly fast-paced with non-stop action and high stakes.", ar: "سريع الوتيرة بشكل لا يصدق مع حركة لا تتوقف ومخاطر عالية." },
         link: "https://archive.org/search?query=The+Hunger+Games",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780439023481&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1586722975l/2767052.jpg",
       },
       {
         title: { en: "The Da Vinci Code", ar: "شفرة دا فينشي" },
@@ -493,8 +460,7 @@ const RESULTS_DATA = {
         reason: { en: "A perfect blend of mystery, action, and suspenseful plot twists.", ar: "مزيج مثالي من الغموض والحركة وتحولات الحبكة المشوقة." },
         link: "https://archive.org/search?query=The+Da+Vinci+Code",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780307474278&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780307474278-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1579621267l/968.jpg",
       },
       {
         title: { en: "Bilal's Code", ar: "شفرة بلال" },
@@ -503,8 +469,6 @@ const RESULTS_DATA = {
         reason: { en: "Keeps you engaged with its energetic flow and compelling story.", ar: "يبقيك متفاعلاً مع تدفقه الحيوي وقصته المقنعة." },
         link: "https://www.google.com/search?q=Bilal%27s+Code+book",
         linkType: "search" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9786144195742&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9786144195742-L.jpg",
       },
       {
         title: { en: "The Blue Elephant", ar: "الفيل الأزرق" },
@@ -513,8 +477,6 @@ const RESULTS_DATA = {
         reason: { en: "A mind-bending, suspenseful ride that you won't be able to put down.", ar: "رحلة مشوقة ومذهلة للعقل لن تتمكن من التوقف عن قراءتها." },
         link: "https://archive.org/search?query=%D8%A7%D9%84%D9%81%D9%8A%D9%84+%D8%A7%D9%84%D8%A3%D8%B2%D8%B1%D9%82",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9789770931535&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9789770931535-L.jpg",
       },
       {
         title: { en: "The Martian", ar: "المريخي" },
@@ -523,43 +485,24 @@ const RESULTS_DATA = {
         reason: { en: "High-stakes survival action mixed with clever problem-solving.", ar: "إجراءات بقاء عالية المخاطر ممزوجة بحل ذكي للمشكلات." },
         link: "https://archive.org/search?query=The+Martian+Andy+Weir",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/content?vid=ISBN9780553418026&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-        fallbackCover: "https://covers.openlibrary.org/b/isbn/9780553418026-L.jpg",
+        coverUrl: "https://images.gr-assets.com/books/1413706054l/18007564.jpg",
       }
     ]
   }
 };
 
-const BookCover = ({ primarySrc, fallbackSrc, title, author }: { primarySrc?: string, fallbackSrc?: string, title: string, author: string }) => {
-  const [imageError, setImageError] = useState<"none" | "primary" | "both">("none");
+const BookCover = ({ coverUrl, title, color }: { coverUrl?: string, title: string, color: string }) => {
+  const [imageError, setImageError] = useState(false);
   
   return (
-    <div className="h-[220px] shrink-0 relative flex items-center justify-center overflow-hidden bg-[#e0dcd3]">
-      {imageError === "none" && primarySrc && (
+    <div className={`h-[220px] shrink-0 relative flex items-center justify-center overflow-hidden ${color}`}>
+      {!imageError && coverUrl && (
         <img 
-          src={primarySrc} 
+          src={coverUrl} 
           alt={title} 
-          onError={() => setImageError("primary")}
-          className="w-full h-full object-cover object-center z-20 transition-opacity duration-300"
+          onError={() => setImageError(true)}
+          className="w-full h-full object-cover object-center z-20"
         />
-      )}
-      {imageError === "primary" && fallbackSrc && (
-        <img 
-          src={fallbackSrc} 
-          alt={title} 
-          onError={() => setImageError("both")}
-          className="w-full h-full object-cover object-center z-20 transition-opacity duration-300"
-        />
-      )}
-      {(imageError === "both" || (!primarySrc && !fallbackSrc)) && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
-           <span className="font-serif font-medium text-lg leading-tight text-[#4a463e] mb-2">
-             {title}
-           </span>
-           <span className="font-sans text-xs italic text-[#7a7465]">
-             {author}
-           </span>
-        </div>
       )}
     </div>
   )
@@ -859,10 +802,9 @@ export default function Matchmaker() {
                     <Card className="flex flex-col w-full border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group bg-card">
                       
                       <BookCover 
-                        primarySrc={book.coverUrl}
-                        fallbackSrc={book.fallbackCover} 
+                        coverUrl={(book as any).coverUrl}
                         title={book.title[language]}
-                        author={book.author[language]}
+                        color={RESULTS_DATA[resultType].placeholderColor}
                       />
 
                       <CardContent className="p-5 flex flex-col flex-1">
@@ -891,8 +833,9 @@ export default function Matchmaker() {
                             className="w-full rounded-full hover:bg-primary hover:text-primary-foreground transition-colors font-medium"
                             asChild
                           >
-                            <a href={book.link} target="_blank" rel="noopener noreferrer">
+                            <a href={book.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                               {getLinkText(book.linkType)}
+                              <ExternalLink className="w-3.5 h-3.5" />
                             </a>
                           </Button>
                         </div>
