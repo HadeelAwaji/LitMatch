@@ -189,7 +189,7 @@ const RESULTS_DATA = {
         reason: { en: "Challenges your views on society, truth, and freedom.", ar: "تتحدى وجهات نظرك حول المجتمع والحقيقة والحرية." },
         link: "https://gutenberg.net.au/ebooks01/0100021h.html",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1348990566l/5470.jpg",
+        coverUrl: "https://images-na.ssl-images-amazon.com/images/P/0451524934.01.LZZZZZZZ.jpg",
       },
       {
         title: { en: "The Secret History", ar: "التاريخ السري" },
@@ -198,6 +198,7 @@ const RESULTS_DATA = {
         reason: { en: "Masterfully atmospheric dark academia exploring moral ambiguity.", ar: "أكاديمية مظلمة رائعة الجو تستكشف الغموض الأخلاقي." },
         link: "https://archive.org/search?query=The+Secret+History+Donna+Tartt",
         linkType: "borrow" as LinkType,
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/3w0YEAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "Season of Migration to the North", ar: "موسم الهجرة إلى الشمال" },
@@ -206,6 +207,7 @@ const RESULTS_DATA = {
         reason: { en: "Offers profound philosophical insights into identity and culture.", ar: "تقدم رؤى فلسفية عميقة حول الهوية والثقافة." },
         link: "https://archive.org/search?query=Season+of+Migration+to+the+North",
         linkType: "borrow" as LinkType,
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/_hZjaWrQtmcC?fife=w400-h600",
       },
       {
         title: { en: "Children of the Alley", ar: "أولاد حارتنا" },
@@ -214,6 +216,7 @@ const RESULTS_DATA = {
         reason: { en: "Deep, symbolic, and thought-provoking classic literature.", ar: "كلاسيكية أدبية عميقة ورمزية ومثيرة للتفكير." },
         link: "https://archive.org/search?query=Children+of+the+Alley+Naguib+Mahfouz",
         linkType: "borrow" as LinkType,
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/LvZMDAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "Notes from Underground", ar: "رسائل من تحت الأرض" },
@@ -222,6 +225,7 @@ const RESULTS_DATA = {
         reason: { en: "A brilliant, unfiltered look into the complexity of the human mind.", ar: "نظرة رائعة وغير مفلترة في تعقيد العقل البشري." },
         link: "https://www.gutenberg.org/ebooks/600",
         linkType: "pdf" as LinkType,
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/hU5Wk0o_iCoC?fife=w400-h600",
       }
     ]
   },
@@ -240,7 +244,7 @@ const RESULTS_DATA = {
         reason: { en: "Unmatched world-building that completely absorbs you.", ar: "بناء عالم لا مثيل له يمتصك بالكامل." },
         link: "https://archive.org/search?query=Dune+Frank+Herbert",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://upload.wikimedia.org/wikipedia/en/d/de/Dune-Frank_Herbert_%281965%29_First_edition.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/nrRKDwAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "The Night Circus", ar: "السيرك الليلي" },
@@ -249,7 +253,7 @@ const RESULTS_DATA = {
         reason: { en: "A sensory-rich experience full of magic and wonder.", ar: "تجربة غنية بالحواس مليئة بالسحر والعجب." },
         link: "https://archive.org/search?query=The+Night+Circus",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1387124618l/9361589.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/gwsgL3ZNuqkC?fife=w400-h600",
       },
       {
         title: { en: "One Thousand and One Nights", ar: "ألف ليلة وليلة" },
@@ -258,6 +262,7 @@ const RESULTS_DATA = {
         reason: { en: "The ultimate collection of enchanting and magical escapist stories.", ar: "المجموعة المطلقة من القصص الساحرة والخيالية." },
         link: "https://www.gutenberg.org/ebooks/19860",
         linkType: "pdf" as LinkType,
+        coverUrl: "https://images-na.ssl-images-amazon.com/images/P/0140449388.01.LZZZZZZZ.jpg",
       },
       {
         title: { en: "Utopia", ar: "يوتوبيا" },
@@ -274,7 +279,7 @@ const RESULTS_DATA = {
         reason: { en: "The perfect journey into a richly detailed magical world.", ar: "الرحلة المثالية إلى عالم سحري غني بالتفاصيل." },
         link: "https://archive.org/search?query=The+Hobbit+Tolkien",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1546071216l/5907.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/LLSpngEACAAJ?fife=w400-h600",
       }
     ]
   },
@@ -293,7 +298,7 @@ const RESULTS_DATA = {
         reason: { en: "Provides clear, actionable steps for everyday self-improvement.", ar: "يقدم خطوات واضحة وقابلة للتنفيذ لتحسين الذات يومياً." },
         link: "https://archive.org/search?query=Atomic+Habits+James+Clear",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1535115320l/40121378.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/XfFvDwAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "Man's Search for Meaning", ar: "الإنسان يبحث عن المعنى" },
@@ -302,7 +307,7 @@ const RESULTS_DATA = {
         reason: { en: "Offers deep inspiration and shifts your life perspective.", ar: "يقدم إلهاماً عميقاً ويغير نظرتك للحياة." },
         link: "https://archive.org/search?query=Mans+Search+for+Meaning",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1535419394l/4069.jpg",
+        coverUrl: "https://images-na.ssl-images-amazon.com/images/P/080701429X.01.LZZZZZZZ.jpg",
       },
       {
         title: { en: "Renew Your Life", ar: "جدد حياتك" },
@@ -327,7 +332,7 @@ const RESULTS_DATA = {
         reason: { en: "Timeless wisdom on self-discipline and inner strength.", ar: "حكمة خالدة حول الانضباط الذاتي والقوة الداخلية." },
         link: "https://www.gutenberg.org/ebooks/2680",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1421618636l/30659.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/brSidvTKfcQC?fife=w400-h600",
       }
     ]
   },
@@ -346,7 +351,7 @@ const RESULTS_DATA = {
         reason: { en: "A beautifully written, timeless love story with sharp wit.", ar: "قصة حب خالدة ومكتوبة بشكل جميل بذكاء حاد." },
         link: "https://www.gutenberg.org/ebooks/1342",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1320399351l/1885.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/uY6MEAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "The Seven Husbands of Evelyn Hugo", ar: "أزواج إيفلين هيوغو السبعة" },
@@ -355,6 +360,7 @@ const RESULTS_DATA = {
         reason: { en: "Delivers the emotional depth and passionate romance you crave.", ar: "يقدم العمق العاطفي والرومانسية العاطفية التي تتوق إليها." },
         link: "https://archive.org/search?query=The+Seven+Husbands+of+Evelyn+Hugo",
         linkType: "borrow" as LinkType,
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/s8X3yQEACAAJ?fife=w400-h600",
       },
       {
         title: { en: "Black Suits You so Well", ar: "الأسود يليق بك" },
@@ -379,7 +385,7 @@ const RESULTS_DATA = {
         reason: { en: "A deeply emotional story of love, morality, and independence.", ar: "قصة عاطفية عميقة عن الحب والأخلاق والاستقلال." },
         link: "https://www.gutenberg.org/ebooks/1260",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1557343311l/10210.jpg",
+        coverUrl: "https://images-na.ssl-images-amazon.com/images/P/0141441143.01.LZZZZZZZ.jpg",
       }
     ]
   },
@@ -398,7 +404,7 @@ const RESULTS_DATA = {
         reason: { en: "Deeply immerses you in a rich culture and poignant history.", ar: "يغمرك بعمق في ثقافة غنية وتاريخ مؤثر." },
         link: "https://archive.org/search?query=The+Kite+Runner",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1579036753l/77203.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/ykWQEAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "Pachinko", ar: "باتشينكو" },
@@ -407,7 +413,7 @@ const RESULTS_DATA = {
         reason: { en: "A beautifully detailed exploration of immigrant identities and resilience.", ar: "استكشاف مفصل بشكل جميل لهويات المهاجرين والمرونة." },
         link: "https://archive.org/search?query=Pachinko+Min+Jin+Lee",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1462393298l/29983711.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/AV6HtAEACAAJ?fife=w400-h600",
       },
       {
         title: { en: "The Granada Trilogy", ar: "ثلاثية غرناطة" },
@@ -416,6 +422,7 @@ const RESULTS_DATA = {
         reason: { en: "An incredible historical journey through a fascinating culture.", ar: "رحلة تاريخية مذهلة عبر ثقافة رائعة." },
         link: "https://archive.org/search?query=The+Granada+Trilogy",
         linkType: "borrow" as LinkType,
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/K3kuQnjHMi0C?fife=w400-h600",
       },
       {
         title: { en: "Azazeel", ar: "عزازيل" },
@@ -432,7 +439,7 @@ const RESULTS_DATA = {
         reason: { en: "An essential cultural narrative that expands your worldview.", ar: "سرد ثقافي أساسي يوسع نظرتك للعالم." },
         link: "https://archive.org/search?query=Things+Fall+Apart+Chinua+Achebe",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1352082529l/37781.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/2plPEAAAQBAJ?fife=w400-h600",
       }
     ]
   },
@@ -451,7 +458,7 @@ const RESULTS_DATA = {
         reason: { en: "Incredibly fast-paced with non-stop action and high stakes.", ar: "سريع الوتيرة بشكل لا يصدق مع حركة لا تتوقف ومخاطر عالية." },
         link: "https://archive.org/search?query=The+Hunger+Games",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1586722975l/2767052.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/sJdUAzLUNyAC?fife=w400-h600",
       },
       {
         title: { en: "The Da Vinci Code", ar: "شفرة دا فينشي" },
@@ -460,7 +467,7 @@ const RESULTS_DATA = {
         reason: { en: "A perfect blend of mystery, action, and suspenseful plot twists.", ar: "مزيج مثالي من الغموض والحركة وتحولات الحبكة المشوقة." },
         link: "https://archive.org/search?query=The+Da+Vinci+Code",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1579621267l/968.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/YuDl2Wl651AC?fife=w400-h600",
       },
       {
         title: { en: "Bilal's Code", ar: "شفرة بلال" },
@@ -477,6 +484,7 @@ const RESULTS_DATA = {
         reason: { en: "A mind-bending, suspenseful ride that you won't be able to put down.", ar: "رحلة مشوقة ومذهلة للعقل لن تتمكن من التوقف عن قراءتها." },
         link: "https://archive.org/search?query=%D8%A7%D9%84%D9%81%D9%8A%D9%84+%D8%A7%D9%84%D8%A3%D8%B2%D8%B1%D9%82",
         linkType: "borrow" as LinkType,
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/BY8mDAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "The Martian", ar: "المريخي" },
@@ -485,7 +493,7 @@ const RESULTS_DATA = {
         reason: { en: "High-stakes survival action mixed with clever problem-solving.", ar: "إجراءات بقاء عالية المخاطر ممزوجة بحل ذكي للمشكلات." },
         link: "https://archive.org/search?query=The+Martian+Andy+Weir",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images.gr-assets.com/books/1413706054l/18007564.jpg",
+        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/2NIpDAAAQBAJ?fife=w400-h600",
       }
     ]
   }
