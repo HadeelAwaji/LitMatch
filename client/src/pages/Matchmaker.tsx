@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Sparkles, Feather, ArrowRight, RefreshCcw, Languages, ExternalLink, ArrowLeft } from "lucide-react";
+import { BookOpen, Sparkles, Feather, ArrowRight, RefreshCcw, Languages, ExternalLink, ArrowLeft, Shuffle } from "lucide-react";
 import heroBg from "@/assets/images/hero-bg.png";
 
 type Step = "home" | "quiz" | "results";
@@ -27,6 +27,7 @@ const UI_TEXT = {
     goBack: "Restart Quiz",
     backBtn: "Back",
     by: "by",
+    shuffleBooks: "Shuffle Books",
   },
   ar: {
     title: "ليت ماتش",
@@ -45,6 +46,7 @@ const UI_TEXT = {
     goBack: "إعادة الاختبار",
     backBtn: "رجوع",
     by: "بقلم",
+    shuffleBooks: "تغيير الكتب",
   }
 };
 
@@ -189,7 +191,6 @@ const RESULTS_DATA = {
         reason: { en: "Challenges your views on society, truth, and freedom.", ar: "تتحدى وجهات نظرك حول المجتمع والحقيقة والحرية." },
         link: "https://gutenberg.net.au/ebooks01/0100021h.html",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://images-na.ssl-images-amazon.com/images/P/0451524934.01.LZZZZZZZ.jpg",
       },
       {
         title: { en: "The Secret History", ar: "التاريخ السري" },
@@ -198,7 +199,6 @@ const RESULTS_DATA = {
         reason: { en: "Masterfully atmospheric dark academia exploring moral ambiguity.", ar: "أكاديمية مظلمة رائعة الجو تستكشف الغموض الأخلاقي." },
         link: "https://archive.org/search?query=The+Secret+History+Donna+Tartt",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/3w0YEAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "Season of Migration to the North", ar: "موسم الهجرة إلى الشمال" },
@@ -207,7 +207,6 @@ const RESULTS_DATA = {
         reason: { en: "Offers profound philosophical insights into identity and culture.", ar: "تقدم رؤى فلسفية عميقة حول الهوية والثقافة." },
         link: "https://archive.org/search?query=Season+of+Migration+to+the+North",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/_hZjaWrQtmcC?fife=w400-h600",
       },
       {
         title: { en: "Children of the Alley", ar: "أولاد حارتنا" },
@@ -216,7 +215,6 @@ const RESULTS_DATA = {
         reason: { en: "Deep, symbolic, and thought-provoking classic literature.", ar: "كلاسيكية أدبية عميقة ورمزية ومثيرة للتفكير." },
         link: "https://archive.org/search?query=Children+of+the+Alley+Naguib+Mahfouz",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/LvZMDAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "Notes from Underground", ar: "رسائل من تحت الأرض" },
@@ -225,7 +223,46 @@ const RESULTS_DATA = {
         reason: { en: "A brilliant, unfiltered look into the complexity of the human mind.", ar: "نظرة رائعة وغير مفلترة في تعقيد العقل البشري." },
         link: "https://www.gutenberg.org/ebooks/600",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/hU5Wk0o_iCoC?fife=w400-h600",
+      },
+      {
+        title: { en: "Crime and Punishment", ar: "الجريمة والعقاب" },
+        author: { en: "Fyodor Dostoevsky", ar: "فيودور دوستويفسكي" },
+        description: { en: "A psychological drama about a young student's moral dilemmas after a murder.", ar: "دراما نفسية حول المعضلات الأخلاقية لطالب شاب بعد ارتكاب جريمة قتل." },
+        reason: { en: "Plunges you into deep psychological and ethical contemplation.", ar: "يغرقك في تأمل نفسي وأخلاقي عميق." },
+        link: "https://www.gutenberg.org/ebooks/2554",
+        linkType: "pdf" as LinkType,
+      },
+      {
+        title: { en: "The Stranger", ar: "الغريب" },
+        author: { en: "Albert Camus", ar: "ألبير كامو" },
+        description: { en: "An exploration of existentialism and the absurdity of life through a detached narrator.", ar: "استكشاف للوجودية وعبثية الحياة من خلال راوٍ منفصل." },
+        reason: { en: "Challenges your understanding of societal norms and human emotions.", ar: "يتحدى فهمك للأعراف المجتمعية والعواطف الإنسانية." },
+        link: "https://archive.org/search?query=The+Stranger+Albert+Camus",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Book of Disquiet", ar: "كتاب اللاطمأنينة" },
+        author: { en: "Fernando Pessoa", ar: "فرناندو بيسوا" },
+        description: { en: "A fragmented, poetic autobiography of a melancholic soul.", ar: "سيرة ذاتية شعرية مجزأة لروح كئيبة." },
+        reason: { en: "A beautifully written exploration of solitude and inner life.", ar: "استكشاف مكتوب بشكل جميل للعزلة والحياة الداخلية." },
+        link: "https://archive.org/search?query=The+Book+of+Disquiet",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Prophet", ar: "النبي" },
+        author: { en: "Kahlil Gibran", ar: "جبران خليل جبران" },
+        description: { en: "Poetic essays covering various aspects of life and the human condition.", ar: "مقالات شعرية تغطي جوانب مختلفة من الحياة والظروف الإنسانية." },
+        reason: { en: "Offers timeless philosophical wisdom wrapped in beautiful prose.", ar: "يقدم حكمة فلسفية خالدة مغلفة بنثر جميل." },
+        link: "https://www.gutenberg.org/ebooks/58585",
+        linkType: "pdf" as LinkType,
+      },
+      {
+        title: { en: "The Plague", ar: "الطاعون" },
+        author: { en: "Albert Camus", ar: "ألبير كامو" },
+        description: { en: "A gripping tale of a town struck by a deadly epidemic, symbolizing human solidarity.", ar: "حكاية مشوقة عن بلدة ضربها وباء مميت، ترمز إلى التضامن الإنساني." },
+        reason: { en: "Examines human resilience and morality in the face of inevitable tragedy.", ar: "يفحص مرونة الإنسان وأخلاقه في مواجهة المأساة الحتمية." },
+        link: "https://archive.org/search?query=The+Plague+Albert+Camus",
+        linkType: "borrow" as LinkType,
       }
     ]
   },
@@ -244,7 +281,6 @@ const RESULTS_DATA = {
         reason: { en: "Unmatched world-building that completely absorbs you.", ar: "بناء عالم لا مثيل له يمتصك بالكامل." },
         link: "https://archive.org/search?query=Dune+Frank+Herbert",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/nrRKDwAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "The Night Circus", ar: "السيرك الليلي" },
@@ -253,7 +289,6 @@ const RESULTS_DATA = {
         reason: { en: "A sensory-rich experience full of magic and wonder.", ar: "تجربة غنية بالحواس مليئة بالسحر والعجب." },
         link: "https://archive.org/search?query=The+Night+Circus",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/gwsgL3ZNuqkC?fife=w400-h600",
       },
       {
         title: { en: "One Thousand and One Nights", ar: "ألف ليلة وليلة" },
@@ -262,7 +297,6 @@ const RESULTS_DATA = {
         reason: { en: "The ultimate collection of enchanting and magical escapist stories.", ar: "المجموعة المطلقة من القصص الساحرة والخيالية." },
         link: "https://www.gutenberg.org/ebooks/19860",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://images-na.ssl-images-amazon.com/images/P/0140449388.01.LZZZZZZZ.jpg",
       },
       {
         title: { en: "Utopia", ar: "يوتوبيا" },
@@ -279,7 +313,46 @@ const RESULTS_DATA = {
         reason: { en: "The perfect journey into a richly detailed magical world.", ar: "الرحلة المثالية إلى عالم سحري غني بالتفاصيل." },
         link: "https://archive.org/search?query=The+Hobbit+Tolkien",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/LLSpngEACAAJ?fife=w400-h600",
+      },
+      {
+        title: { en: "Harry Potter and the Sorcerer's Stone", ar: "هاري بوتر وحجر الفيلسوف" },
+        author: { en: "J.K. Rowling", ar: "ج. ك. رولينغ" },
+        description: { en: "A young boy discovers he's a wizard and enters a magical world.", ar: "يكتشف صبي صغير أنه ساحر ويدخل عالماً سحرياً." },
+        reason: { en: "The ultimate escapist fantasy that feels incredibly real.", ar: "الخيال الهروبي المطلق الذي يبدو حقيقياً بشكل لا يصدق." },
+        link: "https://archive.org/search?query=Harry+Potter+and+the+Sorcerers+Stone",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Name of the Wind", ar: "اسم الريح" },
+        author: { en: "Patrick Rothfuss", ar: "باتريك روثفوس" },
+        description: { en: "The legendary tale of a gifted young man who grows to be a notorious wizard.", ar: "الحكاية الأسطورية لشاب موهوب يكبر ليصبح ساحراً سيئ السمعة." },
+        reason: { en: "Immersive storytelling with a beautifully crafted magic system.", ar: "سرد قصصي غامر مع نظام سحري مصمم بشكل جميل." },
+        link: "https://archive.org/search?query=The+Name+of+the+Wind",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Alice's Adventures in Wonderland", ar: "مغامرات أليس في بلاد العجائب" },
+        author: { en: "Lewis Carroll", ar: "لويس كارول" },
+        description: { en: "A classic surreal tale of a girl falling down a rabbit hole.", ar: "حكاية سريالية كلاسيكية عن فتاة تسقط في حفرة أرنب." },
+        reason: { en: "Pure imaginative nonsense that frees your mind from reality.", ar: "هراء خيالي خالص يحرر عقلك من الواقع." },
+        link: "https://www.gutenberg.org/ebooks/11",
+        linkType: "pdf" as LinkType,
+      },
+      {
+        title: { en: "A Game of Thrones", ar: "لعبة العروش" },
+        author: { en: "George R. R. Martin", ar: "جورج ر. ر. مارتن" },
+        description: { en: "An epic fantasy of political intrigue, war, and dragons.", ar: "خيال ملحمي من المؤامرات السياسية والحرب والتنانين." },
+        reason: { en: "A vast, complex world you can completely lose yourself in.", ar: "عالم واسع ومعقد يمكنك أن تفقد نفسك فيه تماماً." },
+        link: "https://archive.org/search?query=A+Game+of+Thrones",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Chronicles of Narnia", ar: "سجلات نارنيا" },
+        author: { en: "C.S. Lewis", ar: "سي. إس. لويس" },
+        description: { en: "Children travel through a wardrobe to a magical land of talking animals.", ar: "أطفال يسافرون عبر خزانة ملابس إلى أرض سحرية بها حيوانات ناطقة." },
+        reason: { en: "A deeply nostalgic and wondrous adventure.", ar: "مغامرة حنين إلى الماضي ورائعة بعمق." },
+        link: "https://archive.org/search?query=The+Chronicles+of+Narnia",
+        linkType: "borrow" as LinkType,
       }
     ]
   },
@@ -298,7 +371,6 @@ const RESULTS_DATA = {
         reason: { en: "Provides clear, actionable steps for everyday self-improvement.", ar: "يقدم خطوات واضحة وقابلة للتنفيذ لتحسين الذات يومياً." },
         link: "https://archive.org/search?query=Atomic+Habits+James+Clear",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/XfFvDwAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "Man's Search for Meaning", ar: "الإنسان يبحث عن المعنى" },
@@ -307,7 +379,6 @@ const RESULTS_DATA = {
         reason: { en: "Offers deep inspiration and shifts your life perspective.", ar: "يقدم إلهاماً عميقاً ويغير نظرتك للحياة." },
         link: "https://archive.org/search?query=Mans+Search+for+Meaning",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://images-na.ssl-images-amazon.com/images/P/080701429X.01.LZZZZZZZ.jpg",
       },
       {
         title: { en: "Renew Your Life", ar: "جدد حياتك" },
@@ -332,7 +403,46 @@ const RESULTS_DATA = {
         reason: { en: "Timeless wisdom on self-discipline and inner strength.", ar: "حكمة خالدة حول الانضباط الذاتي والقوة الداخلية." },
         link: "https://www.gutenberg.org/ebooks/2680",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/brSidvTKfcQC?fife=w400-h600",
+      },
+      {
+        title: { en: "The 7 Habits of Highly Effective People", ar: "العادات السبع للناس الأكثر فعالية" },
+        author: { en: "Stephen Covey", ar: "ستيفن كوفي" },
+        description: { en: "A comprehensive framework for personal and professional effectiveness.", ar: "إطار عمل شامل للفعالية الشخصية والمهنية." },
+        reason: { en: "Provides powerful paradigms to improve your life fundamentally.", ar: "يوفر نماذج قوية لتحسين حياتك بشكل أساسي." },
+        link: "https://archive.org/search?query=The+7+Habits+of+Highly+Effective+People",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Think and Grow Rich", ar: "فكر وتصبح غنيا" },
+        author: { en: "Napoleon Hill", ar: "نابولون هيل" },
+        description: { en: "A classic guide on mindset, success, and wealth creation.", ar: "دليل كلاسيكي حول العقلية والنجاح وخلق الثروة." },
+        reason: { en: "Inspires a mindset shift towards limitless possibility.", ar: "يلهم تحولاً في العقلية نحو إمكانيات لا حدود لها." },
+        link: "https://archive.org/search?query=Think+and+Grow+Rich",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Power of Now", ar: "قوة الآن" },
+        author: { en: "Eckhart Tolle", ar: "إيكهارت تول" },
+        description: { en: "A spiritual guide to enlightenment and living in the present moment.", ar: "دليل روحي للتنوير والعيش في اللحظة الحالية." },
+        reason: { en: "Helps you master your mind and find true inner peace.", ar: "يساعدك على إتقان عقلك وإيجاد السلام الداخلي الحقيقي." },
+        link: "https://archive.org/search?query=The+Power+of+Now",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Outliers", ar: "الاستثنائيون" },
+        author: { en: "Malcolm Gladwell", ar: "مالكولم جلادويل" },
+        description: { en: "An examination of what makes high achievers different.", ar: "دراسة لما يجعل المتفوقين مختلفين." },
+        reason: { en: "Fascinating insights into the mechanics of extreme success.", ar: "رؤى رائعة في آليات النجاح الشديد." },
+        link: "https://archive.org/search?query=Outliers+Malcolm+Gladwell",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Alchemist", ar: "الخيميائي" },
+        author: { en: "Paulo Coelho", ar: "باولو كويلو" },
+        description: { en: "A magical fable about following your dreams.", ar: "حكاية سحرية عن اتباع أحلامك." },
+        reason: { en: "A beautifully simple story that will reignite your ambitions.", ar: "قصة بسيطة وجميلة ستعيد إشعال طموحاتك." },
+        link: "https://archive.org/search?query=The+Alchemist+Paulo+Coelho",
+        linkType: "borrow" as LinkType,
       }
     ]
   },
@@ -351,7 +461,6 @@ const RESULTS_DATA = {
         reason: { en: "A beautifully written, timeless love story with sharp wit.", ar: "قصة حب خالدة ومكتوبة بشكل جميل بذكاء حاد." },
         link: "https://www.gutenberg.org/ebooks/1342",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/uY6MEAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "The Seven Husbands of Evelyn Hugo", ar: "أزواج إيفلين هيوغو السبعة" },
@@ -360,7 +469,6 @@ const RESULTS_DATA = {
         reason: { en: "Delivers the emotional depth and passionate romance you crave.", ar: "يقدم العمق العاطفي والرومانسية العاطفية التي تتوق إليها." },
         link: "https://archive.org/search?query=The+Seven+Husbands+of+Evelyn+Hugo",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/s8X3yQEACAAJ?fife=w400-h600",
       },
       {
         title: { en: "Black Suits You so Well", ar: "الأسود يليق بك" },
@@ -385,7 +493,46 @@ const RESULTS_DATA = {
         reason: { en: "A deeply emotional story of love, morality, and independence.", ar: "قصة عاطفية عميقة عن الحب والأخلاق والاستقلال." },
         link: "https://www.gutenberg.org/ebooks/1260",
         linkType: "pdf" as LinkType,
-        coverUrl: "https://images-na.ssl-images-amazon.com/images/P/0141441143.01.LZZZZZZZ.jpg",
+      },
+      {
+        title: { en: "Wuthering Heights", ar: "مرتفعات وذرينغ" },
+        author: { en: "Emily Brontë", ar: "إيميلي برونتي" },
+        description: { en: "A dark and intense tale of passionate but destructive love.", ar: "حكاية مظلمة ومكثفة عن الحب العاطفي والمدمر." },
+        reason: { en: "The ultimate story of wild, untamed romance and deep emotions.", ar: "القصة المطلقة للرومانسية الجامحة والعواطف العميقة." },
+        link: "https://www.gutenberg.org/ebooks/768",
+        linkType: "pdf" as LinkType,
+      },
+      {
+        title: { en: "Me Before You", ar: "أنا قبلك" },
+        author: { en: "Jojo Moyes", ar: "جوجو مويس" },
+        description: { en: "A heartbreaking story of a girl who cares for a paralyzed man.", ar: "قصة مفجعة لفتاة تعتني برجل مشلول." },
+        reason: { en: "A powerful tear-jerker that deeply explores human connection.", ar: "قصة مؤثرة للغاية تستكشف بعمق التواصل البشري." },
+        link: "https://archive.org/search?query=Me+Before+You+Jojo+Moyes",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Outlander", ar: "غريبة" },
+        author: { en: "Diana Gabaldon", ar: "ديانا غابالدون" },
+        description: { en: "A time-traveling romance set in the Scottish Highlands.", ar: "رومانسية السفر عبر الزمن تدور أحداثها في المرتفعات الاسكتلندية." },
+        reason: { en: "An epic, sprawling love story with historical intrigue.", ar: "قصة حب ملحمية ومترامية الأطراف مع مؤامرات تاريخية." },
+        link: "https://archive.org/search?query=Outlander+Diana+Gabaldon",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Fault in Our Stars", ar: "الخطأ في أقدارنا" },
+        author: { en: "John Green", ar: "جون غرين" },
+        description: { en: "Two teenagers meet at a cancer support group and fall in love.", ar: "يلتقي مراهقان في مجموعة دعم لمرضى السرطان ويقعان في الحب." },
+        reason: { en: "A deeply poignant reminder of the beauty and fragility of life.", ar: "تذكير مؤثر للغاية بجمال وهشاشة الحياة." },
+        link: "https://archive.org/search?query=The+Fault+in+Our+Stars",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Call Me By Your Name", ar: "نادني باسمك" },
+        author: { en: "André Aciman", ar: "أندريه أسيمان" },
+        description: { en: "A story of a sudden and powerful romance that blossoms in Italy.", ar: "قصة رومانسية مفاجئة وقوية تزدهر في إيطاليا." },
+        reason: { en: "A beautifully written, sensual exploration of first love.", ar: "استكشاف حسي مكتوب بشكل جميل للحب الأول." },
+        link: "https://archive.org/search?query=Call+Me+By+Your+Name",
+        linkType: "borrow" as LinkType,
       }
     ]
   },
@@ -404,7 +551,6 @@ const RESULTS_DATA = {
         reason: { en: "Deeply immerses you in a rich culture and poignant history.", ar: "يغمرك بعمق في ثقافة غنية وتاريخ مؤثر." },
         link: "https://archive.org/search?query=The+Kite+Runner",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/ykWQEAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "Pachinko", ar: "باتشينكو" },
@@ -413,7 +559,6 @@ const RESULTS_DATA = {
         reason: { en: "A beautifully detailed exploration of immigrant identities and resilience.", ar: "استكشاف مفصل بشكل جميل لهويات المهاجرين والمرونة." },
         link: "https://archive.org/search?query=Pachinko+Min+Jin+Lee",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/AV6HtAEACAAJ?fife=w400-h600",
       },
       {
         title: { en: "The Granada Trilogy", ar: "ثلاثية غرناطة" },
@@ -422,7 +567,6 @@ const RESULTS_DATA = {
         reason: { en: "An incredible historical journey through a fascinating culture.", ar: "رحلة تاريخية مذهلة عبر ثقافة رائعة." },
         link: "https://archive.org/search?query=The+Granada+Trilogy",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/K3kuQnjHMi0C?fife=w400-h600",
       },
       {
         title: { en: "Azazeel", ar: "عزازيل" },
@@ -439,7 +583,46 @@ const RESULTS_DATA = {
         reason: { en: "An essential cultural narrative that expands your worldview.", ar: "سرد ثقافي أساسي يوسع نظرتك للعالم." },
         link: "https://archive.org/search?query=Things+Fall+Apart+Chinua+Achebe",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/2plPEAAAQBAJ?fife=w400-h600",
+      },
+      {
+        title: { en: "A Thousand Splendid Suns", ar: "ألف شمس مشرقة" },
+        author: { en: "Khaled Hosseini", ar: "خالد حسيني" },
+        description: { en: "A sweeping story of two Afghan women whose lives intersect.", ar: "قصة شاملة لامرأتين أفغانيتين تتقاطع حياتهما." },
+        reason: { en: "A deeply moving window into the history and people of Afghanistan.", ar: "نافذة مؤثرة للغاية على تاريخ وشعب أفغانستان." },
+        link: "https://archive.org/search?query=A+Thousand+Splendid+Suns",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Memoirs of a Geisha", ar: "مذكرات غيشا" },
+        author: { en: "Arthur Golden", ar: "آرثر غولدن" },
+        description: { en: "A fictional memoir offering a glimpse into the secretive world of geishas.", ar: "مذكرات خيالية تقدم لمحة عن العالم السري للغيشا." },
+        reason: { en: "An incredibly atmospheric and detailed cultural immersion.", ar: "تجربة غامرة ثقافية مفصلة وجوية بشكل لا يصدق." },
+        link: "https://archive.org/search?query=Memoirs+of+a+Geisha",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Joy Luck Club", ar: "نادي الفرح والحظ" },
+        author: { en: "Amy Tan", ar: "إيمي تان" },
+        description: { en: "The lives of four Chinese immigrant mothers and their American-born daughters.", ar: "حياة أربع أمهات صينيات مهاجرات وبناتهن المولودات في أمريكا." },
+        reason: { en: "A rich tapestry of cultural heritage and generational divides.", ar: "نسيج غني من التراث الثقافي والانقسامات بين الأجيال." },
+        link: "https://archive.org/search?query=The+Joy+Luck+Club",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Shadow of the Wind", ar: "ظل الريح" },
+        author: { en: "Carlos Ruiz Zafón", ar: "كارلوس زافون" },
+        description: { en: "A young boy uncovers a mysterious book in post-war Barcelona.", ar: "صبي صغير يكتشف كتاباً غامضاً في برشلونة بعد الحرب." },
+        reason: { en: "Transports you to a vividly imagined historical Barcelona.", ar: "ينقلك إلى برشلونة تاريخية متخيلة بوضوح." },
+        link: "https://archive.org/search?query=The+Shadow+of+the+Wind",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Half of a Yellow Sun", ar: "نصف شمس صفراء" },
+        author: { en: "Chimamanda Ngozi Adichie", ar: "تشيماماندا نغوزي أديتشي" },
+        description: { en: "An emotional epic set during the Biafran War in Nigeria.", ar: "ملحمة عاطفية تدور أحداثها خلال حرب بيافرا في نيجيريا." },
+        reason: { en: "A powerful, illuminating look at a crucial moment in African history.", ar: "نظرة قوية ومفيدة في لحظة حاسمة في التاريخ الأفريقي." },
+        link: "https://archive.org/search?query=Half+of+a+Yellow+Sun",
+        linkType: "borrow" as LinkType,
       }
     ]
   },
@@ -458,7 +641,6 @@ const RESULTS_DATA = {
         reason: { en: "Incredibly fast-paced with non-stop action and high stakes.", ar: "سريع الوتيرة بشكل لا يصدق مع حركة لا تتوقف ومخاطر عالية." },
         link: "https://archive.org/search?query=The+Hunger+Games",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/sJdUAzLUNyAC?fife=w400-h600",
       },
       {
         title: { en: "The Da Vinci Code", ar: "شفرة دا فينشي" },
@@ -467,7 +649,6 @@ const RESULTS_DATA = {
         reason: { en: "A perfect blend of mystery, action, and suspenseful plot twists.", ar: "مزيج مثالي من الغموض والحركة وتحولات الحبكة المشوقة." },
         link: "https://archive.org/search?query=The+Da+Vinci+Code",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/YuDl2Wl651AC?fife=w400-h600",
       },
       {
         title: { en: "Bilal's Code", ar: "شفرة بلال" },
@@ -484,7 +665,6 @@ const RESULTS_DATA = {
         reason: { en: "A mind-bending, suspenseful ride that you won't be able to put down.", ar: "رحلة مشوقة ومذهلة للعقل لن تتمكن من التوقف عن قراءتها." },
         link: "https://archive.org/search?query=%D8%A7%D9%84%D9%81%D9%8A%D9%84+%D8%A7%D9%84%D8%A3%D8%B2%D8%B1%D9%82",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/BY8mDAAAQBAJ?fife=w400-h600",
       },
       {
         title: { en: "The Martian", ar: "المريخي" },
@@ -493,21 +673,131 @@ const RESULTS_DATA = {
         reason: { en: "High-stakes survival action mixed with clever problem-solving.", ar: "إجراءات بقاء عالية المخاطر ممزوجة بحل ذكي للمشكلات." },
         link: "https://archive.org/search?query=The+Martian+Andy+Weir",
         linkType: "borrow" as LinkType,
-        coverUrl: "https://books.google.com/books/publisher/content/images/frontcover/2NIpDAAAQBAJ?fife=w400-h600",
+      },
+      {
+        title: { en: "The Girl with the Dragon Tattoo", ar: "الفتاة ذات وشم التنين" },
+        author: { en: "Stieg Larsson", ar: "ستيغ لارسون" },
+        description: { en: "A journalist and a hacker investigate a decades-old disappearance.", ar: "صحفي ومتسللة إلكترونية يحققان في اختفاء دام عقوداً." },
+        reason: { en: "A dark, complex mystery that moves at breakneck speed.", ar: "لغز مظلم ومعقد يتحرك بسرعة فائقة." },
+        link: "https://archive.org/search?query=The+Girl+with+the+Dragon+Tattoo",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Gone Girl", ar: "الفتاة المفقودة" },
+        author: { en: "Gillian Flynn", ar: "جيليان فلين" },
+        description: { en: "A man's wife goes missing, and he becomes the prime suspect.", ar: "تختفي زوجة رجل، ويصبح هو المشتبه به الرئيسي." },
+        reason: { en: "Full of incredible twists that will keep you guessing.", ar: "مليء بالتحولات المذهلة التي ستبقيك في حيرة من أمرك." },
+        link: "https://archive.org/search?query=Gone+Girl",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "The Maze Runner", ar: "عداء المتاهة" },
+        author: { en: "James Dashner", ar: "جيمس داشنر" },
+        description: { en: "Teens are trapped in a deadly maze and must find a way out.", ar: "مراهقون محاصرون في متاهة مميتة ويجب أن يجدوا مخرجاً." },
+        reason: { en: "Non-stop suspense and action as they fight to survive.", ar: "تشويق وحركة لا تتوقف وهم يقاتلون من أجل البقاء." },
+        link: "https://archive.org/search?query=The+Maze+Runner",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Angels & Demons", ar: "ملائكة وشياطين" },
+        author: { en: "Dan Brown", ar: "دان براون" },
+        description: { en: "A race against time to stop an ancient secret society from destroying the Vatican.", ar: "سباق مع الزمن لمنع جمعية سرية قديمة من تدمير الفاتيكان." },
+        reason: { en: "A high-stakes, explosive thriller full of puzzles.", ar: "قصة إثارة شديدة المخاطر والانفجار مليئة بالألغاز." },
+        link: "https://archive.org/search?query=Angels+and+Demons",
+        linkType: "borrow" as LinkType,
+      },
+      {
+        title: { en: "Jurassic Park", ar: "الحديقة الجوراسية" },
+        author: { en: "Michael Crichton", ar: "مايكل كرايتون" },
+        description: { en: "A theme park with cloned dinosaurs goes terribly wrong.", ar: "منتزه ترفيهي به ديناصورات مستنسخة يسير بشكل خاطئ تماماً." },
+        reason: { en: "Intense survival action blended with fascinating science.", ar: "عمل بقاء مكثف ممزوج بعلم رائع." },
+        link: "https://archive.org/search?query=Jurassic+Park+Michael+Crichton",
+        linkType: "borrow" as LinkType,
       }
     ]
   }
 };
 
-const BookCover = ({ coverUrl, title, color }: { coverUrl?: string, title: string, color: string }) => {
+const shuffleArray = <T,>(array: T[]) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+const BookCover = ({ titleEn, titleAr, authorEn, authorAr, color }: { titleEn: string, titleAr: string, authorEn: string, authorAr: string, color: string }) => {
+  const [coverUrl, setCoverUrl] = useState<string | null>(null);
   const [imageError, setImageError] = useState(false);
-  
+
+  useEffect(() => {
+    let mounted = true;
+    
+    const findCover = async () => {
+      const search = async (t: string, a: string) => {
+        try {
+          const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(t)}+inauthor:${encodeURIComponent(a)}`);
+          const data = await res.json();
+          if (data.items && data.items.length > 0) {
+            for (let i = 0; i < Math.min(3, data.items.length); i++) {
+              const item = data.items[i];
+              const apiTitle = (item.volumeInfo?.title || "").toLowerCase();
+              const expectedTitle = t.toLowerCase();
+              
+              // Verify the result by checking that the returned book title closely matches the expected title
+              const expectedWords = expectedTitle.split(/\s+/).filter(w => w.length > 2);
+              const hasMatch = expectedTitle.includes(apiTitle) || 
+                               apiTitle.includes(expectedTitle) ||
+                               (expectedWords.length > 0 && expectedWords.some(w => apiTitle.includes(w)));
+              
+              if (!hasMatch && item.volumeInfo?.title) continue;
+
+              const links = item.volumeInfo?.imageLinks;
+              if (links && links.thumbnail) {
+                let url = links.thumbnail;
+                url = url.replace("zoom=1", "zoom=3").replace("&edge=curl", "");
+                url = url.replace("http://", "https://");
+                return url;
+              }
+            }
+          }
+        } catch (err) {
+          console.error(err);
+        }
+        return null;
+      };
+
+      // Try English first
+      let url = await search(titleEn, authorEn);
+      
+      // If no english match, try arabic
+      if (!url) {
+        url = await search(titleAr, authorAr);
+      }
+
+      if (mounted && url) {
+        setCoverUrl(url);
+      }
+    };
+
+    // Reset state when title changes (e.g. shuffle)
+    setCoverUrl(null);
+    setImageError(false);
+    findCover();
+
+    return () => { mounted = false; };
+  }, [titleEn, titleAr, authorEn, authorAr]);
+
   return (
     <div className={`h-[220px] shrink-0 relative flex items-center justify-center overflow-hidden ${color}`}>
       {!imageError && coverUrl && (
-        <img 
+        <motion.img 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
           src={coverUrl} 
-          alt={title} 
+          alt={titleEn} 
           onError={() => setImageError(true)}
           className="w-full h-full object-cover object-center z-20"
         />
@@ -523,8 +813,16 @@ export default function Matchmaker() {
   const [answers, setAnswers] = useState<Record<string, AnswerValue>>({});
   const [resultType, setResultType] = useState<AnswerValue | null>(null);
   const [direction, setDirection] = useState<number>(1);
+  const [displayedBooks, setDisplayedBooks] = useState<any[]>([]);
 
   const t = UI_TEXT[language];
+
+  useEffect(() => {
+    if (step === "results" && resultType) {
+      const allBooks = RESULTS_DATA[resultType].books;
+      setDisplayedBooks(shuffleArray(allBooks).slice(0, 5));
+    }
+  }, [step, resultType]);
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === "en" ? "ar" : "en");
@@ -593,6 +891,13 @@ export default function Matchmaker() {
     setCurrentQuestionIndex(0);
     setAnswers({});
     setResultType(null);
+  };
+
+  const handleShuffle = () => {
+    if (resultType) {
+      const allBooks = RESULTS_DATA[resultType].books;
+      setDisplayedBooks(shuffleArray(allBooks).slice(0, 5));
+    }
   };
 
   const getLinkText = (type: LinkType) => {
@@ -798,59 +1103,77 @@ export default function Matchmaker() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
-                {RESULTS_DATA[resultType].books.map((book, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + idx * 0.1, duration: 0.5 }}
-                    className="flex"
-                  >
-                    <Card className="flex flex-col w-full border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group bg-card">
-                      
-                      <BookCover 
-                        coverUrl={(book as any).coverUrl}
-                        title={book.title[language]}
-                        color={RESULTS_DATA[resultType].placeholderColor}
-                      />
-
-                      <CardContent className="p-5 flex flex-col flex-1">
-                        <div className="mb-4">
-                          <h4 className="text-lg font-bold font-serif mb-1 group-hover:text-primary transition-colors leading-tight" data-testid={`text-book-title-${idx}`}>
-                            {book.title[language]}
-                          </h4>
-                          <p className="text-sm text-muted-foreground italic">{t.by} {book.author[language]}</p>
-                        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-10">
+                <AnimatePresence mode="popLayout">
+                  {displayedBooks.map((book) => (
+                    <motion.div
+                      key={book.title.en}
+                      layout
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.4 }}
+                      className="flex"
+                    >
+                      <Card className="flex flex-col w-full border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group bg-card">
                         
-                        <div className="flex-1 space-y-4">
-                          <p className="text-foreground/80 text-sm leading-relaxed">
-                            <span className="font-semibold text-primary block mb-1">{t.descriptionText}</span>
-                            {book.description[language]}
-                          </p>
-                          <p className="text-foreground/80 text-sm leading-relaxed border-t border-border/50 pt-4">
-                            <span className="font-semibold text-primary block mb-1">{t.whyItFits}</span>
-                            {book.reason[language]}
-                          </p>
-                        </div>
+                        <BookCover 
+                          titleEn={book.title.en}
+                          titleAr={book.title.ar}
+                          authorEn={book.author.en}
+                          authorAr={book.author.ar}
+                          color={RESULTS_DATA[resultType].placeholderColor}
+                        />
 
-                        <div className="mt-5 pt-4 border-t border-border/30 text-center">
-                          <Button 
-                            variant="secondary" 
-                            size="sm"
-                            className="w-full rounded-full hover:bg-primary hover:text-primary-foreground transition-colors font-medium"
-                            asChild
-                          >
-                            <a href={book.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                              {getLinkText(book.linkType)}
-                              <ExternalLink className="w-3.5 h-3.5" />
-                            </a>
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
+                        <CardContent className="p-5 flex flex-col flex-1">
+                          <div className="mb-4">
+                            <h4 className="text-lg font-bold font-serif mb-1 group-hover:text-primary transition-colors leading-tight" data-testid={`text-book-title-${book.title.en}`}>
+                              {book.title[language]}
+                            </h4>
+                            <p className="text-sm text-muted-foreground italic">{t.by} {book.author[language]}</p>
+                          </div>
+                          
+                          <div className="flex-1 space-y-4">
+                            <p className="text-foreground/80 text-sm leading-relaxed">
+                              <span className="font-semibold text-primary block mb-1">{t.descriptionText}</span>
+                              {book.description[language]}
+                            </p>
+                            <p className="text-foreground/80 text-sm leading-relaxed border-t border-border/50 pt-4">
+                              <span className="font-semibold text-primary block mb-1">{t.whyItFits}</span>
+                              {book.reason[language]}
+                            </p>
+                          </div>
+
+                          <div className="mt-5 pt-4 border-t border-border/30 text-center">
+                            <Button 
+                              variant="secondary" 
+                              size="sm"
+                              className="w-full rounded-full hover:bg-primary hover:text-primary-foreground transition-colors font-medium"
+                              asChild
+                            >
+                              <a href={book.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                                {getLinkText(book.linkType)}
+                                <ExternalLink className="w-3.5 h-3.5" />
+                              </a>
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
+
+              <div className="flex justify-center mb-16">
+                <Button 
+                  variant="secondary" 
+                  onClick={handleShuffle}
+                  className="rounded-full px-8 py-6 text-base gap-2 shadow-sm hover:shadow-md transition-all"
+                  data-testid="button-shuffle-books"
+                >
+                  <Shuffle className="w-5 h-5" />
+                  {t.shuffleBooks}
+                </Button>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
