@@ -185,6 +185,7 @@ const RESULTS_DATA = {
     placeholderColor: "bg-[#2c3e50]", // Warm Navy
     books: [
       {
+        coverUrl: "https://books.google.com/books/content?id=v3yqEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "1984", ar: "١٩٨٤" },
         author: { en: "George Orwell", ar: "جورج أورويل" },
         description: { en: "A dystopian social science fiction novel and cautionary tale.", ar: "رواية خيال علمي اجتماعي بائسة وحكاية تحذيرية." },
@@ -193,6 +194,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=A0vTDAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Secret History", ar: "التاريخ السري" },
         author: { en: "Donna Tartt", ar: "دونا تارت" },
         description: { en: "An inverted detective story exploring beauty, terror, and morality.", ar: "قصة بوليسية مقلوبة تستكشف الجمال والرعب والأخلاق." },
@@ -201,6 +203,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=_hZjaWrQtmcC&printsec=frontcover&img=1&zoom=3",
         title: { en: "Season of Migration to the North", ar: "موسم الهجرة إلى الشمال" },
         author: { en: "Tayeb Salih", ar: "الطيب صالح" },
         description: { en: "A classic post-colonial Arabic novel exploring East-West relations.", ar: "رواية عربية كلاسيكية عن ما بعد الاستعمار تستكشف العلاقات بين الشرق والغرب." },
@@ -209,6 +212,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=LvZMDAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Children of the Alley", ar: "أولاد حارتنا" },
         author: { en: "Naguib Mahfouz", ar: "نجيب محفوظ" },
         description: { en: "An allegorical novel tracing the history of human existence.", ar: "رواية رمزية تتتبع تاريخ الوجود البشري." },
@@ -217,6 +221,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=hU5Wk0o_iCoC&printsec=frontcover&img=1&zoom=3",
         title: { en: "Notes from Underground", ar: "رسائل من تحت الأرض" },
         author: { en: "Fyodor Dostoevsky", ar: "فيودور دوستويفسكي" },
         description: { en: "A profound existentialist novel exploring human nature and suffering.", ar: "رواية وجودية عميقة تستكشف الطبيعة البشرية والمعاناة." },
@@ -225,6 +230,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=QvB1EAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Crime and Punishment", ar: "الجريمة والعقاب" },
         author: { en: "Fyodor Dostoevsky", ar: "فيودور دوستويفسكي" },
         description: { en: "A psychological drama about a young student's moral dilemmas after a murder.", ar: "دراما نفسية حول المعضلات الأخلاقية لطالب شاب بعد ارتكاب جريمة قتل." },
@@ -233,6 +239,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=s66fAAAAMAAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Stranger", ar: "الغريب" },
         author: { en: "Albert Camus", ar: "ألبير كامو" },
         description: { en: "An exploration of existentialism and the absurdity of life through a detached narrator.", ar: "استكشاف للوجودية وعبثية الحياة من خلال راوٍ منفصل." },
@@ -241,6 +248,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=9d-5uQEACAAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Book of Disquiet", ar: "كتاب اللاطمأنينة" },
         author: { en: "Fernando Pessoa", ar: "فرناندو بيسوا" },
         description: { en: "A fragmented, poetic autobiography of a melancholic soul.", ar: "سيرة ذاتية شعرية مجزأة لروح كئيبة." },
@@ -249,6 +257,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=r6qEAAAAMAAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Prophet", ar: "النبي" },
         author: { en: "Kahlil Gibran", ar: "جبران خليل جبران" },
         description: { en: "Poetic essays covering various aspects of life and the human condition.", ar: "مقالات شعرية تغطي جوانب مختلفة من الحياة والظروف الإنسانية." },
@@ -257,6 +266,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=Y6xMEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Plague", ar: "الطاعون" },
         author: { en: "Albert Camus", ar: "ألبير كامو" },
         description: { en: "A gripping tale of a town struck by a deadly epidemic, symbolizing human solidarity.", ar: "حكاية مشوقة عن بلدة ضربها وباء مميت، ترمز إلى التضامن الإنساني." },
@@ -275,6 +285,7 @@ const RESULTS_DATA = {
     placeholderColor: "bg-[#b05c52]", // Muted Terracotta
     books: [
       {
+        coverUrl: "https://books.google.com/books/content?id=nrRKDwAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Dune", ar: "كثيب (ديون)" },
         author: { en: "Frank Herbert", ar: "فرانك هربرت" },
         description: { en: "An epic science fiction masterpiece set on a desert planet.", ar: "تحفة خيال علمي ملحمية تدور أحداثها على كوكب صحراوي." },
@@ -283,6 +294,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=gwsgL3ZNuqkC&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Night Circus", ar: "السيرك الليلي" },
         author: { en: "Erin Morgenstern", ar: "إيرين مورجينستيرن" },
         description: { en: "A phantasmagorical fairy tale set in a magical circus.", ar: "حكاية خرافية خيالية تدور أحداثها في سيرك سحري." },
@@ -291,6 +303,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=wzQIEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "One Thousand and One Nights", ar: "ألف ليلة وليلة" },
         author: { en: "Various", ar: "مؤلفون مختلفون" },
         description: { en: "A collection of Middle Eastern folk tales compiled in Arabic.", ar: "مجموعة من الحكايات الشعبية الشرق أوسطية جمعت باللغة العربية." },
@@ -299,6 +312,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789774088874-L.jpg",
         title: { en: "Utopia", ar: "يوتوبيا" },
         author: { en: "Ahmed Khaled Tawfik", ar: "أحمد خالد توفيق" },
         description: { en: "A chilling futuristic thriller exploring social division.", ar: "قصة إثارة مستقبلية مرعبة تستكشف الانقسام الاجتماعي." },
@@ -307,6 +321,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=LLSpngEACAAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Hobbit", ar: "الهوبيت" },
         author: { en: "J.R.R. Tolkien", ar: "ج.ر.ر. تولكين" },
         description: { en: "A classic fantasy adventure following a reluctant hero.", ar: "مغامرة خيالية كلاسيكية تتبع بطلاً متردداً." },
@@ -315,6 +330,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=wrOQLV6xB-wC&printsec=frontcover&img=1&zoom=3",
         title: { en: "Harry Potter and the Sorcerer's Stone", ar: "هاري بوتر وحجر الفيلسوف" },
         author: { en: "J.K. Rowling", ar: "ج. ك. رولينغ" },
         description: { en: "A young boy discovers he's a wizard and enters a magical world.", ar: "يكتشف صبي صغير أنه ساحر ويدخل عالماً سحرياً." },
@@ -323,6 +339,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=pA_UDAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Name of the Wind", ar: "اسم الريح" },
         author: { en: "Patrick Rothfuss", ar: "باتريك روثفوس" },
         description: { en: "The legendary tale of a gifted young man who grows to be a notorious wizard.", ar: "الحكاية الأسطورية لشاب موهوب يكبر ليصبح ساحراً سيئ السمعة." },
@@ -331,6 +348,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=YwKGEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Alice's Adventures in Wonderland", ar: "مغامرات أليس في بلاد العجائب" },
         author: { en: "Lewis Carroll", ar: "لويس كارول" },
         description: { en: "A classic surreal tale of a girl falling down a rabbit hole.", ar: "حكاية سريالية كلاسيكية عن فتاة تسقط في حفرة أرنب." },
@@ -339,6 +357,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=5NomkK4EV68C&printsec=frontcover&img=1&zoom=3",
         title: { en: "A Game of Thrones", ar: "لعبة العروش" },
         author: { en: "George R. R. Martin", ar: "جورج ر. ر. مارتن" },
         description: { en: "An epic fantasy of political intrigue, war, and dragons.", ar: "خيال ملحمي من المؤامرات السياسية والحرب والتنانين." },
@@ -347,6 +366,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=qYw5EAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Chronicles of Narnia", ar: "سجلات نارنيا" },
         author: { en: "C.S. Lewis", ar: "سي. إس. لويس" },
         description: { en: "Children travel through a wardrobe to a magical land of talking animals.", ar: "أطفال يسافرون عبر خزانة ملابس إلى أرض سحرية بها حيوانات ناطقة." },
@@ -365,6 +385,7 @@ const RESULTS_DATA = {
     placeholderColor: "bg-[#7a8b76]", // Sage Green
     books: [
       {
+        coverUrl: "https://books.google.com/books/content?id=XfFvDwAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Atomic Habits", ar: "العادات الذرية" },
         author: { en: "James Clear", ar: "جيمس كلير" },
         description: { en: "An easy and proven way to build good habits and break bad ones.", ar: "طريقة سهلة ومثبتة لبناء عادات جيدة وكسر العادات السيئة." },
@@ -373,6 +394,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780807014295-L.jpg",
         title: { en: "Man's Search for Meaning", ar: "الإنسان يبحث عن المعنى" },
         author: { en: "Viktor E. Frankl", ar: "فيكتور إي. فرانكل" },
         description: { en: "A profound memoir of finding purpose in the darkest of times.", ar: "مذكرات عميقة حول إيجاد الهدف في أحلك الأوقات." },
@@ -381,6 +403,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771427508-L.jpg",
         title: { en: "Renew Your Life", ar: "جدد حياتك" },
         author: { en: "Muhammad al-Ghazali", ar: "محمد الغزالي" },
         description: { en: "Islamic perspective on self-help inspired by Dale Carnegie.", ar: "منظور إسلامي لتطوير الذات مستوحى من ديل كارنيجي." },
@@ -389,6 +412,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9786038202570-L.jpg",
         title: { en: "Because You Are God", ar: "لأنك الله" },
         author: { en: "Ali Bin Jaber Al-Fifi", ar: "علي بن جابر الفيفي" },
         description: { en: "A journey to the depths of spirituality and self-peace.", ar: "رحلة إلى أعماق الروحانية والسلام الذاتي." },
@@ -397,6 +421,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=brSidvTKfcQC&printsec=frontcover&img=1&zoom=3",
         title: { en: "Meditations", ar: "التأملات" },
         author: { en: "Marcus Aurelius", ar: "ماركوس أوريليوس" },
         description: { en: "A series of personal writings on Stoic philosophy.", ar: "سلسلة من الكتابات الشخصية حول الفلسفة الرواقية." },
@@ -405,6 +430,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=Z3_qAwAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The 7 Habits of Highly Effective People", ar: "العادات السبع للناس الأكثر فعالية" },
         author: { en: "Stephen Covey", ar: "ستيفن كوفي" },
         description: { en: "A comprehensive framework for personal and professional effectiveness.", ar: "إطار عمل شامل للفعالية الشخصية والمهنية." },
@@ -413,6 +439,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=xXfZEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Think and Grow Rich", ar: "فكر وتصبح غنيا" },
         author: { en: "Napoleon Hill", ar: "نابولون هيل" },
         description: { en: "A classic guide on mindset, success, and wealth creation.", ar: "دليل كلاسيكي حول العقلية والنجاح وخلق الثروة." },
@@ -421,6 +448,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=e7R0DwAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Power of Now", ar: "قوة الآن" },
         author: { en: "Eckhart Tolle", ar: "إيكهارت تول" },
         description: { en: "A spiritual guide to enlightenment and living in the present moment.", ar: "دليل روحي للتنوير والعيش في اللحظة الحالية." },
@@ -429,6 +457,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=xPzYBgAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Outliers", ar: "الاستثنائيون" },
         author: { en: "Malcolm Gladwell", ar: "مالكولم جلادويل" },
         description: { en: "An examination of what makes high achievers different.", ar: "دراسة لما يجعل المتفوقين مختلفين." },
@@ -437,6 +466,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=FzVjBgAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Alchemist", ar: "الخيميائي" },
         author: { en: "Paulo Coelho", ar: "باولو كويلو" },
         description: { en: "A magical fable about following your dreams.", ar: "حكاية سحرية عن اتباع أحلامك." },
@@ -455,6 +485,7 @@ const RESULTS_DATA = {
     placeholderColor: "bg-[#b88691]", // Dusty Rose
     books: [
       {
+        coverUrl: "https://books.google.com/books/content?id=uY6MEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Pride and Prejudice", ar: "كبرياء وتحامل" },
         author: { en: "Jane Austen", ar: "جين أوستن" },
         description: { en: "The ultimate classic romance dealing with manners and matrimony.", ar: "الرومانسية الكلاسيكية المطلقة التي تتناول الأخلاق والزواج." },
@@ -463,6 +494,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=s8X3yQEACAAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Seven Husbands of Evelyn Hugo", ar: "أزواج إيفلين هيوغو السبعة" },
         author: { en: "Taylor Jenkins Reid", ar: "تايلور جينكينز ريد" },
         description: { en: "A glamorous, heartbreaking tale of Hollywood love and secrets.", ar: "قصة ساحرة ومفجعة عن حب هوليوود وأسرارها." },
@@ -471,6 +503,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789953893351-L.jpg",
         title: { en: "Black Suits You so Well", ar: "الأسود يليق بك" },
         author: { en: "Ahlam Mosteghanemi", ar: "أحلام مستغانمي" },
         description: { en: "A tale of love, pride, and sorrow in the Arab world.", ar: "حكاية حب وكبرياء وحزن في العالم العربي." },
@@ -479,6 +512,7 @@ const RESULTS_DATA = {
         linkType: "search" as LinkType,
       },
       {
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789973059850-L.jpg",
         title: { en: "In My Heart is a Hebrew Female", ar: "في قلبي أنثى عبرية" },
         author: { en: "Khawla Hamdi", ar: "خولة حمدي" },
         description: { en: "A touching love story crossing religious and cultural bounds.", ar: "قصة حب مؤثرة تتخطى الحدود الدينية والثقافية." },
@@ -487,6 +521,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=2-6aEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Jane Eyre", ar: "جين أير" },
         author: { en: "Charlotte Brontë", ar: "شارلوت برونتي" },
         description: { en: "A classic romance featuring a strong-willed heroine and a brooding hero.", ar: "رومانسية كلاسيكية تتميز ببطلة قوية الإرادة وبطل غامض." },
@@ -495,6 +530,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=OqXjCQAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Wuthering Heights", ar: "مرتفعات وذرينغ" },
         author: { en: "Emily Brontë", ar: "إيميلي برونتي" },
         description: { en: "A dark and intense tale of passionate but destructive love.", ar: "حكاية مظلمة ومكثفة عن الحب العاطفي والمدمر." },
@@ -503,6 +539,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=H49lDAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Me Before You", ar: "أنا قبلك" },
         author: { en: "Jojo Moyes", ar: "جوجو مويس" },
         description: { en: "A heartbreaking story of a girl who cares for a paralyzed man.", ar: "قصة مفجعة لفتاة تعتني برجل مشلول." },
@@ -511,6 +548,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=B5R5e-a61qUC&printsec=frontcover&img=1&zoom=3",
         title: { en: "Outlander", ar: "غريبة" },
         author: { en: "Diana Gabaldon", ar: "ديانا غابالدون" },
         description: { en: "A time-traveling romance set in the Scottish Highlands.", ar: "رومانسية السفر عبر الزمن تدور أحداثها في المرتفعات الاسكتلندية." },
@@ -519,6 +557,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=a64MEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Fault in Our Stars", ar: "الخطأ في أقدارنا" },
         author: { en: "John Green", ar: "جون غرين" },
         description: { en: "Two teenagers meet at a cancer support group and fall in love.", ar: "يلتقي مراهقان في مجموعة دعم لمرضى السرطان ويقعان في الحب." },
@@ -527,6 +566,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=M8J1DwAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Call Me By Your Name", ar: "نادني باسمك" },
         author: { en: "André Aciman", ar: "أندريه أسيمان" },
         description: { en: "A story of a sudden and powerful romance that blossoms in Italy.", ar: "قصة رومانسية مفاجئة وقوية تزدهر في إيطاليا." },
@@ -545,6 +585,7 @@ const RESULTS_DATA = {
     placeholderColor: "bg-[#d4a373]", // Warm Ochre
     books: [
       {
+        coverUrl: "https://books.google.com/books/content?id=ykWQEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Kite Runner", ar: "عداء الطائرة الورقية" },
         author: { en: "Khaled Hosseini", ar: "خالد حسيني" },
         description: { en: "A heartbreaking story of friendship and redemption in Afghanistan.", ar: "قصة مفجعة عن الصداقة والفداء في أفغانستان." },
@@ -553,6 +594,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=AV6HtAEACAAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Pachinko", ar: "باتشينكو" },
         author: { en: "Min Jin Lee", ar: "مين جين لي" },
         description: { en: "A sweeping saga of a Korean family living in Japan.", ar: "ملحمة شاملة لعائلة كورية تعيش في اليابان." },
@@ -561,6 +603,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=K3kuQnjHMi0C&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Granada Trilogy", ar: "ثلاثية غرناطة" },
         author: { en: "Radwa Ashour", ar: "رضوى عاشور" },
         description: { en: "A masterpiece chronicling the fall of Moorish Spain.", ar: "تحفة فنية تؤرخ لسقوط إسبانيا المغاربية." },
@@ -569,6 +612,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771442112-L.jpg",
         title: { en: "Azazeel", ar: "عزازيل" },
         author: { en: "Youssef Ziedan", ar: "يوسف زيدان" },
         description: { en: "A tale of religious conflict and personal turmoil in the 5th century.", ar: "حكاية عن الصراع الديني والاضطراب الشخصي في القرن الخامس." },
@@ -577,6 +621,7 @@ const RESULTS_DATA = {
         linkType: "pdf" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=2plPEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Things Fall Apart", ar: "أشياء تتداعى" },
         author: { en: "Chinua Achebe", ar: "تشينوا أتشيبي" },
         description: { en: "A powerful novel about the impact of colonialism in Nigeria.", ar: "رواية قوية حول تأثير الاستعمار في نيجيريا." },
@@ -585,6 +630,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=pYwFEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "A Thousand Splendid Suns", ar: "ألف شمس مشرقة" },
         author: { en: "Khaled Hosseini", ar: "خالد حسيني" },
         description: { en: "A sweeping story of two Afghan women whose lives intersect.", ar: "قصة شاملة لامرأتين أفغانيتين تتقاطع حياتهما." },
@@ -593,6 +639,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=zIqWEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Memoirs of a Geisha", ar: "مذكرات غيشا" },
         author: { en: "Arthur Golden", ar: "آرثر غولدن" },
         description: { en: "A fictional memoir offering a glimpse into the secretive world of geishas.", ar: "مذكرات خيالية تقدم لمحة عن العالم السري للغيشا." },
@@ -601,6 +648,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=6u2fEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Joy Luck Club", ar: "نادي الفرح والحظ" },
         author: { en: "Amy Tan", ar: "إيمي تان" },
         description: { en: "The lives of four Chinese immigrant mothers and their American-born daughters.", ar: "حياة أربع أمهات صينيات مهاجرات وبناتهن المولودات في أمريكا." },
@@ -609,6 +657,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=9H2pEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Shadow of the Wind", ar: "ظل الريح" },
         author: { en: "Carlos Ruiz Zafón", ar: "كارلوس زافون" },
         description: { en: "A young boy uncovers a mysterious book in post-war Barcelona.", ar: "صبي صغير يكتشف كتاباً غامضاً في برشلونة بعد الحرب." },
@@ -617,6 +666,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=bV19EAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Half of a Yellow Sun", ar: "نصف شمس صفراء" },
         author: { en: "Chimamanda Ngozi Adichie", ar: "تشيماماندا نغوزي أديتشي" },
         description: { en: "An emotional epic set during the Biafran War in Nigeria.", ar: "ملحمة عاطفية تدور أحداثها خلال حرب بيافرا في نيجيريا." },
@@ -635,6 +685,7 @@ const RESULTS_DATA = {
     placeholderColor: "bg-[#4a4e69]", // Deep Slate
     books: [
       {
+        coverUrl: "https://books.google.com/books/content?id=sJdUAzLUNyAC&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Hunger Games", ar: "مباريات الجوع" },
         author: { en: "Suzanne Collins", ar: "سوزان كولنز" },
         description: { en: "A thrilling dystopian survival game with political undertones.", ar: "لعبة بقاء بائسة ومثيرة ذات دلالات سياسية." },
@@ -643,6 +694,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=YuDl2Wl651AC&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Da Vinci Code", ar: "شفرة دا فينشي" },
         author: { en: "Dan Brown", ar: "دان براون" },
         description: { en: "A breathless global treasure hunt full of puzzles.", ar: "بحث عالمي يحبس الأنفاس عن كنز مليء بالألغاز." },
@@ -651,6 +703,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9786144195742-L.jpg",
         title: { en: "Bilal's Code", ar: "شفرة بلال" },
         author: { en: "Ahmed Khaireddine", ar: "أحمد خيري العمري" },
         description: { en: "A dynamic narrative intertwining history and modern struggle.", ar: "سرد ديناميكي يتشابك فيه التاريخ والنضال الحديث." },
@@ -659,6 +712,7 @@ const RESULTS_DATA = {
         linkType: "search" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=BY8mDAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Blue Elephant", ar: "الفيل الأزرق" },
         author: { en: "Ahmed Mourad", ar: "أحمد مراد" },
         description: { en: "A psychological thriller involving murder, madness, and mystery.", ar: "قصة إثارة نفسية تتضمن القتل والجنون والغموض." },
@@ -667,6 +721,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=2NIpDAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Martian", ar: "المريخي" },
         author: { en: "Andy Weir", ar: "آندي وير" },
         description: { en: "A gripping sci-fi survival story of an astronaut stranded on Mars.", ar: "قصة بقاء خيال علمي مشوقة لرائد فضاء تقطعت به السبل على المريخ." },
@@ -675,6 +730,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=r6qEAAAAMAAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Girl with the Dragon Tattoo", ar: "الفتاة ذات وشم التنين" },
         author: { en: "Stieg Larsson", ar: "ستيغ لارسون" },
         description: { en: "A journalist and a hacker investigate a decades-old disappearance.", ar: "صحفي ومتسللة إلكترونية يحققان في اختفاء دام عقوداً." },
@@ -683,6 +739,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=2u3wEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Gone Girl", ar: "الفتاة المفقودة" },
         author: { en: "Gillian Flynn", ar: "جيليان فلين" },
         description: { en: "A man's wife goes missing, and he becomes the prime suspect.", ar: "تختفي زوجة رجل، ويصبح هو المشتبه به الرئيسي." },
@@ -691,6 +748,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=k_6FEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "The Maze Runner", ar: "عداء المتاهة" },
         author: { en: "James Dashner", ar: "جيمس داشنر" },
         description: { en: "Teens are trapped in a deadly maze and must find a way out.", ar: "مراهقون محاصرون في متاهة مميتة ويجب أن يجدوا مخرجاً." },
@@ -699,6 +757,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=W9eHEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Angels & Demons", ar: "ملائكة وشياطين" },
         author: { en: "Dan Brown", ar: "دان براون" },
         description: { en: "A race against time to stop an ancient secret society from destroying the Vatican.", ar: "سباق مع الزمن لمنع جمعية سرية قديمة من تدمير الفاتيكان." },
@@ -707,6 +766,7 @@ const RESULTS_DATA = {
         linkType: "borrow" as LinkType,
       },
       {
+        coverUrl: "https://books.google.com/books/content?id=12qWEAAAQBAJ&printsec=frontcover&img=1&zoom=3",
         title: { en: "Jurassic Park", ar: "الحديقة الجوراسية" },
         author: { en: "Michael Crichton", ar: "مايكل كرايتون" },
         description: { en: "A theme park with cloned dinosaurs goes terribly wrong.", ar: "منتزه ترفيهي به ديناصورات مستنسخة يسير بشكل خاطئ تماماً." },
@@ -727,68 +787,9 @@ const shuffleArray = <T,>(array: T[]) => {
   return shuffled;
 };
 
-const BookCover = ({ titleEn, titleAr, authorEn, authorAr, color }: { titleEn: string, titleAr: string, authorEn: string, authorAr: string, color: string }) => {
-  const [coverUrl, setCoverUrl] = useState<string | null>(null);
+const BookCover = ({ coverUrl, title, color }: { coverUrl?: string, title: string, color: string }) => {
   const [imageError, setImageError] = useState(false);
-
-  useEffect(() => {
-    let mounted = true;
-    
-    const findCover = async () => {
-      const search = async (t: string, a: string) => {
-        try {
-          const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(t)}+inauthor:${encodeURIComponent(a)}`);
-          const data = await res.json();
-          if (data.items && data.items.length > 0) {
-            for (let i = 0; i < Math.min(3, data.items.length); i++) {
-              const item = data.items[i];
-              const apiTitle = (item.volumeInfo?.title || "").toLowerCase();
-              const expectedTitle = t.toLowerCase();
-              
-              // Verify the result by checking that the returned book title closely matches the expected title
-              const expectedWords = expectedTitle.split(/\s+/).filter(w => w.length > 2);
-              const hasMatch = expectedTitle.includes(apiTitle) || 
-                               apiTitle.includes(expectedTitle) ||
-                               (expectedWords.length > 0 && expectedWords.some(w => apiTitle.includes(w)));
-              
-              if (!hasMatch && item.volumeInfo?.title) continue;
-
-              const links = item.volumeInfo?.imageLinks;
-              if (links && links.thumbnail) {
-                let url = links.thumbnail;
-                url = url.replace("zoom=1", "zoom=3").replace("&edge=curl", "");
-                url = url.replace("http://", "https://");
-                return url;
-              }
-            }
-          }
-        } catch (err) {
-          console.error(err);
-        }
-        return null;
-      };
-
-      // Try English first
-      let url = await search(titleEn, authorEn);
-      
-      // If no english match, try arabic
-      if (!url) {
-        url = await search(titleAr, authorAr);
-      }
-
-      if (mounted && url) {
-        setCoverUrl(url);
-      }
-    };
-
-    // Reset state when title changes (e.g. shuffle)
-    setCoverUrl(null);
-    setImageError(false);
-    findCover();
-
-    return () => { mounted = false; };
-  }, [titleEn, titleAr, authorEn, authorAr]);
-
+  
   return (
     <div className={`h-[220px] shrink-0 relative flex items-center justify-center overflow-hidden ${color}`}>
       {!imageError && coverUrl && (
@@ -797,7 +798,7 @@ const BookCover = ({ titleEn, titleAr, authorEn, authorAr, color }: { titleEn: s
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           src={coverUrl} 
-          alt={titleEn} 
+          alt={title} 
           onError={() => setImageError(true)}
           className="w-full h-full object-cover object-center z-20"
         />
@@ -1118,10 +1119,8 @@ export default function Matchmaker() {
                       <Card className="flex flex-col w-full border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group bg-card">
                         
                         <BookCover 
-                          titleEn={book.title.en}
-                          titleAr={book.title.ar}
-                          authorEn={book.author.en}
-                          authorAr={book.author.ar}
+                          coverUrl={(book as any).coverUrl}
+                          title={book.title[language]}
                           color={RESULTS_DATA[resultType].placeholderColor}
                         />
 
