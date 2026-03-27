@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Sparkles, Feather, ArrowRight, RefreshCcw, Languages, ExternalLink, ArrowLeft, Shuffle, Copy, Check, Share2 } from "lucide-react";
+import { BookOpen, Sparkles, Feather, ArrowRight, RefreshCcw, Languages, ExternalLink, ArrowLeft, Shuffle, Copy, Check, Share2, Download } from "lucide-react";
+import html2canvas from "html2canvas";
 import heroBg from "@/assets/images/hero-bg.png";
 
 type Step = "home" | "quiz" | "results";
@@ -41,7 +42,7 @@ const UI_TEXT = {
     footerMadeWith: "Made with ❤️ by LitMatch Team"
   },
   ar: {
-    title: "ليت ماتش",
+    title: "أثر",
     heroTitle1: "اكتشف ",
     heroTitle2: "شغفك الأدبي القادم.",
     heroSubtitle: "قم بإجراء تقييم الشخصية المنسق الخاص بنا للكشف عن نمط القارئ الفريد الخاص بك واكتشاف الكتب المصممة خصيصًا لروحك.",
@@ -68,7 +69,7 @@ const UI_TEXT = {
     noThanks: "لا، شكراً",
     welcomeBack: "مرحباً بعودتك! آخر نتيجة لك كانت",
     seeResultAgain: "شوف نتيجتك",
-    footerMadeWith: "صُنع بـ ❤️ من فريق LitMatch"
+    footerMadeWith: "صُنع بـ ❤️ من فريق أثر"
   }
 };
 
@@ -611,7 +612,7 @@ const RESULTS_DATA = {
         style: { en: "Contemporary Fiction", ar: "خيال معاصر" },
         description: { en: "A raw and complex story about two people who constantly orbit each other's lives.", ar: "قصة خام ومعقدة عن شخصين يدوران باستمرار في حياة بعضهما البعض." },
         reason: { en: "An intense exploration of modern love and human connection. It feels incredibly real and vulnerable.", ar: "استكشاف مكثف للحب الحديث والتواصل البشري. يبدو حقيقياً وضعيفاً بشكل لا يصدق." },
-        coverUrl: "https://books.google.com/books/content?id=fQBlDwAAQBAJ&printsec=frontcover&img=1&zoom=3",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9781984822178-L.jpg",
         link: "https://archive.org/search?query=Normal+People+Sally+Rooney"
       },
       {
@@ -620,7 +621,7 @@ const RESULTS_DATA = {
         style: { en: "Romantic Drama", ar: "دراما رومانسية" },
         description: { en: "A timeless story of a love that endures sickness, time, and tragedy.", ar: "قصة خالدة لحب يدوم رغم المرض والوقت والمأساة." },
         reason: { en: "The ultimate tear-jerker. It provides the warm, sweeping emotions you look for in a book.", ar: "القصة المبكية المطلقة. توفر العواطف الدافئة والشاملة التي تبحث عنها في كتاب." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780446605236-L.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9781455582877-L.jpg",
         link: "https://archive.org/search?query=The+Notebook+Nicholas+Sparks"
       },
       {
@@ -651,13 +652,13 @@ const RESULTS_DATA = {
         link: "https://archive.org/search?query=%D9%81%D9%8A+%D9%82%D9%84%D8%A8%D9%8A+%D8%A3%D9%86%D8%AB%D9%89+%D8%B9%D8%A8%D8%B1%D9%8A%D8%A9"
       },
       {
-        title: { en: "The Love Hypothesis", ar: "فرضية الحب" },
-        author: { en: "Ali Hazelwood", ar: "علي هازلوود" },
-        style: { en: "Rom-Com", ar: "كوميديا رومانسية" },
-        description: { en: "A fake-dating arrangement between two scientists leads to real, undeniable chemistry.", ar: "ترتيب مواعدة مزيف بين عالمين يؤدي إلى كيمياء حقيقية لا يمكن إنكارها." },
-        reason: { en: "Fun, sweet, and highly engaging. A perfect lighthearted romance to warm your heart.", ar: "ممتع ولطيف وجذاب للغاية. رومانسية خفيفة مثالية لتدفئة قلبك." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780593336823-L.jpg",
-        link: "https://archive.org/search?query=The+Love+Hypothesis"
+        title: { en: "Emma", ar: "إيما" },
+        author: { en: "Jane Austen", ar: "جين أوستن" },
+        style: { en: "Classic Romance", ar: "رومانسية كلاسيكية" },
+        description: { en: "A young woman who fancies herself a matchmaker meddles in the romantic lives of her friends.", ar: "شابة تعتقد أنها خبيرة في التوفيق بين الزوجين تتدخل في الحياة الرومانسية لأصدقائها." },
+        reason: { en: "A witty and charming classic that explores love and self-discovery. Delightfully romantic.", ar: "كلاسيكية ذكية وساحرة تستكشف الحب واكتشاف الذات. رومانسية مبهجة." },
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780141439587-L.jpg",
+        link: "https://archive.org/search?query=Emma+Jane+Austen"
       },
       {
         title: { en: "A Little Life", ar: "حياة صغيرة" },
@@ -793,7 +794,7 @@ const BookCover = ({ coverUrl, title, color }: { coverUrl?: string, title: strin
           src={coverUrl} 
           alt={title} 
           onError={() => setImageError(true)}
-          className="w-full h-full object-cover object-center z-20"
+          className="w-full h-full object-contain object-center z-20 bg-white dark:bg-[#f8f9fa]"
         />
       ) : (
         <BookOpen className="w-12 h-12 text-black/20 dark:text-white/20" />
@@ -991,7 +992,7 @@ export default function Matchmaker() {
     const archetype = RESULTS_DATA[resultType as keyof typeof RESULTS_DATA].title[language];
     return language === "en" 
       ? `I got ${archetype} on LitMatch! Discover yours → litmatch.vercel.app`
-      : `طلعت شخصيتي الأدبية: ${archetype} في LitMatch! اكتشف شخصيتك ← litmatch.vercel.app`;
+      : `طلعت شخصيتي الأدبية: ${archetype} في أثر! اكتشف شخصيتك ← litmatch.vercel.app`;
   };
 
   const copyToClipboard = () => {
@@ -1007,6 +1008,29 @@ export default function Matchmaker() {
   const shareWhatsApp = () => {
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(getShareText())}`, '_blank');
   };
+
+  
+  const downloadResultImage = async () => {
+    const element = document.getElementById('result-capture-area');
+    if (!element) return;
+    
+    try {
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        backgroundColor: null,
+        useCORS: true
+      });
+      
+      const image = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.href = image;
+      link.download = `litmatch-result-${resultType}.png`;
+      link.click();
+    } catch (err) {
+      console.error("Failed to generate image", err);
+    }
+  };
+
 
   const loadSavedResult = () => {
     if (savedResult) {
@@ -1195,6 +1219,7 @@ export default function Matchmaker() {
           {step === "results" && resultType && (
             <motion.div
               key="results"
+              id="result-capture-area"
               custom={direction}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -1239,6 +1264,17 @@ export default function Matchmaker() {
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.881-.733-1.476-1.639-1.649-1.937-.173-.298-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .104 5.383.101 11.936c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.551 0 11.944-5.383 11.947-11.936a11.86 11.86 0 0 0-3.534-8.455"/></svg>
                     {t.shareWhatsApp}
                   </Button>
+
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={downloadResultImage}
+                    className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
+                  >
+                    <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                    {language === "en" ? "Download My Result" : "تحميل نتيجتي"}
+                  </Button>
+
                 </div>
                 
                 {showSavePrompt && (
