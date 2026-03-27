@@ -1086,8 +1086,7 @@ export default function Matchmaker() {
     const element = document.getElementById('result-capture-area');
     if (!element) return;
     
-    try {
-      // Add a temporary watermark
+    // Add a temporary watermark
     const watermark = document.createElement('div');
     watermark.innerText = language === 'en' ? 'LitMatch' : 'أثر';
     watermark.style.position = 'absolute';
