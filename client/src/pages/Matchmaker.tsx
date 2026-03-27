@@ -578,7 +578,7 @@ const RESULTS_DATA = {
                 pages: 200,
         description: { en: "Islamic perspective on self-help inspired by Dale Carnegie. It blends modern psychology with faith.", ar: "منظور إسلامي لتطوير الذات مستوحى من ديل كارنيجي. يمزج علم النفس الحديث بالإيمان." },
         reason: { en: "Practical spiritual and mental guidance for a better life. Gives you actionable wisdom with a soulful touch.", ar: "إرشادات روحية وعقلية عملية لحياة أفضل. يمنحك حكمة قابلة للتنفيذ بلمسة روحية." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771427508-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/71Z8I0P6TzL.jpg",
         link: "https://archive.org/search?query=Renew+Your+Life+Ghazali"
       },
       {
@@ -588,7 +588,7 @@ const RESULTS_DATA = {
                 pages: 192,
         description: { en: "A journey to the depths of spirituality, explaining the names of God to find inner peace.", ar: "رحلة إلى أعماق الروحانية، تشرح أسماء الله لإيجاد السلام الداخلي." },
         reason: { en: "Highly motivating for spiritual and emotional well-being. It brings profound comfort and inner strength.", ar: "محفز للغاية للرفاهية الروحية والعاطفية. يجلب راحة عميقة وقوة داخلية." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9786038202570-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/51uU8I6B6pL.jpg",
         link: "https://archive.org/search?query=%D9%84%D8%A3%D9%86%D9%83+%D8%A7%D9%84%D9%84%D9%87"
       },
       {
@@ -677,7 +677,7 @@ const RESULTS_DATA = {
                 pages: 350,
         description: { en: "A tale of love, pride, and sorrow in the Arab world. A billionaire falls for a grieving singer.", ar: "حكاية حب وكبرياء وحزن في العالم العربي. ملياردير يقع في حب مغنية حزينة." },
         reason: { en: "Richly poetic and highly emotional. It caters perfectly to your romantic sensibilities.", ar: "شاعري غني وعاطفي للغاية. يلبي حساسيتك الرومانسية بشكل مثالي." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9789953893351-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/41O9V1e6uDL.jpg",
         link: "https://archive.org/search?query=Black+Suits+You+so+Well"
       },
       {
@@ -786,7 +786,7 @@ const RESULTS_DATA = {
                 pages: 512,
         description: { en: "A masterpiece chronicling the fall of Moorish Spain and its devastating impact on an Arab family.", ar: "تحفة فنية تؤرخ لسقوط إسبانيا المغاربية وتأثيرها المدمر على عائلة عربية." },
         reason: { en: "An incredible historical journey through a fascinating and tragic era.", ar: "رحلة تاريخية مذهلة عبر حقبة رائعة ومأساوية." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780815609111-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/81S79j+pL7L.jpg",
         link: "https://archive.org/search?query=The+Granada+Trilogy"
       },
       {
@@ -796,7 +796,7 @@ const RESULTS_DATA = {
                 pages: 377,
         description: { en: "A monk's struggles with faith and temptation in 5th century Egypt and Syria.", ar: "صراعات راهب مع الإيمان والإغراء في مصر وسوريا في القرن الخامس." },
         reason: { en: "Rich historical setting that vividly transports you to the ancient Middle East.", ar: "بيئة تاريخية غنية تنقلك بوضوح إلى الشرق الأوسط القديم." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771442112-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/41-lU-nL0iL.jpg",
         link: "https://archive.org/search?query=Azazeel"
       },
       {
@@ -844,7 +844,8 @@ const BookCover = ({ coverUrl, title, color }: { coverUrl?: string, title: strin
           transition={{ duration: 0.5 }}
           src={coverUrl} 
           alt={title}
-          crossOrigin="anonymous" 
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer" 
           onError={() => setImageError(true)}
           className="w-full h-full object-contain object-center z-20 bg-white dark:bg-[#f8f9fa]"
         />
@@ -931,93 +932,69 @@ const BookCard = ({ book, color, language, t }: any) => {
 };
 
 
+
 const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
   return (
-    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+    <div id="personality-bg" className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
       {type === 'A' && (
-        <svg className="w-full h-full opacity-[0.07] absolute inset-0 text-[#8b5a2b]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-full opacity-[0.08] absolute inset-0" style={{ color: '#4b3621' }} xmlns="http://www.w3.org/2000/svg">
           {/* Top Left Open Book */}
           <path d="M40 80 Q 70 70 100 80 L 100 130 Q 70 120 40 130 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
           <path d="M100 80 Q 130 70 160 80 L 160 130 Q 130 120 100 130 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
           <line x1="100" y1="80" x2="100" y2="130" stroke="currentColor" strokeWidth="2"/>
           {/* Bottom Right Quill */}
-          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 100px) calc(100% - 50px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="currentColor" strokeWidth="3"/>
-          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 70px) calc(100% - 80px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="currentColor" strokeWidth="1"/>
-          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 90px) calc(100% - 60px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="currentColor" strokeWidth="1"/>
-          {/* Ink drops */}
-          <circle cx="20%" cy="30%" r="2" fill="currentColor" />
-          <circle cx="22%" cy="32%" r="1" fill="currentColor" />
-          <circle cx="80%" cy="40%" r="3" fill="currentColor" />
-          <circle cx="75%" cy="80%" r="2" fill="currentColor" />
-          <circle cx="15%" cy="70%" r="1" fill="currentColor" />
+          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 100px) calc(100% - 50px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="#d4af37" strokeWidth="3"/>
+          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 70px) calc(100% - 80px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="#d4af37" strokeWidth="1"/>
+          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 90px) calc(100% - 60px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="#d4af37" strokeWidth="1"/>
         </svg>
       )}
 
       {type === 'B' && (
-        <svg className="w-full h-full opacity-[0.08] absolute inset-0 text-[#b0c4de]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-full opacity-[0.10] absolute inset-0" style={{ color: '#1a1a2e' }} xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="100%" fill="currentColor" opacity="0.5" />
           {/* Top Right Moon */}
-          <path d="M calc(100% - 80px) 100 A 40 40 0 1 0 calc(100% - 40px) 140 A 50 50 0 1 1 calc(100% - 80px) 100 Z" fill="currentColor" />
+          <path d="M calc(100% - 80px) 100 A 40 40 0 1 0 calc(100% - 40px) 140 A 50 50 0 1 1 calc(100% - 80px) 100 Z" fill="#c0c0c0" />
           {/* Stars */}
-          {[...Array(15)].map((_, i) => (
-            <path key={i} d={`M ${Math.random() * 100}% ${Math.random() * 50}% l 2 -6 l 2 6 l 6 2 l -6 2 l -2 6 l -2 -6 l -6 -2 z`} fill="currentColor" />
+          {[...Array(25)].map((_, i) => (
+            <text key={i} x={`${Math.random() * 100}%`} y={`${Math.random() * 100}%`} fill="#c0c0c0" fontSize={`${10 + Math.random() * 10}px`}>+</text>
           ))}
-          {/* Soft Rings */}
-          <circle cx="20%" cy="60%" r="100" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5"/>
-          <circle cx="80%" cy="80%" r="150" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4,8"/>
         </svg>
       )}
 
       {type === 'C' && (
-        <svg className="w-full h-full opacity-[0.1] absolute inset-0 text-[#ff8c00]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-full opacity-[0.12] absolute inset-0" style={{ color: '#ff8c00' }} xmlns="http://www.w3.org/2000/svg">
           {/* Rising Lines */}
           <path d="M 10% 90% L 30% 60% L 40% 70% L 70% 30% L 90% 40%" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
           <path d="M 15% 85% L 25% 70% L 45% 75% L 65% 40% L 85% 50%" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
-          {/* Sun Rays Bottom Left */}
-          <circle cx="0" cy="100%" r="80" fill="currentColor" opacity="0.2"/>
-          <line x1="0" y1="100%" x2="100" y2="calc(100% - 150px)" stroke="currentColor" strokeWidth="2"/>
-          <line x1="0" y1="100%" x2="150" y2="calc(100% - 100px)" stroke="currentColor" strokeWidth="2"/>
-          <line x1="0" y1="100%" x2="50" y2="calc(100% - 180px)" stroke="currentColor" strokeWidth="2"/>
-          {/* Geometric shapes */}
-          <polygon points="80%,20% 85%,30% 75%,30%" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <rect x="60%" y="15%" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" transform="rotate(45)"/>
+          {/* Sun Rays Top Left */}
+          <circle cx="0" cy="0" r="80" fill="#ffd700" opacity="0.5"/>
+          <line x1="0" y1="0" x2="100" y2="150" stroke="#ffd700" strokeWidth="2"/>
+          <line x1="0" y1="0" x2="150" y2="100" stroke="#ffd700" strokeWidth="2"/>
+          <line x1="0" y1="0" x2="180" y2="50" stroke="#ffd700" strokeWidth="2"/>
         </svg>
       )}
 
       {type === 'D' && (
-        <svg className="w-full h-full opacity-[0.1] absolute inset-0 text-[#ffb6c1]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-full opacity-[0.10] absolute inset-0" style={{ color: '#ffb6c1' }} xmlns="http://www.w3.org/2000/svg">
           {/* Roses/Flowers */}
           <path d="M 60 60 Q 70 40 80 60 Q 100 70 80 80 Q 70 100 60 80 Q 40 70 60 60 Z" fill="currentColor"/>
           <path d="M calc(100% - 60px) calc(100% - 60px) Q calc(100% - 70px) calc(100% - 40px) calc(100% - 80px) calc(100% - 60px) Q calc(100% - 100px) calc(100% - 70px) calc(100% - 80px) calc(100% - 80px) Q calc(100% - 70px) calc(100% - 100px) calc(100% - 60px) calc(100% - 80px) Q calc(100% - 40px) calc(100% - 70px) calc(100% - 60px) calc(100% - 60px) Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-          {/* Leaves */}
-          <path d="M 20% 80% Q 25% 70% 30% 80% Q 25% 90% 20% 80% Z" fill="currentColor" opacity="0.6"/>
-          <path d="M 80% 30% Q 85% 20% 90% 30% Q 85% 40% 80% 30% Z" fill="currentColor" opacity="0.6"/>
-          <path d="M 40% 20% Q 45% 15% 50% 20% Q 45% 25% 40% 20% Z" fill="none" stroke="currentColor" strokeWidth="1"/>
           {/* Petals */}
-          {[...Array(10)].map((_, i) => (
-            <ellipse key={i} cx={`${10 + Math.random() * 80}%`} cy={`${10 + Math.random() * 80}%`} rx="4" ry="8" fill="currentColor" transform={`rotate(${Math.random() * 180})`} opacity="0.5"/>
+          {[...Array(15)].map((_, i) => (
+            <ellipse key={i} cx={`${10 + Math.random() * 80}%`} cy={`${10 + Math.random() * 80}%`} rx="4" ry="8" fill="#f8edeb" transform={`rotate(${Math.random() * 180})`} opacity="0.8"/>
           ))}
         </svg>
       )}
 
       {type === 'E' && (
-        <svg className="w-full h-full opacity-[0.08] absolute inset-0 text-[#8b4513]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-full opacity-[0.08] absolute inset-0" style={{ color: '#556b2f' }} xmlns="http://www.w3.org/2000/svg">
           {/* Compass Rose */}
           <path d="M calc(100% - 100px) 100 L calc(100% - 90px) 130 L calc(100% - 60px) 140 L calc(100% - 90px) 150 L calc(100% - 100px) 180 L calc(100% - 110px) 150 L calc(100% - 140px) 140 L calc(100% - 110px) 130 Z" fill="currentColor"/>
           <circle cx="calc(100% - 100px)" cy="140" r="30" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="calc(100% - 100px)" cy="140" r="45" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2,2"/>
           {/* Travel Routes */}
-          <path d="M 10% 20% Q 30% 10% 40% 30% T 70% 60% T 90% 80%" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="8,8"/>
-          <circle cx="10%" cy="20%" r="4" fill="currentColor" />
-          <circle cx="90%" cy="80%" r="4" fill="currentColor" />
-          {/* Mountains */}
-          <path d="M 20% 90% L 25% 80% L 28% 85% L 35% 75% L 45% 90% Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <path d="M 25% 80% L 25% 90%" fill="none" stroke="currentColor" strokeWidth="1"/>
-          <path d="M 35% 75% L 35% 90%" fill="none" stroke="currentColor" strokeWidth="1"/>
-          {/* Map Grid */}
-          <line x1="0" y1="33%" x2="100%" y2="33%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10,10"/>
-          <line x1="0" y1="66%" x2="100%" y2="66%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10,10"/>
-          <line x1="33%" y1="0" x2="33%" y2="100%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10,10"/>
-          <line x1="66%" y1="0" x2="66%" y2="100%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10,10"/>
+          <path d="M 10% 20% Q 30% 10% 40% 30% T 70% 60% T 90% 80%" fill="none" stroke="#8b4513" strokeWidth="2" strokeDasharray="8,8"/>
+          <circle cx="10%" cy="20%" r="4" fill="#8b4513" />
+          <circle cx="90%" cy="80%" r="4" fill="#8b4513" />
         </svg>
       )}
     </div>
@@ -1176,42 +1153,8 @@ export default function Matchmaker() {
   };
 
 
-  const downloadResultImage = async () => {
-    const element = document.getElementById('result-capture-area');
-    if (!element) return;
-    
-    // Add a temporary watermark
-    const watermark = document.createElement('div');
-    watermark.innerText = language === 'en' ? 'LitMatch' : 'أثر';
-    watermark.style.position = 'absolute';
-    watermark.style.bottom = '20px';
-    watermark.style.right = '30px';
-    watermark.style.fontSize = '24px';
-    watermark.style.fontWeight = 'bold';
-    watermark.style.color = theme.text.replace('text-[', '').replace(']', '');
-    watermark.style.opacity = '0.5';
-    watermark.style.fontFamily = 'serif';
-    element.appendChild(watermark);
-    
-    try {
-      const canvas = await html2canvas(element, {
-        scale: 2,
-        backgroundColor: theme.bg.replace('bg-[', '').replace(']', ''),
-        useCORS: true,
-        allowTaint: false,
-        logging: false
-      });
-      element.removeChild(watermark);
-      
-      const image = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.href = image;
-      link.download = `litmatch-result-${resultType}.png`;
-      link.click();
-    } catch (err) {
-      if (element.contains(watermark)) element.removeChild(watermark);
-      console.error("Failed to generate image", err);
-    }
+  const downloadResultImage = () => {
+    window.print();
   };
 
 
@@ -1421,7 +1364,7 @@ export default function Matchmaker() {
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-3 pt-4 sm:pt-6">
-                  <DropdownMenu dir={isRtl ? "rtl" : "ltr"}>
+                  <div className="print:hidden"><DropdownMenu dir={isRtl ? "rtl" : "ltr"}>
                     <DropdownMenuTrigger asChild>
                       <Button 
                         variant="outline" 
@@ -1454,13 +1397,13 @@ export default function Matchmaker() {
                         {language === "en" ? "LinkedIn" : "لينكد إن"}
                       </DropdownMenuItem>
                     </DropdownMenuContent>
-                  </DropdownMenu>
+                  </DropdownMenu></div>
 
                   <Button 
                     variant="outline" 
                     size="sm" 
                     onClick={downloadResultImage}
-                    className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
+                    className={`print:hidden rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
                   >
                     <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                     {language === "en" ? "Download My Result" : "تحميل نتيجتي"}
@@ -1507,7 +1450,7 @@ export default function Matchmaker() {
               <div className="flex justify-center mb-10 sm:mb-16">
                 <Button 
                   onClick={handleShuffle}
-                  className={`rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base gap-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 ${theme.button}`}
+                  className={`print:hidden rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base gap-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 ${theme.button}`}
                 >
                   <Shuffle className="w-4 h-4 sm:w-5 sm:h-5" />
                   {t.shuffleBooks}

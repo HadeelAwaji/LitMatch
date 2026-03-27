@@ -79,3 +79,30 @@
     @apply font-serif font-medium tracking-tight;
   }
 }
+
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  header {
+    display: none !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  /* Hide the return home / restart quiz buttons area */
+  .border-t.pt-8 {
+    display: none !important;
+  }
+
+  /* Make sure the main content is fully visible */
+  #root, body, html {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
