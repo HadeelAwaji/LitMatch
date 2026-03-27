@@ -930,6 +930,100 @@ const BookCard = ({ book, color, language, t }: any) => {
   );
 };
 
+
+const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
+  return (
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      {type === 'A' && (
+        <svg className="w-full h-full opacity-[0.07] absolute inset-0 text-[#8b5a2b]" xmlns="http://www.w3.org/2000/svg">
+          {/* Top Left Open Book */}
+          <path d="M40 80 Q 70 70 100 80 L 100 130 Q 70 120 40 130 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+          <path d="M100 80 Q 130 70 160 80 L 160 130 Q 130 120 100 130 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+          <line x1="100" y1="80" x2="100" y2="130" stroke="currentColor" strokeWidth="2"/>
+          {/* Bottom Right Quill */}
+          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 100px) calc(100% - 50px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="currentColor" strokeWidth="3"/>
+          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 70px) calc(100% - 80px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="currentColor" strokeWidth="1"/>
+          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 90px) calc(100% - 60px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="currentColor" strokeWidth="1"/>
+          {/* Ink drops */}
+          <circle cx="20%" cy="30%" r="2" fill="currentColor" />
+          <circle cx="22%" cy="32%" r="1" fill="currentColor" />
+          <circle cx="80%" cy="40%" r="3" fill="currentColor" />
+          <circle cx="75%" cy="80%" r="2" fill="currentColor" />
+          <circle cx="15%" cy="70%" r="1" fill="currentColor" />
+        </svg>
+      )}
+
+      {type === 'B' && (
+        <svg className="w-full h-full opacity-[0.08] absolute inset-0 text-[#b0c4de]" xmlns="http://www.w3.org/2000/svg">
+          {/* Top Right Moon */}
+          <path d="M calc(100% - 80px) 100 A 40 40 0 1 0 calc(100% - 40px) 140 A 50 50 0 1 1 calc(100% - 80px) 100 Z" fill="currentColor" />
+          {/* Stars */}
+          {[...Array(15)].map((_, i) => (
+            <path key={i} d={`M ${Math.random() * 100}% ${Math.random() * 50}% l 2 -6 l 2 6 l 6 2 l -6 2 l -2 6 l -2 -6 l -6 -2 z`} fill="currentColor" />
+          ))}
+          {/* Soft Rings */}
+          <circle cx="20%" cy="60%" r="100" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5,5"/>
+          <circle cx="80%" cy="80%" r="150" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4,8"/>
+        </svg>
+      )}
+
+      {type === 'C' && (
+        <svg className="w-full h-full opacity-[0.1] absolute inset-0 text-[#ff8c00]" xmlns="http://www.w3.org/2000/svg">
+          {/* Rising Lines */}
+          <path d="M 10% 90% L 30% 60% L 40% 70% L 70% 30% L 90% 40%" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M 15% 85% L 25% 70% L 45% 75% L 65% 40% L 85% 50%" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
+          {/* Sun Rays Bottom Left */}
+          <circle cx="0" cy="100%" r="80" fill="currentColor" opacity="0.2"/>
+          <line x1="0" y1="100%" x2="100" y2="calc(100% - 150px)" stroke="currentColor" strokeWidth="2"/>
+          <line x1="0" y1="100%" x2="150" y2="calc(100% - 100px)" stroke="currentColor" strokeWidth="2"/>
+          <line x1="0" y1="100%" x2="50" y2="calc(100% - 180px)" stroke="currentColor" strokeWidth="2"/>
+          {/* Geometric shapes */}
+          <polygon points="80%,20% 85%,30% 75%,30%" fill="none" stroke="currentColor" strokeWidth="2"/>
+          <rect x="60%" y="15%" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" transform="rotate(45)"/>
+        </svg>
+      )}
+
+      {type === 'D' && (
+        <svg className="w-full h-full opacity-[0.1] absolute inset-0 text-[#ffb6c1]" xmlns="http://www.w3.org/2000/svg">
+          {/* Roses/Flowers */}
+          <path d="M 60 60 Q 70 40 80 60 Q 100 70 80 80 Q 70 100 60 80 Q 40 70 60 60 Z" fill="currentColor"/>
+          <path d="M calc(100% - 60px) calc(100% - 60px) Q calc(100% - 70px) calc(100% - 40px) calc(100% - 80px) calc(100% - 60px) Q calc(100% - 100px) calc(100% - 70px) calc(100% - 80px) calc(100% - 80px) Q calc(100% - 70px) calc(100% - 100px) calc(100% - 60px) calc(100% - 80px) Q calc(100% - 40px) calc(100% - 70px) calc(100% - 60px) calc(100% - 60px) Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+          {/* Leaves */}
+          <path d="M 20% 80% Q 25% 70% 30% 80% Q 25% 90% 20% 80% Z" fill="currentColor" opacity="0.6"/>
+          <path d="M 80% 30% Q 85% 20% 90% 30% Q 85% 40% 80% 30% Z" fill="currentColor" opacity="0.6"/>
+          <path d="M 40% 20% Q 45% 15% 50% 20% Q 45% 25% 40% 20% Z" fill="none" stroke="currentColor" strokeWidth="1"/>
+          {/* Petals */}
+          {[...Array(10)].map((_, i) => (
+            <ellipse key={i} cx={`${10 + Math.random() * 80}%`} cy={`${10 + Math.random() * 80}%`} rx="4" ry="8" fill="currentColor" transform={`rotate(${Math.random() * 180})`} opacity="0.5"/>
+          ))}
+        </svg>
+      )}
+
+      {type === 'E' && (
+        <svg className="w-full h-full opacity-[0.08] absolute inset-0 text-[#8b4513]" xmlns="http://www.w3.org/2000/svg">
+          {/* Compass Rose */}
+          <path d="M calc(100% - 100px) 100 L calc(100% - 90px) 130 L calc(100% - 60px) 140 L calc(100% - 90px) 150 L calc(100% - 100px) 180 L calc(100% - 110px) 150 L calc(100% - 140px) 140 L calc(100% - 110px) 130 Z" fill="currentColor"/>
+          <circle cx="calc(100% - 100px)" cy="140" r="30" fill="none" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="calc(100% - 100px)" cy="140" r="45" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2,2"/>
+          {/* Travel Routes */}
+          <path d="M 10% 20% Q 30% 10% 40% 30% T 70% 60% T 90% 80%" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="8,8"/>
+          <circle cx="10%" cy="20%" r="4" fill="currentColor" />
+          <circle cx="90%" cy="80%" r="4" fill="currentColor" />
+          {/* Mountains */}
+          <path d="M 20% 90% L 25% 80% L 28% 85% L 35% 75% L 45% 90% Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+          <path d="M 25% 80% L 25% 90%" fill="none" stroke="currentColor" strokeWidth="1"/>
+          <path d="M 35% 75% L 35% 90%" fill="none" stroke="currentColor" strokeWidth="1"/>
+          {/* Map Grid */}
+          <line x1="0" y1="33%" x2="100%" y2="33%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10,10"/>
+          <line x1="0" y1="66%" x2="100%" y2="66%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10,10"/>
+          <line x1="33%" y1="0" x2="33%" y2="100%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10,10"/>
+          <line x1="66%" y1="0" x2="66%" y2="100%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="10,10"/>
+        </svg>
+      )}
+    </div>
+  );
+};
+
 export default function Matchmaker() {
   const [step, setStep] = useState<Step>("home");
   const [language, setLanguage] = useState<Language>("en");
@@ -1316,6 +1410,7 @@ export default function Matchmaker() {
               transition={{ duration: 1 }}
               className="max-w-7xl w-full py-6 sm:py-10"
             >
+              <BackgroundDecorations type={resultType} />
               <div className="text-center mb-10 sm:mb-16 space-y-4 sm:space-y-6">
                 <p className={`${theme.accent} font-medium tracking-widest uppercase text-xs sm:text-sm`}>{t.yourArchetype}</p>
                 <h2 className={`text-4xl sm:text-5xl md:text-7xl font-bold font-serif ${theme.text}`}>
