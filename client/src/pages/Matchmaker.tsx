@@ -1,3 +1,4 @@
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -286,6 +287,7 @@ const RESULTS_DATA = {
         title: { en: "1984", ar: "١٩٨٤" },
         author: { en: "George Orwell", ar: "جورج أورويل" },
         style: { en: "Dystopian Fiction", ar: "خيال ديستوبي" },
+                pages: 328,
         description: { en: "A chilling prophecy about the future. It's a gripping novel about totalitarianism and the power of truth.", ar: "نبوءة مرعبة عن المستقبل. إنها رواية مشوقة عن الشمولية وقوة الحقيقة." },
         reason: { en: "It tackles profound questions about society and truth. You will ponder its themes for days.", ar: "يعالج أسئلة عميقة حول المجتمع والحقيقة. ستتأمل في مواضيعها لأيام." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
@@ -295,6 +297,7 @@ const RESULTS_DATA = {
         title: { en: "The Secret History", ar: "التاريخ السري" },
         author: { en: "Donna Tartt", ar: "دونا تارت" },
         style: { en: "Dark Academia", ar: "أكاديمية مظلمة" },
+                pages: 559,
         description: { en: "An inverted detective story exploring beauty, terror, and morality. A group of eccentric students go too far.", ar: "قصة بوليسية مقلوبة تستكشف الجمال والرعب والأخلاق. مجموعة من الطلاب غريبي الأطوار يتمادون كثيراً." },
         reason: { en: "It challenges your moral compass with complex, flawed characters. Perfect for analytical readers.", ar: "تتحدى بوصلتك الأخلاقية بشخصيات معقدة ومعيبة. مثالية للقراء التحليليين." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781400031702-L.jpg",
@@ -304,6 +307,7 @@ const RESULTS_DATA = {
         title: { en: "Crime and Punishment", ar: "الجريمة والعقاب" },
         author: { en: "Fyodor Dostoevsky", ar: "فيودور دوستويفسكي" },
         style: { en: "Philosophical Fiction", ar: "خيال فلسفي" },
+                pages: 545,
         description: { en: "A psychological drama about a young student's moral dilemmas after a murder. It dives deep into guilt and redemption.", ar: "دراما نفسية حول المعضلات الأخلاقية لطالب شاب بعد ارتكاب جريمة قتل. تغوص بعمق في الذنب والفداء." },
         reason: { en: "Explores the deepest corners of the human psyche. It is incredibly dense and intellectually satisfying.", ar: "يستكشف أعمق زوايا النفس البشرية. كثيف للغاية ومرضٍ فكرياً." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780679734505-L.jpg",
@@ -313,6 +317,7 @@ const RESULTS_DATA = {
         title: { en: "The Stranger", ar: "الغريب" },
         author: { en: "Albert Camus", ar: "ألبير كامو" },
         style: { en: "Existentialist Fiction", ar: "خيال وجودي" },
+                pages: 123,
         description: { en: "An exploration of existentialism and the absurdity of life through a detached narrator. A short but impactful read.", ar: "استكشاف للوجودية وعبثية الحياة من خلال راوٍ منفصل. قراءة قصيرة لكنها مؤثرة." },
         reason: { en: "Forces you to confront the inherent meaninglessness of societal norms. It will completely alter your perspective.", ar: "يجبرك على مواجهة انعدام المعنى المتأصل للأعراف المجتمعية. سيغير منظورك تماماً." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780679420262-L.jpg",
@@ -322,6 +327,7 @@ const RESULTS_DATA = {
         title: { en: "Steppenwolf", ar: "ذئب السهوب" },
         author: { en: "Hermann Hesse", ar: "هيرمان هيسه" },
         style: { en: "Classic Literature", ar: "أدب كلاسيكي" },
+                pages: 238,
         description: { en: "A mesmerizing tale of a man divided between his human and wolf-like instincts. It's a deep dive into spiritual isolation.", ar: "حكاية ساحرة لرجل منقسم بين غرائزه البشرية والذئبية. غوص عميق في العزلة الروحية." },
         reason: { en: "Resonates with those who feel alienated by modern society. Highly intellectual and deeply introspective.", ar: "يتردد صداه مع أولئك الذين يشعرون بالغربة عن المجتمع الحديث. فكري وتأملي للغاية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780312278670-L.jpg",
@@ -331,6 +337,7 @@ const RESULTS_DATA = {
         title: { en: "The Master and Margarita", ar: "المعلم ومارجريتا" },
         author: { en: "Mikhail Bulgakov", ar: "ميخائيل بولغاكوف" },
         style: { en: "Magical Realism", ar: "واقعية سحرية" },
+                pages: 384,
         description: { en: "The Devil visits atheistic Soviet Moscow. A brilliant satire and a profound exploration of good and evil.", ar: "الشيطان يزور موسكو السوفيتية الإلحادية. هجاء رائع واستكشاف عميق للخير والشر." },
         reason: { en: "Combines sharp political critique with wild imagination. Offers endless layers of meaning to uncover.", ar: "يجمع بين النقد السياسي الحاد والخيال الجامح. يقدم طبقات لا حصر لها من المعاني لاكتشافها." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780679760801-L.jpg",
@@ -340,6 +347,7 @@ const RESULTS_DATA = {
         title: { en: "Season of Migration to the North", ar: "موسم الهجرة إلى الشمال" },
         author: { en: "Tayeb Salih", ar: "الطيب صالح" },
         style: { en: "Post-colonial Fiction", ar: "أدب ما بعد الاستعمار" },
+                pages: 169,
         description: { en: "A classic post-colonial Arabic novel exploring East-West relations. It unravels dark secrets of identity.", ar: "رواية عربية كلاسيكية عن ما بعد الاستعمار تستكشف العلاقات بين الشرق والغرب. تكشف أسراراً مظلمة للهوية." },
         reason: { en: "Offers profound philosophical insights into cultural conflict. Its dense prose rewards careful reading.", ar: "تقدم رؤى فلسفية عميقة حول الصراع الثقافي. نثرها الكثيف يكافئ القراءة المتأنية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781590173029-L.jpg",
@@ -349,6 +357,7 @@ const RESULTS_DATA = {
         title: { en: "Children of the Alley", ar: "أولاد حارتنا" },
         author: { en: "Naguib Mahfouz", ar: "نجيب محفوظ" },
         style: { en: "Allegorical Novel", ar: "رواية رمزية" },
+                pages: 455,
         description: { en: "An allegorical novel tracing the history of human existence and religion. It's a masterpiece of modern Arabic literature.", ar: "رواية رمزية تتتبع تاريخ الوجود البشري والدين. إنها تحفة من روائع الأدب العربي الحديث." },
         reason: { en: "Deep, symbolic, and thought-provoking. It challenges you to decode its intricate religious allegories.", ar: "عميقة ورمزية ومثيرة للتفكير. تتحداك لفك رموزها الدينية المعقدة." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780385264731-L.jpg",
@@ -358,6 +367,7 @@ const RESULTS_DATA = {
         title: { en: "The Prophet", ar: "النبي" },
         author: { en: "Kahlil Gibran", ar: "جبران خليل جبران" },
         style: { en: "Poetic Essays", ar: "مقالات شعرية" },
+                pages: 107,
         description: { en: "Poetic essays covering various aspects of life and the human condition. A beautiful meditation on existence.", ar: "مقالات شعرية تغطي جوانب مختلفة من الحياة والظروف الإنسانية. تأمل جميل في الوجود." },
         reason: { en: "Offers timeless philosophical wisdom wrapped in beautiful prose. Perfect for slow, contemplative reading.", ar: "يقدم حكمة فلسفية خالدة مغلفة بنثر جميل. مثالي للقراءة البطيئة والمتأملة." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780394404288-L.jpg",
@@ -367,6 +377,7 @@ const RESULTS_DATA = {
         title: { en: "Notes from Underground", ar: "رسائل من تحت الأرض" },
         author: { en: "Fyodor Dostoevsky", ar: "فيودور دوستويفسكي" },
         style: { en: "Existentialism", ar: "وجودية" },
+                pages: 136,
         description: { en: "A profound existentialist novel exploring human nature and suffering. A bitter, brilliant monologue.", ar: "رواية وجودية عميقة تستكشف الطبيعة البشرية والمعاناة. مونولوج مرير ورائع." },
         reason: { en: "A brilliant, unfiltered look into the complexity of the human mind. Leaves a lasting intellectual impact.", ar: "نظرة رائعة وغير مفلترة في تعقيد العقل البشري. تترك تأثيراً فكرياً دائماً." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780679734529-L.jpg",
@@ -385,6 +396,7 @@ const RESULTS_DATA = {
         title: { en: "Dune", ar: "كثيب" },
         author: { en: "Frank Herbert", ar: "فرانك هربرت" },
         style: { en: "Epic Sci-Fi", ar: "خيال علمي ملحمي" },
+                pages: 896,
         description: { en: "An epic science fiction masterpiece set on a desert planet. It weaves politics, religion, and ecology into a massive world.", ar: "تحفة خيال علمي ملحمية تدور أحداثها على كوكب صحراوي. تنسج السياسة والدين والبيئة في عالم هائل." },
         reason: { en: "Unmatched world-building that completely absorbs you. You will easily lose yourself in Arrakis.", ar: "بناء عالم لا مثيل له يمتصك بالكامل. ستفقد نفسك بسهولة في أراكيس." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
@@ -394,6 +406,7 @@ const RESULTS_DATA = {
         title: { en: "The Name of the Wind", ar: "اسم الريح" },
         author: { en: "Patrick Rothfuss", ar: "باتريك روثفوس" },
         style: { en: "High Fantasy", ar: "فانتازيا ملحمية" },
+                pages: 662,
         description: { en: "The legendary tale of a gifted young man who grows to be a notorious wizard. A deeply immersive magical journey.", ar: "الحكاية الأسطورية لشاب موهوب يكبر ليصبح ساحراً سيئ السمعة. رحلة سحرية غامرة بعمق." },
         reason: { en: "Immersive storytelling with a beautifully crafted magic system. A perfect escape from reality.", ar: "سرد قصصي غامر مع نظام سحري مصمم بشكل جميل. ملاذ مثالي من الواقع." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg",
@@ -403,6 +416,7 @@ const RESULTS_DATA = {
         title: { en: "The Night Circus", ar: "السيرك الليلي" },
         author: { en: "Erin Morgenstern", ar: "إيرين مورجينستيرن" },
         style: { en: "Magical Realism", ar: "واقعية سحرية" },
+                pages: 387,
         description: { en: "A phantasmagorical fairy tale set in a magical circus that only opens at night. It's a breathtaking sensory experience.", ar: "حكاية خرافية خيالية تدور أحداثها في سيرك سحري يفتح أبوابه ليلاً فقط. إنها تجربة حسية تخطف الأنفاس." },
         reason: { en: "A rich, dreamlike atmosphere full of magic and wonder. It enchants and transports the reader.", ar: "أجواء غنية وحالمة مليئة بالسحر والعجب. تسحر وتنقل القارئ." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780307739920-L.jpg",
@@ -412,6 +426,7 @@ const RESULTS_DATA = {
         title: { en: "The Hobbit", ar: "الهوبيت" },
         author: { en: "J.R.R. Tolkien", ar: "ج.ر.ر. تولكين" },
         style: { en: "Classic Fantasy", ar: "فانتازيا كلاسيكية" },
+                pages: 310,
         description: { en: "A classic fantasy adventure following a reluctant hero. It's the ultimate journey into Middle-earth.", ar: "مغامرة خيالية كلاسيكية تتبع بطلاً متردداً. إنها الرحلة المطلقة إلى الأرض الوسطى." },
         reason: { en: "The perfect journey into a richly detailed magical world. It’s comforting, adventurous, and perfectly escapist.", ar: "الرحلة المثالية إلى عالم سحري غني بالتفاصيل. إنها مريحة ومغامرة وهروب مثالي." },
         coverUrl: "https://books.google.com/books/content?id=U799AY3yfqcC&printsec=frontcover&img=1&zoom=3",
@@ -421,6 +436,7 @@ const RESULTS_DATA = {
         title: { en: "Mistborn", ar: "أبناء الضباب" },
         author: { en: "Brandon Sanderson", ar: "براندون ساندرسون" },
         style: { en: "Fantasy / Action", ar: "فانتازيا / أكشن" },
+                pages: 541,
         description: { en: "A thrilling heist story set in an ash-covered world where magic is drawn from metals.", ar: "قصة سرقة مثيرة تدور أحداثها في عالم مغطى بالرماد حيث يُستمد السحر من المعادن." },
         reason: { en: "Features an incredible magic system and non-stop action. You simply won't be able to put it down.", ar: "يتميز بنظام سحري مذهل وعمل لا يتوقف. ببساطة لن تتمكن من تركه." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780765311788-L.jpg",
@@ -430,6 +446,7 @@ const RESULTS_DATA = {
         title: { en: "The Hitchhiker's Guide to the Galaxy", ar: "دليل المسافر للمجرة" },
         author: { en: "Douglas Adams", ar: "دوغلاس آدمز" },
         style: { en: "Sci-Fi Comedy", ar: "خيال علمي كوميدي" },
+                pages: 193,
         description: { en: "A hilarious journey through space following the destruction of Earth. Pure, joyous absurdity.", ar: "رحلة مرحة عبر الفضاء بعد تدمير الأرض. عبثية نقية ومبهجة." },
         reason: { en: "Provides a wildly entertaining escape through laughter. It makes you completely forget your worldly worries.", ar: "يوفر هروباً ترفيهياً جامحاً من خلال الضحك. يجعلك تنسى تماماً همومك الدنيوية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780345391803-L.jpg",
@@ -439,6 +456,7 @@ const RESULTS_DATA = {
         title: { en: "One Thousand and One Nights", ar: "ألف ليلة وليلة" },
         author: { en: "Various", ar: "متنوع" },
         style: { en: "Folk Tales", ar: "حكايات شعبية" },
+                pages: 980,
         description: { en: "A collection of Middle Eastern folk tales compiled in Arabic. Full of genies, magic, and epic quests.", ar: "مجموعة من الحكايات الشعبية الشرق أوسطية. مليئة بالجن والسحر والمهام الملحمية." },
         reason: { en: "The ultimate collection of enchanting and magical escapist stories. It’s the origin of fantasy storytelling.", ar: "المجموعة المطلقة من القصص الساحرة والخيالية. إنه أصل سرد القصص الخيالية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780140449389-L.jpg",
@@ -448,6 +466,7 @@ const RESULTS_DATA = {
         title: { en: "Utopia", ar: "يوتوبيا" },
         author: { en: "Ahmed Khaled Tawfik", ar: "أحمد خالد توفيق" },
         style: { en: "Dystopian Thriller", ar: "إثارة ديستوبية" },
+                pages: 122,
         description: { en: "A chilling futuristic thriller exploring extreme social division in Egypt. A dark but gripping alternate reality.", ar: "قصة إثارة مستقبلية مرعبة تستكشف الانقسام الاجتماعي المتطرف في مصر. واقع بديل مظلم ولكنه مشوق." },
         reason: { en: "A fast-paced reality shift that keeps you completely hooked. An intense form of literary escape.", ar: "تحول سريع الوتيرة للواقع يبقيك منتبهاً تماماً. شكل مكثف من الهروب الأدبي." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9789774088874-L.jpg",
@@ -457,6 +476,7 @@ const RESULTS_DATA = {
         title: { en: "The Chronicles of Narnia", ar: "سجلات نارنيا" },
         author: { en: "C.S. Lewis", ar: "سي. إس. لويس" },
         style: { en: "Children's Fantasy", ar: "فانتازيا الأطفال" },
+                pages: 767,
         description: { en: "Children travel through a wardrobe to a magical land of talking animals. A timeless classic of imagination.", ar: "أطفال يسافرون عبر خزانة ملابس إلى أرض سحرية بها حيوانات ناطقة. كلاسيكية خالدة من الخيال." },
         reason: { en: "A deeply nostalgic and wondrous adventure. It reawakens the childlike joy of pure imagination.", ar: "مغامرة حنين إلى الماضي ورائعة بعمق. توقظ الفرح الطفولي بالخيال النقي." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780064404990-L.jpg",
@@ -466,6 +486,7 @@ const RESULTS_DATA = {
         title: { en: "Harry Potter and the Sorcerer's Stone", ar: "هاري بوتر وحجر الفيلسوف" },
         author: { en: "J.K. Rowling", ar: "ج. ك. رولينغ" },
         style: { en: "Modern Fantasy", ar: "فانتازيا حديثة" },
+                pages: 309,
         description: { en: "A young boy discovers he's a wizard and enters a magical world. The ultimate story of hidden magic.", ar: "يكتشف صبي صغير أنه ساحر ويدخل عالماً سحرياً. القصة المطلقة للسحر الخفي." },
         reason: { en: "The ultimate escapist fantasy that feels incredibly real. A comforting world you can always return to.", ar: "الخيال الهروبي المطلق الذي يبدو حقيقياً بشكل لا يصدق. عالم مريح يمكنك دائمًا العودة إليه." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg",
@@ -484,6 +505,7 @@ const RESULTS_DATA = {
         title: { en: "Atomic Habits", ar: "العادات الذرية" },
         author: { en: "James Clear", ar: "جيمس كلير" },
         style: { en: "Self-Improvement", ar: "تطوير الذات" },
+                pages: 320,
         description: { en: "An easy and proven way to build good habits and break bad ones. Focuses on small daily improvements.", ar: "طريقة سهلة ومثبتة لبناء عادات جيدة وكسر العادات السيئة. يركز على التحسينات اليومية الصغيرة." },
         reason: { en: "Provides clear, actionable steps to change your life immediately. Highly practical and goal-oriented.", ar: "يقدم خطوات واضحة وقابلة للتنفيذ لتغيير حياتك على الفور. عملي للغاية وموجه نحو الهدف." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
@@ -493,6 +515,7 @@ const RESULTS_DATA = {
         title: { en: "Man's Search for Meaning", ar: "الإنسان يبحث عن المعنى" },
         author: { en: "Viktor Frankl", ar: "فيكتور فرانكل" },
         style: { en: "Psychology / Memoir", ar: "علم النفس / مذكرات" },
+                pages: 165,
         description: { en: "A profound memoir of finding purpose in the darkest of times inside a concentration camp.", ar: "مذكرات عميقة حول إيجاد الهدف في أحلك الأوقات داخل معسكر اعتقال." },
         reason: { en: "Offers deep inspiration and shifts your life perspective forever. It motivates you through profound meaning.", ar: "يقدم إلهاماً عميقاً ويغير نظرتك للحياة إلى الأبد. يحفزك من خلال المعنى العميق." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780807014295-L.jpg",
@@ -502,6 +525,7 @@ const RESULTS_DATA = {
         title: { en: "Meditations", ar: "التأملات" },
         author: { en: "Marcus Aurelius", ar: "ماركوس أوريليوس" },
         style: { en: "Stoic Philosophy", ar: "فلسفة رواقية" },
+                pages: 254,
         description: { en: "A series of personal writings on Stoic philosophy from a Roman Emperor. A guide to mental resilience.", ar: "سلسلة من الكتابات الشخصية حول الفلسفة الرواقية من إمبراطور روماني. دليل للمرونة العقلية." },
         reason: { en: "Timeless wisdom on self-discipline and inner strength. It's the ultimate manual for self-mastery.", ar: "حكمة خالدة حول الانضباط الذاتي والقوة الداخلية. إنه الدليل المطلق للتمكن الذاتي." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780812968255-L.jpg",
@@ -511,6 +535,7 @@ const RESULTS_DATA = {
         title: { en: "The Alchemist", ar: "الخيميائي" },
         author: { en: "Paulo Coelho", ar: "باولو كويلو" },
         style: { en: "Inspirational Fiction", ar: "خيال ملهم" },
+                pages: 167,
         description: { en: "A magical fable about an Andalusian shepherd boy following his dreams. A global phenomenon about destiny.", ar: "حكاية سحرية عن صبي راعٍ أندلسي يتبع أحلامه. ظاهرة عالمية عن المصير." },
         reason: { en: "A beautifully simple story that will reignite your ambitions. It inspires you to pursue your true calling.", ar: "قصة بسيطة وجميلة ستعيد إشعال طموحاتك. تلهمك لمتابعة دعوتك الحقيقية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg",
@@ -520,6 +545,7 @@ const RESULTS_DATA = {
         title: { en: "Start With Why", ar: "ابدأ بلماذا" },
         author: { en: "Simon Sinek", ar: "سيمون سينك" },
         style: { en: "Leadership / Business", ar: "القيادة / الأعمال" },
+                pages: 256,
         description: { en: "Shows how great leaders inspire action by focusing on their underlying purpose.", ar: "يوضح كيف يلهم القادة العظماء العمل من خلال التركيز على هدفهم الأساسي." },
         reason: { en: "Gives you a powerful framework to lead and find your own motivation. Perfect for ambitious minds.", ar: "يمنحك إطاراً قوياً للقيادة وإيجاد دوافعك الخاصة. مثالي للعقول الطموحة." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781591846444-L.jpg",
@@ -529,6 +555,7 @@ const RESULTS_DATA = {
         title: { en: "Can't Hurt Me", ar: "لا يمكن إيذائي" },
         author: { en: "David Goggins", ar: "ديفيد جوجينز" },
         style: { en: "Biography / Motivation", ar: "سيرة ذاتية / تحفيز" },
+                pages: 364,
         description: { en: "The story of a man who overcame a horrific childhood to become a US Armed Forces icon.", ar: "قصة رجل تغلب على طفولة مروعة ليصبح أيقونة في القوات المسلحة الأمريكية." },
         reason: { en: "Provides raw, intense motivation to push past your mental limits. It destroys excuses.", ar: "يوفر دافعاً خاماً ومكثفاً لتجاوز حدودك العقلية. إنه يدمر الأعذار." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781544512280-L.jpg",
@@ -538,6 +565,7 @@ const RESULTS_DATA = {
         title: { en: "Zero to One", ar: "من الصفر إلى الواحد" },
         author: { en: "Peter Thiel", ar: "بيتر ثيل" },
         style: { en: "Business / Innovation", ar: "أعمال / ابتكار" },
+                pages: 210,
         description: { en: "Notes on startups and how to build the future through unique innovation.", ar: "ملاحظات حول الشركات الناشئة وكيفية بناء المستقبل من خلال الابتكار الفريد." },
         reason: { en: "Challenges you to think differently about success and creation. Highly inspiring for entrepreneurs.", ar: "يتحداك للتفكير بشكل مختلف حول النجاح والخلق. ملهم للغاية لرواد الأعمال." },
         coverUrl: "https://books.google.com/books/content?id=POOJDQAAQBAJ&printsec=frontcover&img=1&zoom=3",
@@ -547,6 +575,7 @@ const RESULTS_DATA = {
         title: { en: "Renew Your Life", ar: "تجديد حياتك" },
         author: { en: "Muhammad al-Ghazali", ar: "محمد الغزالي" },
         style: { en: "Spiritual / Self-Help", ar: "روحي / تطوير الذات" },
+                pages: 200,
         description: { en: "Islamic perspective on self-help inspired by Dale Carnegie. It blends modern psychology with faith.", ar: "منظور إسلامي لتطوير الذات مستوحى من ديل كارنيجي. يمزج علم النفس الحديث بالإيمان." },
         reason: { en: "Practical spiritual and mental guidance for a better life. Gives you actionable wisdom with a soulful touch.", ar: "إرشادات روحية وعقلية عملية لحياة أفضل. يمنحك حكمة قابلة للتنفيذ بلمسة روحية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9789771427508-L.jpg",
@@ -556,6 +585,7 @@ const RESULTS_DATA = {
         title: { en: "Because You Are God", ar: "لأنك الله" },
         author: { en: "Ali Bin Jaber Al-Fifi", ar: "علي بن جابر الفيفي" },
         style: { en: "Spiritual / Healing", ar: "روحي / علاج نفسي" },
+                pages: 192,
         description: { en: "A journey to the depths of spirituality, explaining the names of God to find inner peace.", ar: "رحلة إلى أعماق الروحانية، تشرح أسماء الله لإيجاد السلام الداخلي." },
         reason: { en: "Highly motivating for spiritual and emotional well-being. It brings profound comfort and inner strength.", ar: "محفز للغاية للرفاهية الروحية والعاطفية. يجلب راحة عميقة وقوة داخلية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9786038202570-L.jpg",
@@ -565,6 +595,7 @@ const RESULTS_DATA = {
         title: { en: "The 7 Habits of Highly Effective People", ar: "العادات السبع للناس الأكثر فعالية" },
         author: { en: "Stephen Covey", ar: "ستيفن كوفي" },
         style: { en: "Self-Improvement", ar: "تطوير الذات" },
+                pages: 381,
         description: { en: "A comprehensive framework for personal and professional effectiveness based on timeless principles.", ar: "إطار عمل شامل للفعالية الشخصية والمهنية بناءً على مبادئ خالدة." },
         reason: { en: "Provides powerful paradigms to improve your life fundamentally. It’s a complete toolkit for success.", ar: "يوفر نماذج قوية لتحسين حياتك بشكل أساسي. إنها مجموعة أدوات كاملة للنجاح." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780743269513-L.jpg",
@@ -583,6 +614,7 @@ const RESULTS_DATA = {
         title: { en: "Pride and Prejudice", ar: "كبرياء وتحامل" },
         author: { en: "Jane Austen", ar: "جين أوستن" },
         style: { en: "Classic Romance", ar: "رومانسية كلاسيكية" },
+                pages: 279,
         description: { en: "The ultimate classic romance dealing with manners, matrimony, and overcoming first impressions.", ar: "الرومانسية الكلاسيكية المطلقة التي تتناول الأخلاق والزواج والتغلب على الانطباعات الأولى." },
         reason: { en: "A beautifully written, timeless love story with sharp wit. It hits all the right emotional notes.", ar: "قصة حب خالدة ومكتوبة بشكل جميل بذكاء حاد. تضرب على جميع الأوتار العاطفية الصحيحة." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
@@ -592,6 +624,7 @@ const RESULTS_DATA = {
         title: { en: "The Seven Husbands of Evelyn Hugo", ar: "أزواج إيفلين هيوغو السبعة" },
         author: { en: "Taylor Jenkins Reid", ar: "تايلور جينكينز ريد" },
         style: { en: "Historical Romance", ar: "رومانسية تاريخية" },
+                pages: 400,
         description: { en: "A glamorous, heartbreaking tale of a Hollywood icon revealing her hidden true love.", ar: "قصة ساحرة ومفجعة لأيقونة هوليوود تكشف عن حبها الحقيقي الخفي." },
         reason: { en: "Delivers the emotional depth and passionate romance you crave. It will make you both smile and cry.", ar: "يقدم العمق العاطفي والرومانسية العاطفية التي تتوق إليها. سيجعلك تبتسم وتبكي." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781501161933-L.jpg",
@@ -601,6 +634,7 @@ const RESULTS_DATA = {
         title: { en: "Jane Eyre", ar: "جين أير" },
         author: { en: "Charlotte Brontë", ar: "شارلوت برونتي" },
         style: { en: "Gothic Romance", ar: "رومانسية قوطية" },
+                pages: 532,
         description: { en: "A classic romance featuring a strong-willed heroine and a brooding hero with a dark secret.", ar: "رومانسية كلاسيكية تتميز ببطلة قوية الإرادة وبطل غامض ذو سر مظلم." },
         reason: { en: "A deeply emotional story of love, morality, and independence. Perfect for a cozy afternoon.", ar: "قصة عاطفية عميقة عن الحب والأخلاق والاستقلال. مثالية لعصر مريح." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
@@ -610,6 +644,7 @@ const RESULTS_DATA = {
         title: { en: "Normal People", ar: "أشخاص عاديون" },
         author: { en: "Sally Rooney", ar: "سالي روني" },
         style: { en: "Contemporary Fiction", ar: "خيال معاصر" },
+                pages: 273,
         description: { en: "A raw and complex story about two people who constantly orbit each other's lives.", ar: "قصة خام ومعقدة عن شخصين يدوران باستمرار في حياة بعضهما البعض." },
         reason: { en: "An intense exploration of modern love and human connection. It feels incredibly real and vulnerable.", ar: "استكشاف مكثف للحب الحديث والتواصل البشري. يبدو حقيقياً وضعيفاً بشكل لا يصدق." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781984822178-L.jpg",
@@ -619,6 +654,7 @@ const RESULTS_DATA = {
         title: { en: "The Notebook", ar: "دفتر الملاحظات" },
         author: { en: "Nicholas Sparks", ar: "نيكولاس سباركس" },
         style: { en: "Romantic Drama", ar: "دراما رومانسية" },
+                pages: 214,
         description: { en: "A timeless story of a love that endures sickness, time, and tragedy.", ar: "قصة خالدة لحب يدوم رغم المرض والوقت والمأساة." },
         reason: { en: "The ultimate tear-jerker. It provides the warm, sweeping emotions you look for in a book.", ar: "القصة المبكية المطلقة. توفر العواطف الدافئة والشاملة التي تبحث عنها في كتاب." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781455582877-L.jpg",
@@ -628,6 +664,7 @@ const RESULTS_DATA = {
         title: { en: "Anna Karenina", ar: "آنا كارينينا" },
         author: { en: "Leo Tolstoy", ar: "ليو تولستوي" },
         style: { en: "Classic Tragic Romance", ar: "رومانسية مأساوية كلاسيكية" },
+                pages: 864,
         description: { en: "An epic tale of passion, betrayal, and society in Imperial Russia.", ar: "حكاية ملحمية عن العاطفة والخيانة والمجتمع في روسيا الإمبراطورية." },
         reason: { en: "A masterpiece of human emotion. You will feel every ounce of love and heartbreak.", ar: "تحفة من المشاعر الإنسانية. ستشعر بكل أوقية من الحب وحسرة القلب." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780143035008-L.jpg",
@@ -637,6 +674,7 @@ const RESULTS_DATA = {
         title: { en: "Black Suits You so Well", ar: "الأسود يليق بك" },
         author: { en: "Ahlam Mosteghanemi", ar: "أحلام مستغانمي" },
         style: { en: "Arabic Romance", ar: "رومانسية عربية" },
+                pages: 350,
         description: { en: "A tale of love, pride, and sorrow in the Arab world. A billionaire falls for a grieving singer.", ar: "حكاية حب وكبرياء وحزن في العالم العربي. ملياردير يقع في حب مغنية حزينة." },
         reason: { en: "Richly poetic and highly emotional. It caters perfectly to your romantic sensibilities.", ar: "شاعري غني وعاطفي للغاية. يلبي حساسيتك الرومانسية بشكل مثالي." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9789953893351-L.jpg",
@@ -646,6 +684,7 @@ const RESULTS_DATA = {
         title: { en: "In My Heart is a Hebrew Female", ar: "في قلبي أنثى عبرية" },
         author: { en: "Khawla Hamdi", ar: "خولة حمدي" },
         style: { en: "Cultural Romance", ar: "رومانسية ثقافية" },
+                pages: 388,
         description: { en: "A touching love story crossing religious and cultural bounds in Tunisia and Lebanon.", ar: "قصة حب مؤثرة تتخطى الحدود الدينية والثقافية في تونس ولبنان." },
         reason: { en: "A poignant exploration of love overcoming major obstacles. Heartwarming and beautifully written.", ar: "استكشاف مؤثر للحب الذي يتغلب على العقبات الكبرى. دافئ القلب ومكتوب بشكل جميل." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9789973059850-L.jpg",
@@ -655,6 +694,7 @@ const RESULTS_DATA = {
         title: { en: "Emma", ar: "إيما" },
         author: { en: "Jane Austen", ar: "جين أوستن" },
         style: { en: "Classic Romance", ar: "رومانسية كلاسيكية" },
+                pages: 474,
         description: { en: "A young woman who fancies herself a matchmaker meddles in the romantic lives of her friends.", ar: "شابة تعتقد أنها خبيرة في التوفيق بين الزوجين تتدخل في الحياة الرومانسية لأصدقائها." },
         reason: { en: "A witty and charming classic that explores love and self-discovery. Delightfully romantic.", ar: "كلاسيكية ذكية وساحرة تستكشف الحب واكتشاف الذات. رومانسية مبهجة." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780141439587-L.jpg",
@@ -664,6 +704,7 @@ const RESULTS_DATA = {
         title: { en: "A Little Life", ar: "حياة صغيرة" },
         author: { en: "Hanya Yanagihara", ar: "هانيا ياناجيهارا" },
         style: { en: "Emotional Drama", ar: "دراما عاطفية" },
+                pages: 814,
         description: { en: "A sprawling, devastating novel about four college friends and the deep traumas of one of them.", ar: "رواية مترامية الأطراف ومدمرة عن أربعة أصدقاء جامعيين والصدمات العميقة لأحدهم." },
         reason: { en: "An exercise in extreme empathy and emotional endurance. You read to feel deeply, and this delivers.", ar: "تمرين في التعاطف الشديد والتحمل العاطفي. أنت تقرأ لتشعر بعمق، وهذا الكتاب يقدم ذلك." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780804172707-L.jpg",
@@ -682,6 +723,7 @@ const RESULTS_DATA = {
         title: { en: "The Kite Runner", ar: "عداء الطائرة الورقية" },
         author: { en: "Khaled Hosseini", ar: "خالد حسيني" },
         style: { en: "Historical Drama", ar: "دراما تاريخية" },
+                pages: 371,
         description: { en: "A heartbreaking story of friendship and redemption set against the turbulent history of Afghanistan.", ar: "قصة مفجعة عن الصداقة والفداء تدور أحداثها على خلفية التاريخ المضطرب لأفغانستان." },
         reason: { en: "Deeply immerses you in a rich culture and poignant history. It's a powerful emotional journey.", ar: "يغمرك بعمق في ثقافة غنية وتاريخ مؤثر. إنها رحلة عاطفية قوية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781594631931-L.jpg",
@@ -691,6 +733,7 @@ const RESULTS_DATA = {
         title: { en: "Pachinko", ar: "باتشينكو" },
         author: { en: "Min Jin Lee", ar: "مين جين لي" },
         style: { en: "Historical Saga", ar: "ملحمة تاريخية" },
+                pages: 496,
         description: { en: "A sweeping saga of a Korean family living in Japan through generations, facing exile and discrimination.", ar: "ملحمة شاملة لعائلة كورية تعيش في اليابان عبر الأجيال، وتواجه النفي والتمييز." },
         reason: { en: "A beautifully detailed exploration of immigrant identities and resilience across cultures.", ar: "استكشاف مفصل بشكل جميل لهويات المهاجرين والمرونة عبر الثقافات." },
         coverUrl: "https://books.google.com/books/content?id=JsFMvgAACAAJ&printsec=frontcover&img=1&zoom=3",
@@ -700,6 +743,7 @@ const RESULTS_DATA = {
         title: { en: "Things Fall Apart", ar: "أشياء تتداعى" },
         author: { en: "Chinua Achebe", ar: "تشينوا أتشيبي" },
         style: { en: "African Literature", ar: "أدب أفريقي" },
+                pages: 209,
         description: { en: "A powerful novel detailing the impact of British colonialism on a Nigerian village.", ar: "رواية قوية تفصل تأثير الاستعمار البريطاني على قرية نيجيرية." },
         reason: { en: "An essential cultural narrative that completely expands your worldview.", ar: "سرد ثقافي أساسي يوسع نظرتك للعالم تماماً." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780385474542-L.jpg",
@@ -709,6 +753,7 @@ const RESULTS_DATA = {
         title: { en: "Americanah", ar: "أمريكانا" },
         author: { en: "Chimamanda Ngozi Adichie", ar: "تشيماماندا نغوزي أديتشي" },
         style: { en: "Contemporary Fiction", ar: "خيال معاصر" },
+                pages: 588,
         description: { en: "A Nigerian woman moves to America and must navigate issues of race, identity, and love.", ar: "امرأة نيجيرية تنتقل إلى أمريكا ويجب عليها التنقل في قضايا العرق والهوية والحب." },
         reason: { en: "A brilliant dissection of global cultures and what it means to be an immigrant.", ar: "تشريح رائع للثقافات العالمية وما يعنيه أن تكون مهاجراً." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780307455925-L.jpg",
@@ -718,6 +763,7 @@ const RESULTS_DATA = {
         title: { en: "A Thousand Splendid Suns", ar: "ألف شمس مشرقة" },
         author: { en: "Khaled Hosseini", ar: "خالد حسيني" },
         style: { en: "Historical Drama", ar: "دراما تاريخية" },
+                pages: 384,
         description: { en: "A sweeping story of two Afghan women whose lives intersect over decades of war.", ar: "قصة شاملة لامرأتين أفغانيتين تتقاطع حياتهما على مدى عقود من الحرب." },
         reason: { en: "A deeply moving window into the history and people of Afghanistan.", ar: "نافذة مؤثرة للغاية على تاريخ وشعب أفغانستان." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9781594489501-L.jpg",
@@ -727,6 +773,7 @@ const RESULTS_DATA = {
         title: { en: "The God of Small Things", ar: "إله الأشياء الصغيرة" },
         author: { en: "Arundhati Roy", ar: "أرونداتي روي" },
         style: { en: "Literary Fiction", ar: "خيال أدبي" },
+                pages: 340,
         description: { en: "A lush, tragic story of twins in Kerala, India, whose lives are destroyed by the 'Love Laws'.", ar: "قصة خصبة ومأساوية عن توأمين في كيرالا بالهند، دُمرت حياتهما بسبب 'قوانين الحب'." },
         reason: { en: "Transports you to India with its poetic prose and deep cultural commentary.", ar: "ينقلك إلى الهند بنثره الشعري وتعليقه الثقافي العميق." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780812979657-L.jpg",
@@ -736,6 +783,7 @@ const RESULTS_DATA = {
         title: { en: "The Granada Trilogy", ar: "ثلاثية غرناطة" },
         author: { en: "Radwa Ashour", ar: "رضوى عاشور" },
         style: { en: "Historical Epic", ar: "ملحمة تاريخية" },
+                pages: 512,
         description: { en: "A masterpiece chronicling the fall of Moorish Spain and its devastating impact on an Arab family.", ar: "تحفة فنية تؤرخ لسقوط إسبانيا المغاربية وتأثيرها المدمر على عائلة عربية." },
         reason: { en: "An incredible historical journey through a fascinating and tragic era.", ar: "رحلة تاريخية مذهلة عبر حقبة رائعة ومأساوية." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780815609111-L.jpg",
@@ -745,6 +793,7 @@ const RESULTS_DATA = {
         title: { en: "Azazeel", ar: "عزازيل" },
         author: { en: "Youssef Ziedan", ar: "يوسف زيدان" },
         style: { en: "Historical Fiction", ar: "خيال تاريخي" },
+                pages: 377,
         description: { en: "A monk's struggles with faith and temptation in 5th century Egypt and Syria.", ar: "صراعات راهب مع الإيمان والإغراء في مصر وسوريا في القرن الخامس." },
         reason: { en: "Rich historical setting that vividly transports you to the ancient Middle East.", ar: "بيئة تاريخية غنية تنقلك بوضوح إلى الشرق الأوسط القديم." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9789771442112-L.jpg",
@@ -754,6 +803,7 @@ const RESULTS_DATA = {
         title: { en: "In the Name of the Rose", ar: "اسم الوردة" },
         author: { en: "Umberto Eco", ar: "أومبرتو إيكو" },
         style: { en: "Historical Mystery", ar: "لغز تاريخي" },
+                pages: 536,
         description: { en: "A murder mystery set in an Italian monastery in 1327. Dense with medieval theology and history.", ar: "لغز جريمة قتل تدور أحداثه في دير إيطالي عام 1327. كثيف بعلم اللاهوت والتاريخ في العصور الوسطى." },
         reason: { en: "A brilliant time machine that thoroughly immerses you in the medieval world.", ar: "آلة زمنية رائعة تغمرك تماماً في عالم العصور الوسطى." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780156001311-L.jpg",
@@ -763,6 +813,7 @@ const RESULTS_DATA = {
         title: { en: "The Book Thief", ar: "سارقة الكتب" },
         author: { en: "Markus Zusak", ar: "ماركوس زوساك" },
         style: { en: "Historical Fiction", ar: "خيال تاريخي" },
+                pages: 584,
         description: { en: "The story of a young girl in Nazi Germany, narrated by Death himself.", ar: "قصة فتاة صغيرة في ألمانيا النازية، يرويها الموت نفسه." },
         reason: { en: "A uniquely told cultural narrative that captures the humanity within a dark historical period.", ar: "سرد ثقافي فريد يجسد الإنسانية داخل فترة تاريخية مظلمة." },
         coverUrl: "https://covers.openlibrary.org/b/isbn/9780375842207-L.jpg",
@@ -792,7 +843,8 @@ const BookCover = ({ coverUrl, title, color }: { coverUrl?: string, title: strin
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
           src={coverUrl} 
-          alt={title} 
+          alt={title}
+          crossOrigin="anonymous" 
           onError={() => setImageError(true)}
           className="w-full h-full object-contain object-center z-20 bg-white dark:bg-[#f8f9fa]"
         />
@@ -820,9 +872,16 @@ const BookCard = ({ book, color, language, t }: any) => {
             {book.title[language]}
           </h4>
           <p className={`text-sm italic mb-3 ${color.muted}`}>{t.by} {book.author[language]}</p>
-          <span className={`inline-block px-2.5 py-1 text-xs rounded-full bg-black/5 dark:bg-white/10 border ${color.border} ${color.text}`}>
-            {book.style[language]}
-          </span>
+          <div className="flex gap-2 items-center flex-wrap">
+            <span className={`inline-block px-2.5 py-1 text-xs rounded-full bg-black/5 dark:bg-white/10 border ${color.border} ${color.text}`}>
+              {book.style[language]}
+            </span>
+            {book.pages && (
+              <span className={`inline-block px-2.5 py-1 text-xs rounded-full bg-black/5 dark:bg-white/10 border ${color.border} ${color.text}`}>
+                📄 {book.pages} {language === 'en' ? 'pages' : 'صفحة'}
+              </span>
+            )}
+          </div>
         </div>
         
         <div className="flex-1 space-y-4 mb-4">
@@ -1010,16 +1069,46 @@ export default function Matchmaker() {
   };
 
   
+  
+  const shareInstagram = () => {
+    navigator.clipboard.writeText(getShareText());
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+    alert(language === "en" ? "Text copied! Open Instagram to paste it in your story or post." : "تم نسخ النص! افتح انستغرام للصقه في قصتك أو منشورك.");
+  };
+
+  const shareLinkedIn = () => {
+    window.open(`https://www.linkedin.com/feed/?shareActive=true&text=${encodeURIComponent(getShareText())}`, '_blank');
+  };
+
+
   const downloadResultImage = async () => {
     const element = document.getElementById('result-capture-area');
     if (!element) return;
     
     try {
+      // Add a temporary watermark
+    const watermark = document.createElement('div');
+    watermark.innerText = language === 'en' ? 'LitMatch' : 'أثر';
+    watermark.style.position = 'absolute';
+    watermark.style.bottom = '20px';
+    watermark.style.right = '30px';
+    watermark.style.fontSize = '24px';
+    watermark.style.fontWeight = 'bold';
+    watermark.style.color = theme.text.replace('text-[', '').replace(']', '');
+    watermark.style.opacity = '0.5';
+    watermark.style.fontFamily = 'serif';
+    element.appendChild(watermark);
+    
+    try {
       const canvas = await html2canvas(element, {
         scale: 2,
-        backgroundColor: null,
-        useCORS: true
+        backgroundColor: theme.bg.replace('bg-[', '').replace(']', ''),
+        useCORS: true,
+        allowTaint: false,
+        logging: false
       });
+      element.removeChild(watermark);
       
       const image = canvas.toDataURL('image/png');
       const link = document.createElement('a');
@@ -1027,6 +1116,7 @@ export default function Matchmaker() {
       link.download = `litmatch-result-${resultType}.png`;
       link.click();
     } catch (err) {
+      if (element.contains(watermark)) element.removeChild(watermark);
       console.error("Failed to generate image", err);
     }
   };
@@ -1098,7 +1188,7 @@ export default function Matchmaker() {
               <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-2 sm:mb-4 text-primary">
                 <Feather className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-foreground">
+              <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-foreground ${isRtl ? 'font-amiri' : ''}`}>
                 {t.heroTitle1} <span className="italic text-primary">{t.heroTitle2}</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg mx-auto font-sans leading-relaxed">
@@ -1237,33 +1327,40 @@ export default function Matchmaker() {
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-3 pt-4 sm:pt-6">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    onClick={copyToClipboard}
-                    className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
-                  >
-                    {copied ? <Check className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" /> : <Copy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />}
-                    {copied ? t.copied : t.copyLink}
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    onClick={shareTwitter}
-                    className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
-                  >
-                    <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                    {t.shareX}
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    onClick={shareWhatsApp}
-                    className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
-                  >
-                    <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.881-.733-1.476-1.639-1.649-1.937-.173-.298-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .104 5.383.101 11.936c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.551 0 11.944-5.383 11.947-11.936a11.86 11.86 0 0 0-3.534-8.455"/></svg>
-                    {t.shareWhatsApp}
-                  </Button>
+                  <DropdownMenu dir={isRtl ? "rtl" : "ltr"}>
+                    <DropdownMenuTrigger asChild>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
+                      >
+                        <Share2 className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                        {language === "en" ? "Share" : "مشاركة"}
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="center" className={`${theme.card} ${theme.border} ${theme.text}`}>
+                      <DropdownMenuItem onClick={copyToClipboard} className="cursor-pointer hover:opacity-80">
+                        {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
+                        {t.copyLink}
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={shareWhatsApp} className="cursor-pointer hover:opacity-80">
+                        <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.881-.733-1.476-1.639-1.649-1.937-.173-.298-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .104 5.383.101 11.936c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.551 0 11.944-5.383 11.947-11.936a11.86 11.86 0 0 0-3.534-8.455"/></svg>
+                        {t.shareWhatsApp}
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={shareTwitter} className="cursor-pointer hover:opacity-80">
+                        <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        {t.shareX}
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={shareInstagram} className="cursor-pointer hover:opacity-80">
+                        <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        {language === "en" ? "Instagram" : "انستغرام"}
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={shareLinkedIn} className="cursor-pointer hover:opacity-80">
+                        <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        {language === "en" ? "LinkedIn" : "لينكد إن"}
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
 
                   <Button 
                     variant="outline" 
