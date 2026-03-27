@@ -1128,7 +1128,7 @@ export default function Matchmaker() {
     }
   };
 
-  const currentQuestion = QUIZ_QUESTIONS[currentQuestionIndex];
+  const currentQuestion = QUIZ_QUESTIONS[currentQuestionIndex] || QUIZ_QUESTIONS[0];
   const isRtl = language === "ar";
   const theme = resultType ? THEMES[resultType as keyof typeof THEMES] : THEMES.A;
   
