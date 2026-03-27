@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+const fs = require('fs');
+
+const content = `import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,7 +18,7 @@ const UI_TEXT = {
     heroTitle2: "literary obsession.",
     heroSubtitle: "Take our curated personality assessment to reveal your unique reader archetype and uncover books tailored specifically to your soul.",
     startBtn: "Begin the Assessment",
-    questionOf: (curr: number, total: number) => `Question ${curr} of ${total}`,
+    questionOf: (curr: number, total: number) => \`Question \${curr} of \${total}\`,
     yourArchetype: "Your Reader Archetype",
     whyItFits: "Why it fits you:",
     descriptionText: "Description:",
@@ -46,7 +48,7 @@ const UI_TEXT = {
     heroTitle2: "شغفك الأدبي القادم.",
     heroSubtitle: "قم بإجراء تقييم الشخصية المنسق الخاص بنا للكشف عن نمط القارئ الفريد الخاص بك واكتشاف الكتب المصممة خصيصًا لروحك.",
     startBtn: "ابدأ التقييم",
-    questionOf: (curr: number, total: number) => `السؤال ${curr} من ${total}`,
+    questionOf: (curr: number, total: number) => \`السؤال \${curr} من \${total}\`,
     yourArchetype: "نمط القارئ الخاص بك",
     whyItFits: "لماذا يناسبك:",
     descriptionText: "الوصف:",
@@ -784,7 +786,7 @@ const BookCover = ({ coverUrl, title, color }: { coverUrl?: string, title: strin
   const [imageError, setImageError] = useState(false);
   
   return (
-    <div className={`h-[220px] shrink-0 relative flex items-center justify-center overflow-hidden ${color}`}>
+    <div className={\`h-[220px] shrink-0 relative flex items-center justify-center overflow-hidden \${color}\`}>
       {!imageError && coverUrl ? (
         <motion.img 
           initial={{ opacity: 0 }}
@@ -806,7 +808,7 @@ const BookCard = ({ book, color, language, t }: any) => {
   const [expanded, setExpanded] = useState(false);
   
   return (
-    <Card className={`flex flex-col h-full border shadow-lg overflow-hidden group transition-all duration-300 ${color.card} ${color.border}`}>
+    <Card className={\`flex flex-col h-full border shadow-lg overflow-hidden group transition-all duration-300 \${color.card} \${color.border}\`}>
       <BookCover 
         coverUrl={book.coverUrl}
         title={book.title[language]}
@@ -815,17 +817,17 @@ const BookCard = ({ book, color, language, t }: any) => {
 
       <CardContent className="p-5 flex flex-col flex-1">
         <div className="mb-4">
-          <h4 className={`text-lg font-bold font-serif leading-tight mb-1 ${color.text}`}>
+          <h4 className={\`text-lg font-bold font-serif leading-tight mb-1 \${color.text}\`}>
             {book.title[language]}
           </h4>
-          <p className={`text-sm italic mb-3 ${color.muted}`}>{t.by} {book.author[language]}</p>
-          <span className={`inline-block px-2.5 py-1 text-xs rounded-full bg-black/5 dark:bg-white/10 border ${color.border} ${color.text}`}>
+          <p className={\`text-sm italic mb-3 \${color.muted}\`}>{t.by} {book.author[language]}</p>
+          <span className={\`inline-block px-2.5 py-1 text-xs rounded-full bg-black/5 dark:bg-white/10 border \${color.border} \${color.text}\`}>
             {book.style[language]}
           </span>
         </div>
         
         <div className="flex-1 space-y-4 mb-4">
-          <p className={`text-sm leading-relaxed ${color.text} ${!expanded ? 'line-clamp-2' : ''}`}>
+          <p className={\`text-sm leading-relaxed \${color.text} \${!expanded ? 'line-clamp-2' : ''}\`}>
             {book.description[language]}
           </p>
           
@@ -835,10 +837,10 @@ const BookCard = ({ book, color, language, t }: any) => {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className={`pt-3 border-t overflow-hidden ${color.border}`}
+                className={\`pt-3 border-t overflow-hidden \${color.border}\`}
               >
-                <p className={`text-sm leading-relaxed ${color.text}`}>
-                  <span className={`font-semibold block mb-1 ${color.accent}`}>{t.whyItFits}</span>
+                <p className={\`text-sm leading-relaxed \${color.text}\`}>
+                  <span className={\`font-semibold block mb-1 \${color.accent}\`}>{t.whyItFits}</span>
                   {book.reason[language]}
                 </p>
               </motion.div>
@@ -846,17 +848,17 @@ const BookCard = ({ book, color, language, t }: any) => {
           </AnimatePresence>
         </div>
 
-        <div className={`mt-auto flex flex-col gap-3 pt-4 border-t ${color.border}`}>
+        <div className={\`mt-auto flex flex-col gap-3 pt-4 border-t \${color.border}\`}>
           <button 
             onClick={() => setExpanded(!expanded)}
-            className={`text-sm font-medium w-full text-center hover:opacity-80 transition-opacity flex justify-center items-center gap-1 ${color.accent}`}
+            className={\`text-sm font-medium w-full text-center hover:opacity-80 transition-opacity flex justify-center items-center gap-1 \${color.accent}\`}
           >
             {expanded ? t.readLess : t.readMore}
           </button>
           
           <Button 
             size="sm"
-            className={`w-full rounded-full transition-all duration-300 font-medium border ${color.buttonOutline} bg-transparent hover:text-white`}
+            className={\`w-full rounded-full transition-all duration-300 font-medium border \${color.buttonOutline} bg-transparent hover:text-white\`}
             asChild
           >
             <a href={book.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
@@ -990,8 +992,8 @@ export default function Matchmaker() {
     if (!resultType) return "";
     const archetype = RESULTS_DATA[resultType as keyof typeof RESULTS_DATA].title[language];
     return language === "en" 
-      ? `I got ${archetype} on LitMatch! Discover yours → litmatch.vercel.app`
-      : `طلعت شخصيتي الأدبية: ${archetype} في LitMatch! اكتشف شخصيتك ← litmatch.vercel.app`;
+      ? \`I got \${archetype} on LitMatch! Discover yours → litmatch.vercel.app\`
+      : \`طلعت شخصيتي الأدبية: \${archetype} في LitMatch! اكتشف شخصيتك ← litmatch.vercel.app\`;
   };
 
   const copyToClipboard = () => {
@@ -1001,11 +1003,11 @@ export default function Matchmaker() {
   };
 
   const shareTwitter = () => {
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(getShareText())}`, '_blank');
+    window.open(\`https://twitter.com/intent/tweet?text=\${encodeURIComponent(getShareText())}\`, '_blank');
   };
 
   const shareWhatsApp = () => {
-    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(getShareText())}`, '_blank');
+    window.open(\`https://api.whatsapp.com/send?text=\${encodeURIComponent(getShareText())}\`, '_blank');
   };
 
   const loadSavedResult = () => {
@@ -1033,7 +1035,7 @@ export default function Matchmaker() {
 
   return (
     <div 
-      className={`min-h-screen w-full flex flex-col relative overflow-hidden transition-colors duration-1000 ${step === 'results' ? theme.bg : 'bg-background'}`}
+      className={\`min-h-screen w-full flex flex-col relative overflow-hidden transition-colors duration-1000 \${step === 'results' ? theme.bg : 'bg-background'}\`}
       dir={isRtl ? "rtl" : "ltr"}
     >
       {step !== 'results' && (
@@ -1042,8 +1044,8 @@ export default function Matchmaker() {
         </div>
       )}
       
-      <header className={`w-full py-4 sm:py-6 px-6 sm:px-8 border-b backdrop-blur-sm sticky top-0 z-50 flex items-center justify-between transition-colors duration-1000 ${step === 'results' ? `${theme.bg} ${theme.border} border-opacity-30` : 'border-border/40 bg-background/80'}`}>
-        <div className={`flex items-center gap-3 ${step === 'results' ? theme.text : 'text-primary'}`}>
+      <header className={\`w-full py-4 sm:py-6 px-6 sm:px-8 border-b backdrop-blur-sm sticky top-0 z-50 flex items-center justify-between transition-colors duration-1000 \${step === 'results' ? \`\${theme.bg} \${theme.border} border-opacity-30\` : 'border-border/40 bg-background/80'}\`}>
+        <div className={\`flex items-center gap-3 \${step === 'results' ? theme.text : 'text-primary'}\`}>
           <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
           <h1 className="text-lg sm:text-xl font-bold font-serif tracking-wide">{t.title}</h1>
         </div>
@@ -1051,7 +1053,7 @@ export default function Matchmaker() {
           variant="outline" 
           size="sm" 
           onClick={toggleLanguage}
-          className={`rounded-full gap-2 transition-colors duration-1000 ${step === 'results' ? `${theme.buttonOutline}` : 'text-primary border-primary/20 hover:bg-primary/5'}`}
+          className={\`rounded-full gap-2 transition-colors duration-1000 \${step === 'results' ? \`\${theme.buttonOutline}\` : 'text-primary border-primary/20 hover:bg-primary/5'}\`}
         >
           <Languages className="w-4 h-4" />
           {language === "en" ? "عربي" : "English"}
@@ -1134,7 +1136,7 @@ export default function Matchmaker() {
                   {QUIZ_QUESTIONS.map((_, idx) => (
                     <div 
                       key={idx} 
-                      className={`h-1 sm:h-1.5 rounded-full transition-all duration-500 ${idx <= currentQuestionIndex ? "w-4 sm:w-8 bg-primary" : "w-2 sm:w-4 bg-primary/20"}`}
+                      className={\`h-1 sm:h-1.5 rounded-full transition-all duration-500 \${idx <= currentQuestionIndex ? "w-4 sm:w-8 bg-primary" : "w-2 sm:w-4 bg-primary/20"}\`}
                     />
                   ))}
                 </div>
@@ -1164,21 +1166,21 @@ export default function Matchmaker() {
                             <button
                               key={idx}
                               onClick={() => handleAnswer(option.value as AnswerValue)}
-                              className={`w-full text-start p-4 sm:p-6 rounded-xl border group transition-all duration-300 flex items-center gap-4 sm:gap-5 hover:-translate-y-0.5 
-                                ${isSelected 
+                              className={\`w-full text-start p-4 sm:p-6 rounded-xl border group transition-all duration-300 flex items-center gap-4 sm:gap-5 hover:-translate-y-0.5 
+                                \${isSelected 
                                   ? "border-primary bg-primary/5 shadow-sm" 
                                   : "border-border/50 hover:border-primary hover:bg-primary/5"
-                                }`}
+                                }\`}
                             >
-                              <div className={`w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full flex items-center justify-center font-bold font-serif text-sm sm:text-base transition-colors 
-                                ${isSelected 
+                              <div className={\`w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full flex items-center justify-center font-bold font-serif text-sm sm:text-base transition-colors 
+                                \${isSelected 
                                   ? "bg-primary text-primary-foreground" 
                                   : "bg-secondary/50 group-hover:bg-primary text-secondary-foreground group-hover:text-primary-foreground"
-                                }`}
+                                }\`}
                               >
                                 {option.value}
                               </div>
-                              <span className={`text-base sm:text-lg font-medium transition-colors ${isSelected ? "text-primary" : "group-hover:text-primary"}`}>
+                              <span className={\`text-base sm:text-lg font-medium transition-colors \${isSelected ? "text-primary" : "group-hover:text-primary"}\`}>
                                 {option[language]}
                               </span>
                             </button>
@@ -1203,11 +1205,11 @@ export default function Matchmaker() {
               className="max-w-7xl w-full py-6 sm:py-10"
             >
               <div className="text-center mb-10 sm:mb-16 space-y-4 sm:space-y-6">
-                <p className={`${theme.accent} font-medium tracking-widest uppercase text-xs sm:text-sm`}>{t.yourArchetype}</p>
-                <h2 className={`text-4xl sm:text-5xl md:text-7xl font-bold font-serif ${theme.text}`}>
+                <p className={\`\${theme.accent} font-medium tracking-widest uppercase text-xs sm:text-sm\`}>{t.yourArchetype}</p>
+                <h2 className={\`text-4xl sm:text-5xl md:text-7xl font-bold font-serif \${theme.text}\`}>
                   {RESULTS_DATA[resultType as keyof typeof RESULTS_DATA].title[language]}
                 </h2>
-                <p className={`text-lg sm:text-xl ${theme.muted} max-w-2xl mx-auto font-sans leading-relaxed px-4`}>
+                <p className={\`text-lg sm:text-xl \${theme.muted} max-w-2xl mx-auto font-sans leading-relaxed px-4\`}>
                   {RESULTS_DATA[resultType as keyof typeof RESULTS_DATA].description[language]}
                 </p>
 
@@ -1216,7 +1218,7 @@ export default function Matchmaker() {
                     variant="outline" 
                     size="sm" 
                     onClick={copyToClipboard}
-                    className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
+                    className={\`rounded-full \${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4\`}
                   >
                     {copied ? <Check className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" /> : <Copy className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />}
                     {copied ? t.copied : t.copyLink}
@@ -1225,7 +1227,7 @@ export default function Matchmaker() {
                     variant="outline" 
                     size="sm" 
                     onClick={shareTwitter}
-                    className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
+                    className={\`rounded-full \${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4\`}
                   >
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     {t.shareX}
@@ -1234,7 +1236,7 @@ export default function Matchmaker() {
                     variant="outline" 
                     size="sm" 
                     onClick={shareWhatsApp}
-                    className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
+                    className={\`rounded-full \${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4\`}
                   >
                     <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.881-.733-1.476-1.639-1.649-1.937-.173-.298-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .104 5.383.101 11.936c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.551 0 11.944-5.383 11.947-11.936a11.86 11.86 0 0 0-3.534-8.455"/></svg>
                     {t.shareWhatsApp}
@@ -1245,14 +1247,14 @@ export default function Matchmaker() {
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className={`mt-4 inline-flex flex-col sm:flex-row items-center gap-3 p-4 ${theme.card} rounded-2xl border ${theme.border} text-sm max-w-md mx-auto shadow-md`}
+                    className={\`mt-4 inline-flex flex-col sm:flex-row items-center gap-3 p-4 \${theme.card} rounded-2xl border \${theme.border} text-sm max-w-md mx-auto shadow-md\`}
                   >
-                    <span className={`font-medium ${theme.text}`}>{t.saveResult}</span>
+                    <span className={\`font-medium \${theme.text}\`}>{t.saveResult}</span>
                     <div className="flex gap-2">
-                      <Button size="sm" onClick={saveToLocalStorage} className={`rounded-full h-8 text-xs ${theme.button}`}>
+                      <Button size="sm" onClick={saveToLocalStorage} className={\`rounded-full h-8 text-xs \${theme.button}\`}>
                         {t.yesSave}
                       </Button>
-                      <Button variant="ghost" size="sm" onClick={() => setShowSavePrompt(false)} className={`rounded-full h-8 text-xs ${theme.muted} hover:${theme.text}`}>
+                      <Button variant="ghost" size="sm" onClick={() => setShowSavePrompt(false)} className={\`rounded-full h-8 text-xs \${theme.muted} hover:\${theme.text}\`}>
                         {t.noThanks}
                       </Button>
                     </div>
@@ -1280,7 +1282,7 @@ export default function Matchmaker() {
               <div className="flex justify-center mb-10 sm:mb-16">
                 <Button 
                   onClick={handleShuffle}
-                  className={`rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base gap-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 ${theme.button}`}
+                  className={\`rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base gap-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 \${theme.button}\`}
                 >
                   <Shuffle className="w-4 h-4 sm:w-5 sm:h-5" />
                   {t.shuffleBooks}
@@ -1291,7 +1293,7 @@ export default function Matchmaker() {
                 <Button 
                   variant="outline" 
                   onClick={goBackToQuiz}
-                  className={`rounded-full px-5 sm:px-6 py-5 sm:py-6 text-sm sm:text-base gap-2 w-full sm:w-auto ${theme.buttonOutline} bg-transparent`}
+                  className={\`rounded-full px-5 sm:px-6 py-5 sm:py-6 text-sm sm:text-base gap-2 w-full sm:w-auto \${theme.buttonOutline} bg-transparent\`}
                 >
                   <RefreshCcw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   {t.goBack}
@@ -1299,7 +1301,7 @@ export default function Matchmaker() {
                 <Button 
                   variant="ghost" 
                   onClick={resetQuizToHome}
-                  className={`rounded-full px-5 sm:px-6 py-5 sm:py-6 text-sm sm:text-base gap-2 w-full sm:w-auto ${theme.muted} hover:${theme.text} hover:bg-black/5 dark:hover:bg-white/5`}
+                  className={\`rounded-full px-5 sm:px-6 py-5 sm:py-6 text-sm sm:text-base gap-2 w-full sm:w-auto \${theme.muted} hover:\${theme.text} hover:bg-black/5 dark:hover:bg-white/5\`}
                 >
                   {t.retakeQuiz}
                 </Button>
@@ -1309,9 +1311,12 @@ export default function Matchmaker() {
         </AnimatePresence>
       </main>
       
-      <footer className={`w-full py-4 sm:py-6 text-center text-xs sm:text-sm transition-colors duration-1000 ${step === 'results' ? theme.muted : 'text-muted-foreground'}`}>
+      <footer className={\`w-full py-4 sm:py-6 text-center text-xs sm:text-sm transition-colors duration-1000 \${step === 'results' ? theme.muted : 'text-muted-foreground'}\`}>
         {t.footerMadeWith}
       </footer>
     </div>
   );
 }
+`
+
+fs.writeFileSync('client/src/pages/Matchmaker.tsx', content);

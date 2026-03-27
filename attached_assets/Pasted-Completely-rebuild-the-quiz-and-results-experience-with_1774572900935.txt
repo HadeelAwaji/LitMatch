@@ -1,0 +1,208 @@
+Completely rebuild the quiz and results experience with the following changes. Do not change the landing page design, fonts, or color palette — only update what is specified below:
+1. Replace All Quiz Questions
+Replace the existing questions entirely with these 10 new questions, each with 5 options. Update the progress bar to show "Question X of 10". Each option maps to a personality as follows: A = Deep Thinker, B = Escapist, C = Motivational Seeker, D = Romantic Dreamer, E = Cultural Explorer.
+Q1: Why do you pick up a new book?
+
+A) I look for ideas that challenge my perspective and change how I see the world
+B) I want to completely disappear into another world and forget my life
+C) I'm looking for inspiration that pushes me to take action in my life
+D) I want to feel warmth, love, and deep emotional connection
+E) I want to discover cultures and historical eras I've never experienced
+
+Q2: What makes a novel unforgettable?
+
+A) A deeply complex character wrestling with real existential questions
+B) A fantasy world built with such detail you believe it's real
+C) A true success story that makes you believe in yourself
+D) A love story that makes you cry or smile against your will
+E) A vivid depiction of a place or culture that makes you feel you've visited it
+
+Q3: How do you prefer the writing style?
+
+A) Deep and dense — requires focus and re-reading
+B) Narrative and gripping — you can't stop reading
+C) Direct and clear — you leave with practical steps
+D) Poetic and sensitive — it touches your emotions
+E) Rich in cultural and historical details
+
+Q4: What kind of protagonist do you connect with most?
+
+A) Someone who questions the meaning of life and rejects easy answers
+B) An ordinary person thrown into a strange world who must adapt
+C) An ambitious person who fails, rises, and achieves their goals
+D) Someone who loves deeply and sacrifices for those they love
+E) Someone who moves between cultures and searches for their identity
+
+Q5: How do you feel after finishing a book that truly affected you?
+
+A) I need days to think and absorb what I read
+B) I feel empty because the world I lived in is gone
+C) I'm excited to immediately apply what I learned
+D) I feel warmth and gratitude and maybe reread some passages
+E) I search for more books about the same culture or era
+
+Q6: What do you talk about with friends after reading a book?
+
+A) The big ideas and questions it raised
+B) The exciting events and twists you didn't see coming
+C) The practical lessons you'll use to change your life
+D) The characters and their relationships and emotions
+E) The places, history, and culture you discovered
+
+Q7: What do you completely avoid in books?
+
+A) Shallow books that leave no real impact
+B) Slow books with no exciting events
+C) Theoretical books with no practical application
+D) Cold books that don't move your emotions
+E) Books limited to one culture with no diversity
+
+Q8: If you could gift a book to a friend, what would you choose?
+
+A) A heavy intellectual novel that changes how they think
+B) A sci-fi or fantasy novel that takes them to another world
+C) A self-development book that genuinely changed your life
+D) A romantic novel that makes them feel warmth
+E) A book about the history or culture of a place they dream of visiting
+
+Q9: What kind of ending do you prefer?
+
+A) An open ending that leaves you with more questions than answers
+B) An unexpected shocking ending that stays with you
+C) A positive ending that fills you with hope and motivation
+D) An emotional ending that touches your heart
+E) A historical or realistic ending that makes you feel you lived through an era
+
+Q10: How would you describe your relationship with reading in one sentence?
+
+A) Reading makes me understand the world and people more deeply
+B) Reading is my way of escaping and recharging
+C) Reading is a tool I use to become a better version of myself
+D) Reading makes me feel I am not alone
+E) Reading is traveling without a ticket to different places and times
+
+
+2. Replace Personalities — 5 Only
+Remove all existing personalities and replace with exactly these 5. Each personality has its own themed world that appears on the results page:
+A — The Deep Thinker (المفكر العميق)
+Description: You seek books that challenge your perspective, feature complex prose, and linger in your mind long after you close the cover.
+World theme: Dark academia — deep browns, cream, candlelight gold. Feels like an old library at midnight.
+B — The Escapist (الهارب من الواقع)
+Description: You read to disappear. You want worlds so vivid and complete that reality feels like the interruption.
+World theme: Midnight fantasy — deep navy, purple, silver stars. Feels like a magical night sky.
+C — The Motivational Seeker (الباحث عن التحفيز)
+Description: You read with purpose. Every book is a tool, every page a step closer to the best version of yourself.
+World theme: Golden energy — warm orange, bright gold, clean white. Feels like sunrise and momentum.
+D — The Romantic Dreamer (الحالم الرومانسي)
+Description: You read to feel. You want love, warmth, and stories that remind you that human connection is everything.
+World theme: Soft romance — blush pink, warm cream, soft gold. Feels like a garden in bloom.
+E — The Cultural Explorer (المستكشف الثقافي)
+Description: You read to travel without moving. Every book is a passport to a different time, place, and way of seeing the world.
+World theme: Earthy wanderer — olive green, warm terracotta, aged brown. Feels like an old map and open road.
+Each world theme should change the results page background, card colors, and accent colors to match the personality. Use smooth fade-in transition when the results page appears. The navbar and fonts stay the same.
+
+3. Replace All Book Recommendations — 10 Books Per Personality
+Replace all existing books with the following. Each book must include: hardcoded high quality cover image URL (Google Books volume ID format: https://books.google.com/books/content?id=VOLUME_ID&printsec=frontcover&img=1&zoom=3), title, author, writing style label, expanded description (3-4 sentences), why it fits you (2 sentences connected to the personality), and a read/borrow/preview link. Show 5 randomly selected books on load. Add a Shuffle button that swaps to a different 5 with a smooth fade animation.
+The Deep Thinker — 10 books:
+
+1984 — George Orwell
+The Secret History — Donna Tartt
+Crime and Punishment — Dostoevsky
+The Stranger — Albert Camus
+Steppenwolf — Hermann Hesse
+The Master and Margarita — Bulgakov
+موسم الهجرة إلى الشمال — الطيب صالح
+أولاد حارتنا — نجيب محفوظ
+النبي — جبران خليل جبران
+رسائل من تحت الأرض — دوستويفسكي
+
+The Escapist — 10 books:
+
+Dune — Frank Herbert
+The Name of the Wind — Patrick Rothfuss
+The Night Circus — Erin Morgenstern
+The Hobbit — J.R.R. Tolkien
+Mistborn — Brandon Sanderson
+The Hitchhiker's Guide to the Galaxy — Douglas Adams
+ألف ليلة وليلة
+يوتوبيا — أحمد خالد توفيق
+The Chronicles of Narnia — C.S. Lewis
+Harry Potter and the Sorcerer's Stone — J.K. Rowling
+
+The Motivational Seeker — 10 books:
+
+Atomic Habits — James Clear
+Man's Search for Meaning — Viktor Frankl
+Meditations — Marcus Aurelius
+The Alchemist — Paulo Coelho
+Start With Why — Simon Sinek
+Can't Hurt Me — David Goggins
+Zero to One — Peter Thiel
+تجديد حياتك — محمد الغزالي
+لأنك الله — علي بن جابر الفيفي
+The 7 Habits of Highly Effective People — Stephen Covey
+
+The Romantic Dreamer — 10 books:
+
+Pride and Prejudice — Jane Austen
+The Seven Husbands of Evelyn Hugo — Taylor Jenkins Reid
+Jane Eyre — Charlotte Brontë
+Normal People — Sally Rooney
+The Notebook — Nicholas Sparks
+Anna Karenina — Leo Tolstoy
+أسود يليق بك — أحلام مستغانمي
+في قلبها أنثى عبرية — خولة حمدي
+The Love Hypothesis — Ali Hazelwood
+A Little Life — Hanya Yanagihara
+
+The Cultural Explorer — 10 books:
+
+The Kite Runner — Khaled Hosseini
+Pachinko — Min Jin Lee
+Things Fall Apart — Chinua Achebe
+Americanah — Chimamanda Ngozi Adichie
+A Thousand Splendid Suns — Khaled Hosseini
+The God of Small Things — Arundhati Roy
+ثلاثية غرناطة — رضوى عاشور
+عزازيل — يوسف زيدان
+In the Name of the Rose — Umberto Eco
+The Book Thief — Markus Zusak
+
+
+4. Expandable Book Cards
+Each book card must have a fixed height and clean layout. Show only the cover image, title, author, writing style label, and one sentence of the description by default. Add an "Read more ▼" button that expands the card smoothly to show the full description and "why it fits you" section. All cards in the same row must stay the same height whether expanded or not.
+
+5. Share Result Button
+Add a Share Result button below the personality description and above the book cards. Include three options:
+
+Copy Link — copies "I got [personality] on LitMatch! Discover yours → litmatch.vercel.app" to clipboard with a "Copied!" confirmation
+Share on X/Twitter — pre-filled tweet with the same text
+Share on WhatsApp — pre-filled WhatsApp message
+
+In Arabic mode the text should be: "طلعت شخصيتي الأدبية: [الشخصية] في LitMatch! اكتشف شخصيتك ← litmatch.vercel.app"
+
+6. Save Result with User Choice
+After the quiz is complete, show a small prompt asking: "Would you like to save your result?" with Yes and No buttons. If Yes, save to localStorage. When the user returns to the landing page show a subtle banner: "Welcome back! Your last result was [personality]" with a "See my result again" button. In Arabic mode show: "مرحباً بعودتك! آخر نتيجة لك كانت [الشخصية]" مع زر "شوف نتيجتك". If No or no saved result, show nothing.
+
+7. Footer
+Add a small centered footer at the bottom of every page:
+
+English: "Made with ❤️ by LitMatch Team"
+Arabic: "صُنع بـ ❤️ من فريق LitMatch"
+Small muted font, switches with the language toggle.
+
+
+8. Fully Responsive Design
+Make every page fully responsive for mobile, tablet, and desktop. On mobile: book cards should stack vertically one per row. Quiz cards should be full width. Text sizes should scale down appropriately. Buttons should be full width on small screens. The navbar should remain clean and readable on all screen sizes.
+
+9. Book Cover Image Quality
+For every book, find the correct Google Books volume ID and hardcode the cover URL in this format: https://books.google.com/books/content?id=VOLUME_ID&printsec=frontcover&img=1&zoom=3. For Arabic books use Open Library large size: https://covers.openlibrary.org/b/isbn/ISBN-L.jpg. Never fetch covers dynamically — hardcode every URL. Verify each URL loads the correct cover before using it. If no verified cover exists use a solid color placeholder that matches the personality world theme.
+
+Do not change:
+
+The landing page design
+The existing font choices
+The translation toggle functionality
+The back button behavior during the quiz
+The progress bar behavior
+The shuffle button behavior
