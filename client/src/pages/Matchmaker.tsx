@@ -76,15 +76,15 @@ const UI_TEXT = {
 
 const THEMES = {
   A: {
-    bg: "bg-[#fdf6e3]",
-    card: "bg-white",
-    text: "text-[#8b5a2b]",
-    muted: "text-[#a07b5a]",
+    bg: "bg-[#1a1008]",
+    card: "bg-[#2c1e14]",
+    text: "text-[#fefae0]",
+    muted: "text-[#d4cbb3]",
     accent: "text-[#d4af37]",
     border: "border-[#5c4d3c]",
-    button: "bg-[#8b5a2b] text-white hover:bg-[#a06b38]",
-    buttonOutline: "border-[#8b5a2b] text-[#8b5a2b] hover:bg-[#8b5a2b] hover:text-white",
-    placeholder: "bg-[#f5deb3]"
+    button: "bg-[#d4af37] text-[#1a1008] hover:bg-[#b5952f]",
+    buttonOutline: "border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-[#1a1008]",
+    placeholder: "bg-[#2c1e14]"
   },
   B: {
     bg: "bg-[#0b0c10]",
@@ -934,28 +934,40 @@ const BookCard = ({ book, color, language, t }: any) => {
 
 
 
+
 const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
   return (
-    <div id="personality-bg" className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden transition-opacity duration-1500 opacity-100">
+    <div id="personality-bg" className="fixed inset-0 pointer-events-none z-[0] overflow-hidden transition-opacity duration-1500 opacity-100">
       {type === 'A' && (
-        <div className="absolute inset-0 bg-[#fdf6e3]">
+        <div className="absolute inset-0 bg-[#1a1008]">
           {/* Faint grid lines for aged manuscript */}
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(transparent 99%, #ffffff 1%)', backgroundSize: '100% 20px' }} />
           
-          {/* Candlelight glow */}
+          {/* Amber candlelight glow */}
           <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255, 191, 0, 0.05) 0%, transparent 70%)', transform: 'translate(-30%, -30%)' }} />
           <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255, 191, 0, 0.05) 0%, transparent 70%)', transform: 'translate(30%, 30%)' }} />
 
           <svg className="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
             {/* Center: Large Open Book */}
-            <g opacity="0.12" stroke="#8b5a2b" fill="none" strokeWidth="2" transform="translate(50%, 50%) scale(2) translate(-50, -50)">
+            <g opacity="0.08" stroke="#d4af37" fill="none" strokeWidth="2" transform="translate(50%, 50%) scale(2.5) translate(-50, -50)">
               <path d="M10 80 Q 40 70 50 80 L 50 130 Q 40 120 10 130 Z" />
               <path d="M50 80 Q 60 70 90 80 L 90 130 Q 60 120 50 130 Z" />
               <line x1="50" y1="80" x2="50" y2="130" />
             </g>
+
+            {/* Scattered ink drops */}
+            <g opacity="0.2" fill="#111">
+              <circle cx="20%" cy="30%" r="3" />
+              <circle cx="22%" cy="32%" r="1" />
+              <circle cx="18%" cy="28%" r="1.5" />
+              
+              <circle cx="75%" cy="80%" r="4" />
+              <circle cx="77%" cy="78%" r="1" />
+              <circle cx="72%" cy="82%" r="2" />
+            </g>
             
             {/* Bottom-Right: Feather Quill */}
-            <g opacity="0.20" stroke="#8b5a2b" fill="none" transform="translate(calc(100% - 150px), calc(100% - 150px)) scale(1.5)">
+            <g opacity="0.15" stroke="#d4af37" fill="none" transform="translate(calc(100% - 150px), calc(100% - 150px)) scale(1.5)">
               <path d="M 20 80 Q 50 50 90 10" strokeWidth="3"/>
               <path d="M 20 80 Q 40 60 90 10" strokeWidth="1"/>
               <path d="M 20 80 Q 60 70 90 10" strokeWidth="1"/>
@@ -1027,10 +1039,10 @@ const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
               <line x1="50%" y1="100%" x2="90%" y2="0" />
             </g>
 
-            {/* Pattern: Triangles */}
-            <g opacity="0.05" fill="#ff8c00">
-              {[...Array(30)].map((_, i) => (
-                <polygon key={i} points="-5,5 5,5 0,-5" transform={`translate(${Math.random() * 100}%, ${Math.random() * 100}%) `} />
+            {/* Pattern: Upward Arrows */}
+            <g opacity="0.05" stroke="#ff8c00" strokeWidth="2" fill="none">
+              {[...Array(40)].map((_, i) => (
+                <path key={i} d="M -5 5 L 0 0 L 5 5 M 0 0 L 0 10" transform={`translate(${Math.random() * 100}%, ${Math.random() * 100}%) scale(0.8)`} />
               ))}
             </g>
 
@@ -1074,8 +1086,8 @@ const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
 
             {/* Floating Petals */}
             <g opacity="0.08" fill="#d6336c">
-              {[...Array(12)].map((_, i) => (
-                <path key={i} d="M0,0 Q10,-5 20,0 Q10,5 0,0" transform={`translate(${20 + Math.random() * 60}%, ${20 + Math.random() * 60}%) rotate(${Math.random() * 360}) scale(${1 + Math.random()})`} />
+              {[...Array(15)].map((_, i) => (
+                <path key={i} d="M0,0 Q10,-5 20,0 Q10,5 0,0" transform={`translate(${10 + Math.random() * 80}%, ${10 + Math.random() * 80}%) rotate(${Math.random() * 360}) scale(${1 + Math.random()})`} />
               ))}
             </g>
 
@@ -1091,8 +1103,19 @@ const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
       {type === 'E' && (
         <div className="absolute inset-0 bg-[#f5efe0]" style={{ boxShadow: 'inset 0 0 100px rgba(101, 67, 33, 0.4)' }}>
           <svg className="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
+            
+            {/* Latitude/Longitude grid */}
+            <g opacity="0.05" stroke="#8b4513" strokeWidth="1" fill="none">
+              {[...Array(10)].map((_, i) => (
+                <line key={`h-${i}`} x1="0" y1={`${i * 10}%`} x2="100%" y2={`${i * 10}%`} />
+              ))}
+              {[...Array(10)].map((_, i) => (
+                <line key={`v-${i}`} x1={`${i * 10}%`} y1="0" x2={`${i * 10}%`} y2="100%" />
+              ))}
+            </g>
+            
             {/* Center: Compass Rose */}
-            <g opacity="0.08" fill="#8b4513" transform="translate(50%, 50%) scale(2)">
+            <g opacity="0.08" fill="#8b4513" transform="translate(50%, 50%) scale(2.5)">
               <polygon points="0,-60 15,-15 60,0 15,15 0,60 -15,15 -60,0 -15,-15" />
               <polygon points="0,-60 0,0 -15,-15" fill="#5c2e0e" />
               <polygon points="60,0 0,0 15,-15" fill="#5c2e0e" />
