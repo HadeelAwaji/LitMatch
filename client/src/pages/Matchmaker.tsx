@@ -76,15 +76,15 @@ const UI_TEXT = {
 
 const THEMES = {
   A: {
-    bg: "bg-[#2c241b]",
-    card: "bg-[#3e3427]",
-    text: "text-[#fefae0]",
-    muted: "text-[#d4cbb3]",
+    bg: "bg-[#fdf6e3]",
+    card: "bg-white",
+    text: "text-[#8b5a2b]",
+    muted: "text-[#a07b5a]",
     accent: "text-[#d4af37]",
     border: "border-[#5c4d3c]",
-    button: "bg-[#d4af37] text-[#2c241b] hover:bg-[#b5952f]",
-    buttonOutline: "border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-[#2c241b]",
-    placeholder: "bg-[#4a3f32]"
+    button: "bg-[#8b5a2b] text-white hover:bg-[#a06b38]",
+    buttonOutline: "border-[#8b5a2b] text-[#8b5a2b] hover:bg-[#8b5a2b] hover:text-white",
+    placeholder: "bg-[#f5deb3]"
   },
   B: {
     bg: "bg-[#0b0c10]",
