@@ -40,7 +40,7 @@ const UI_TEXT = {
     noThanks: "No, thanks",
     welcomeBack: "Welcome back! Your last result was",
     seeResultAgain: "See my result again",
-    footerMadeWith: "Made with ❤️ by LitMatch Team"
+    footerMadeWith: "Built with ❤️ by Hadeel Awaji"
   },
   ar: {
     title: "أثر",
@@ -70,7 +70,7 @@ const UI_TEXT = {
     noThanks: "لا، شكراً",
     welcomeBack: "مرحباً بعودتك! آخر نتيجة لك كانت",
     seeResultAgain: "شوف نتيجتك",
-    footerMadeWith: "صُنع بـ ❤️ من فريق أثر"
+    footerMadeWith: "Built with ❤️ by Hadeel Awaji"
   }
 };
 
@@ -136,8 +136,8 @@ const QUIZ_QUESTIONS = [
   {
     id: "q1",
     question: {
-      en: "Why do you pick up a new book?",
-      ar: "لماذا تلتقط كتابًا جديدًا؟"
+      en: "You are the Cultural Explorer. Your bookshelf is a passport to the globe. You crave stories that immerse you in unfamiliar cultures, historical eras, and diverse perspectives. Translated fiction, historical novels, and rich memoirs are your treasures. Through reading, you travel to places you've never been, taste foods you've never eaten, and understand lives vastly different from your own. Your curiosity knows no borders.",
+      ar: "أنت المستكشف الثقافي. مكتبتك هي جواز سفرك حول العالم. أنت تتوق للقصص التي تغمرك في ثقافات غير مألوفة، وعصور تاريخية، ووجهات نظر متنوعة. الأدب المترجم، والروايات التاريخية، والمذكرات الغنية هي كنوزك. من خلال القراءة، تسافر إلى أماكن لم تزرها من قبل، وتتذوق أطعمة لم تأكلها، وتفهم حيوات تختلف اختلافاً شاسعاً عن حياتك. فضولك لا يعرف حدوداً."
     },
     options: [
       { value: "A", en: "I look for ideas that challenge my perspective and change how I see the world", ar: "أبحث عن أفكار تتحدى منظوري وتغير نظرتي للعالم" },
@@ -320,7 +320,7 @@ const RESULTS_DATA = {
                 pages: 123,
         description: { en: "An exploration of existentialism and the absurdity of life through a detached narrator. A short but impactful read.", ar: "استكشاف للوجودية وعبثية الحياة من خلال راوٍ منفصل. قراءة قصيرة لكنها مؤثرة." },
         reason: { en: "Forces you to confront the inherent meaninglessness of societal norms. It will completely alter your perspective.", ar: "يجبرك على مواجهة انعدام المعنى المتأصل للأعراف المجتمعية. سيغير منظورك تماماً." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780679420262-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/81A+XyBv8aL.jpg",
         link: "https://archive.org/search?query=The+Stranger+Albert+Camus"
       },
       {
@@ -399,7 +399,7 @@ const RESULTS_DATA = {
                 pages: 896,
         description: { en: "An epic science fiction masterpiece set on a desert planet. It weaves politics, religion, and ecology into a massive world.", ar: "تحفة خيال علمي ملحمية تدور أحداثها على كوكب صحراوي. تنسج السياسة والدين والبيئة في عالم هائل." },
         reason: { en: "Unmatched world-building that completely absorbs you. You will easily lose yourself in Arrakis.", ar: "بناء عالم لا مثيل له يمتصك بالكامل. ستفقد نفسك بسهولة في أراكيس." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780441172719-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/81ym3QUd3KL.jpg",
         link: "https://archive.org/search?query=Dune+Frank+Herbert"
       },
       {
@@ -409,7 +409,7 @@ const RESULTS_DATA = {
                 pages: 662,
         description: { en: "The legendary tale of a gifted young man who grows to be a notorious wizard. A deeply immersive magical journey.", ar: "الحكاية الأسطورية لشاب موهوب يكبر ليصبح ساحراً سيئ السمعة. رحلة سحرية غامرة بعمق." },
         reason: { en: "Immersive storytelling with a beautifully crafted magic system. A perfect escape from reality.", ar: "سرد قصصي غامر مع نظام سحري مصمم بشكل جميل. ملاذ مثالي من الواقع." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/91b8oNwaV1L.jpg",
         link: "https://archive.org/search?query=The+Name+of+the+Wind"
       },
       {
@@ -647,7 +647,7 @@ const RESULTS_DATA = {
                 pages: 273,
         description: { en: "A raw and complex story about two people who constantly orbit each other's lives.", ar: "قصة خام ومعقدة عن شخصين يدوران باستمرار في حياة بعضهما البعض." },
         reason: { en: "An intense exploration of modern love and human connection. It feels incredibly real and vulnerable.", ar: "استكشاف مكثف للحب الحديث والتواصل البشري. يبدو حقيقياً وضعيفاً بشكل لا يصدق." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9781984822178-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/817tHNcyAgL.jpg",
         link: "https://archive.org/search?query=Normal+People+Sally+Rooney"
       },
       {
@@ -726,7 +726,7 @@ const RESULTS_DATA = {
                 pages: 371,
         description: { en: "A heartbreaking story of friendship and redemption set against the turbulent history of Afghanistan.", ar: "قصة مفجعة عن الصداقة والفداء تدور أحداثها على خلفية التاريخ المضطرب لأفغانستان." },
         reason: { en: "Deeply immerses you in a rich culture and poignant history. It's a powerful emotional journey.", ar: "يغمرك بعمق في ثقافة غنية وتاريخ مؤثر. إنها رحلة عاطفية قوية." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9781594631931-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/81aMh9AXYmL.jpg",
         link: "https://archive.org/search?query=The+Kite+Runner"
       },
       {
@@ -736,7 +736,7 @@ const RESULTS_DATA = {
                 pages: 496,
         description: { en: "A sweeping saga of a Korean family living in Japan through generations, facing exile and discrimination.", ar: "ملحمة شاملة لعائلة كورية تعيش في اليابان عبر الأجيال، وتواجه النفي والتمييز." },
         reason: { en: "A beautifully detailed exploration of immigrant identities and resilience across cultures.", ar: "استكشاف مفصل بشكل جميل لهويات المهاجرين والمرونة عبر الثقافات." },
-        coverUrl: "https://books.google.com/books/content?id=JsFMvgAACAAJ&printsec=frontcover&img=1&zoom=3",
+        coverUrl: "https://m.media-amazon.com/images/I/81E1528T1eL.jpg",
         link: "https://archive.org/search?query=Pachinko"
       },
       {
@@ -756,7 +756,7 @@ const RESULTS_DATA = {
                 pages: 588,
         description: { en: "A Nigerian woman moves to America and must navigate issues of race, identity, and love.", ar: "امرأة نيجيرية تنتقل إلى أمريكا ويجب عليها التنقل في قضايا العرق والهوية والحب." },
         reason: { en: "A brilliant dissection of global cultures and what it means to be an immigrant.", ar: "تشريح رائع للثقافات العالمية وما يعنيه أن تكون مهاجراً." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780307455925-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/81Q1I+hH-OL.jpg",
         link: "https://archive.org/search?query=Americanah"
       },
       {
@@ -816,7 +816,7 @@ const RESULTS_DATA = {
                 pages: 584,
         description: { en: "The story of a young girl in Nazi Germany, narrated by Death himself.", ar: "قصة فتاة صغيرة في ألمانيا النازية، يرويها الموت نفسه." },
         reason: { en: "A uniquely told cultural narrative that captures the humanity within a dark historical period.", ar: "سرد ثقافي فريد يجسد الإنسانية داخل فترة تاريخية مظلمة." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780375842207-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/81eB+7+CkUL.jpg",
         link: "https://archive.org/search?query=The+Book+Thief"
       }
     ]
@@ -938,7 +938,7 @@ const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
   return (
     <div id="personality-bg" className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden transition-opacity duration-1500 opacity-100">
       {type === 'A' && (
-        <div className="absolute inset-0 bg-[#1a1008]">
+        <div className="absolute inset-0 bg-[#fdf6e3]">
           {/* Faint grid lines for aged manuscript */}
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(transparent 99%, #ffffff 1%)', backgroundSize: '100% 20px' }} />
           
@@ -948,14 +948,14 @@ const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
 
           <svg className="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
             {/* Center: Large Open Book */}
-            <g opacity="0.08" stroke="#d4af37" fill="none" strokeWidth="2" transform="translate(50%, 50%) scale(2) translate(-50, -50)">
+            <g opacity="0.12" stroke="#8b5a2b" fill="none" strokeWidth="2" transform="translate(50%, 50%) scale(2) translate(-50, -50)">
               <path d="M10 80 Q 40 70 50 80 L 50 130 Q 40 120 10 130 Z" />
               <path d="M50 80 Q 60 70 90 80 L 90 130 Q 60 120 50 130 Z" />
               <line x1="50" y1="80" x2="50" y2="130" />
             </g>
             
             {/* Bottom-Right: Feather Quill */}
-            <g opacity="0.15" stroke="#d4af37" fill="none" transform="translate(calc(100% - 150px), calc(100% - 150px)) scale(1.5)">
+            <g opacity="0.20" stroke="#8b5a2b" fill="none" transform="translate(calc(100% - 150px), calc(100% - 150px)) scale(1.5)">
               <path d="M 20 80 Q 50 50 90 10" strokeWidth="3"/>
               <path d="M 20 80 Q 40 60 90 10" strokeWidth="1"/>
               <path d="M 20 80 Q 60 70 90 10" strokeWidth="1"/>
