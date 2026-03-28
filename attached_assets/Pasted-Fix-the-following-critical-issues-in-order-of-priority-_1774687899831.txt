@@ -1,0 +1,35 @@
+Fix the following critical issues in order of priority:
+1. Fix Broken Results Page — URGENT
+The results page is completely broken and showing empty content. Revert to the last working state and then carefully re-apply fixes. All of the following must be visible and working on the results page:
+
+Personality name and tagline
+Deep personality description 2x2 grid
+Share and Download buttons
+Save result prompt
+Book cards with covers, titles, authors, page count, descriptions
+Shuffle button
+Footer navigation links
+
+2. Fix Text Colors for Dark Themes
+For Deep Thinker and Escapist personalities which have dark backgrounds, ALL text must be white or very light and fully readable. For all other personalities keep original dark text colors. Apply this conditionally — do not change light theme text colors.
+3. Fix Cultural Explorer Text on Quiz Page
+The Cultural Explorer personality description is incorrectly appearing on Question 1 of the quiz. Personality descriptions must ONLY appear on the results page after the quiz is complete. Fix the state/rendering logic so quiz pages never show personality result content.
+4. Fix Book Covers
+Fix these specific covers:
+
+The Book Thief by Markus Zusak — wrong cover showing. Use: https://covers.openlibrary.org/b/isbn/9780375842207-L.jpg
+The Granada Trilogy by Radwa Ashour — no cover. Use: https://covers.openlibrary.org/b/isbn/9780815609111-L.jpg
+Pachinko by Min Jin Lee — no cover. Use: https://books.google.com/books/content?id=_eFrDQAAQBAJ&printsec=frontcover&img=1&zoom=3
+A Little Life by Hanya Yanagihara — replace this book entirely. It has inappropriate cover imagery. Replace with "Eleanor Oliphant is Completely Fine" by Gail Honeyman ISBN 9780735220683. Use cover: https://covers.openlibrary.org/b/isbn/9780735220683-L.jpg
+أسود يليق بك — أحلام مستغانمي — no cover. Use: https://covers.openlibrary.org/b/isbn/9789953893351-L.jpg
+يوتوبيا — أحمد خالد توفيق — no cover. Use: https://covers.openlibrary.org/b/isbn/9789774088874-L.jpg
+ثلاثية غرناطة — رضوى عاشور — no cover. Use: https://covers.openlibrary.org/b/isbn/9780815609111-L.jpg
+عزازيل — يوسف زيدان — no cover. Use: https://covers.openlibrary.org/b/isbn/9789771442112-L.jpg
+النبي — جبران خليل جبران — no cover. Use: https://covers.openlibrary.org/b/isbn/9780394404288-L.jpg
+موسم الهجرة إلى الشمال — الطيب صالح — no cover. Use: https://covers.openlibrary.org/b/isbn/9781590173029-L.jpg
+أولاد حارتنا — نجيب محفوظ — no cover. Use: https://covers.openlibrary.org/b/isbn/9780385264731-L.jpg
+لأنك الله — علي بن جابر الفيفي — no cover. Use: https://covers.openlibrary.org/b/isbn/9786038202570-L.jpg
+تجديد حياتك — محمد الغزالي — no cover. Use: https://covers.openlibrary.org/b/isbn/9789771427508-L.jpg
+
+For any book where the URL above doesn't load, show a styled placeholder with the book title and author in elegant typography on a solid color matching the personality world theme. Never show a generic book icon placeholder.
+Do not change anything else — no design changes, no question changes, no world theme backgrounds, no personality changes.

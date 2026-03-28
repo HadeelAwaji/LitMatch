@@ -78,8 +78,8 @@ const THEMES = {
   A: {
     bg: "bg-[#1a1008]",
     card: "bg-[#2c1e14]",
-    text: "text-[#fefae0]",
-    muted: "text-[#d4cbb3]",
+    text: "text-white",
+    muted: "text-gray-300",
     accent: "text-[#d4af37]",
     border: "border-[#5c4d3c]",
     button: "bg-[#d4af37] text-[#1a1008] hover:bg-[#b5952f]",
@@ -89,12 +89,12 @@ const THEMES = {
   B: {
     bg: "bg-[#0b0c10]",
     card: "bg-[#16213e]",
-    text: "text-[#e8eaf6]",
-    muted: "text-[#9fa8da]",
+    text: "text-white",
+    muted: "text-gray-300",
     accent: "text-[#8a2be2]",
     border: "border-[#4a4e69]",
     button: "bg-[#8a2be2] text-white hover:bg-[#7b1fa2]",
-    buttonOutline: "border-[#8a2be2] text-[#8a2be2] hover:bg-[#8a2be2] hover:text-white",
+    buttonOutline: "border-[#8a2be2] text-white hover:bg-[#8a2be2] hover:text-white",
     placeholder: "bg-[#1a1a2e]"
   },
   C: {
@@ -135,17 +135,14 @@ const THEMES = {
 const QUIZ_QUESTIONS = [
   {
     id: "q1",
-    question: {
-      en: "You are the Cultural Explorer. Your bookshelf is a passport to the globe. You crave stories that immerse you in unfamiliar cultures, historical eras, and diverse perspectives. Translated fiction, historical novels, and rich memoirs are your treasures. Through reading, you travel to places you've never been, taste foods you've never eaten, and understand lives vastly different from your own. Your curiosity knows no borders.",
-      ar: "أنت المستكشف الثقافي. مكتبتك هي جواز سفرك حول العالم. أنت تتوق للقصص التي تغمرك في ثقافات غير مألوفة، وعصور تاريخية، ووجهات نظر متنوعة. الأدب المترجم، والروايات التاريخية، والمذكرات الغنية هي كنوزك. من خلال القراءة، تسافر إلى أماكن لم تزرها من قبل، وتتذوق أطعمة لم تأكلها، وتفهم حيوات تختلف اختلافاً شاسعاً عن حياتك. فضولك لا يعرف حدوداً."
-    },
+    text: { en: "Why do you pick up a new book?", ar: "لماذا تختار قراءة كتاب جديد؟" },
     options: [
-      { value: "A", en: "I look for ideas that challenge my perspective and change how I see the world", ar: "أبحث عن أفكار تتحدى منظوري وتغير نظرتي للعالم" },
-      { value: "B", en: "I want to completely disappear into another world and forget my life", ar: "أريد أن أختفي تمامًا في عالم آخر وأنسى حياتي" },
-      { value: "C", en: "I'm looking for inspiration that pushes me to take action in my life", ar: "أبحث عن إلهام يدفعني لاتخاذ إجراء في حياتي" },
-      { value: "D", en: "I want to feel warmth, love, and deep emotional connection", ar: "أريد أن أشعر بالدفء والحب والاتصال العاطفي العميق" },
-      { value: "E", en: "I want to discover cultures and historical eras I've never experienced", ar: "أريد اكتشاف ثقافات وعصور تاريخية لم أختبرها من قبل" },
-    ],
+      { value: "A", text: { en: "To challenge my perspective and think deeply", ar: "لتحدي وجهة نظري والتفكير بعمق" } },
+      { value: "B", text: { en: "To escape reality and enter a new world", ar: "للهروب من الواقع ودخول عالم جديد" } },
+      { value: "C", text: { en: "To learn something useful and improve my life", ar: "لتعلم شيء مفيد وتحسين حياتي" } },
+      { value: "D", text: { en: "To feel profound emotions and romance", ar: "للشعور بمشاعر عميقة ورومانسية" } },
+      { value: "E", text: { en: "I want to discover cultures and historical eras I've never experienced", ar: "أريد اكتشاف ثقافات وعصور تاريخية لم أجربها من قبل" } }
+    ]
   },
   {
     id: "q2",
@@ -350,7 +347,7 @@ const RESULTS_DATA = {
                 pages: 169,
         description: { en: "A classic post-colonial Arabic novel exploring East-West relations. It unravels dark secrets of identity.", ar: "رواية عربية كلاسيكية عن ما بعد الاستعمار تستكشف العلاقات بين الشرق والغرب. تكشف أسراراً مظلمة للهوية." },
         reason: { en: "Offers profound philosophical insights into cultural conflict. Its dense prose rewards careful reading.", ar: "تقدم رؤى فلسفية عميقة حول الصراع الثقافي. نثرها الكثيف يكافئ القراءة المتأنية." },
-        coverUrl: "https://m.media-amazon.com/images/I/71Y-s21aJtL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9781590173029-L.jpg",
         link: "https://archive.org/search?query=Season+of+Migration+to+the+North"
       },
       {
@@ -360,7 +357,7 @@ const RESULTS_DATA = {
                 pages: 455,
         description: { en: "An allegorical novel tracing the history of human existence and religion. It's a masterpiece of modern Arabic literature.", ar: "رواية رمزية تتتبع تاريخ الوجود البشري والدين. إنها تحفة من روائع الأدب العربي الحديث." },
         reason: { en: "Deep, symbolic, and thought-provoking. It challenges you to decode its intricate religious allegories.", ar: "عميقة ورمزية ومثيرة للتفكير. تتحداك لفك رموزها الدينية المعقدة." },
-        coverUrl: "https://m.media-amazon.com/images/I/41K-mF1e1iL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780385264731-L.jpg",
         link: "https://archive.org/search?query=Children+of+the+Alley"
       },
       {
@@ -370,7 +367,7 @@ const RESULTS_DATA = {
                 pages: 107,
         description: { en: "Poetic essays covering various aspects of life and the human condition. A beautiful meditation on existence.", ar: "مقالات شعرية تغطي جوانب مختلفة من الحياة والظروف الإنسانية. تأمل جميل في الوجود." },
         reason: { en: "Offers timeless philosophical wisdom wrapped in beautiful prose. Perfect for slow, contemplative reading.", ar: "يقدم حكمة فلسفية خالدة مغلفة بنثر جميل. مثالي للقراءة البطيئة والمتأملة." },
-        coverUrl: "https://m.media-amazon.com/images/I/71eA3P+S5xL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780394404288-L.jpg",
         link: "https://archive.org/search?query=The+Prophet+Gibran"
       },
       {
@@ -469,7 +466,7 @@ const RESULTS_DATA = {
                 pages: 122,
         description: { en: "A chilling futuristic thriller exploring extreme social division in Egypt. A dark but gripping alternate reality.", ar: "قصة إثارة مستقبلية مرعبة تستكشف الانقسام الاجتماعي المتطرف في مصر. واقع بديل مظلم ولكنه مشوق." },
         reason: { en: "A fast-paced reality shift that keeps you completely hooked. An intense form of literary escape.", ar: "تحول سريع الوتيرة للواقع يبقيك منتبهاً تماماً. شكل مكثف من الهروب الأدبي." },
-        coverUrl: "https://m.media-amazon.com/images/I/41a1k8+XpwL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789774088874-L.jpg",
         link: "https://archive.org/search?query=Utopia+Ahmed+Khaled"
       },
       {
@@ -578,7 +575,7 @@ const RESULTS_DATA = {
                 pages: 200,
         description: { en: "Islamic perspective on self-help inspired by Dale Carnegie. It blends modern psychology with faith.", ar: "منظور إسلامي لتطوير الذات مستوحى من ديل كارنيجي. يمزج علم النفس الحديث بالإيمان." },
         reason: { en: "Practical spiritual and mental guidance for a better life. Gives you actionable wisdom with a soulful touch.", ar: "إرشادات روحية وعقلية عملية لحياة أفضل. يمنحك حكمة قابلة للتنفيذ بلمسة روحية." },
-        coverUrl: "https://m.media-amazon.com/images/I/71Z8I0P6TzL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771427508-L.jpg",
         link: "https://archive.org/search?query=Renew+Your+Life+Ghazali"
       },
       {
@@ -588,7 +585,7 @@ const RESULTS_DATA = {
                 pages: 192,
         description: { en: "A journey to the depths of spirituality, explaining the names of God to find inner peace.", ar: "رحلة إلى أعماق الروحانية، تشرح أسماء الله لإيجاد السلام الداخلي." },
         reason: { en: "Highly motivating for spiritual and emotional well-being. It brings profound comfort and inner strength.", ar: "محفز للغاية للرفاهية الروحية والعاطفية. يجلب راحة عميقة وقوة داخلية." },
-        coverUrl: "https://m.media-amazon.com/images/I/51uU8I6B6pL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9786038202570-L.jpg",
         link: "https://archive.org/search?query=%D9%84%D8%A3%D9%86%D9%83+%D8%A7%D9%84%D9%84%D9%87"
       },
       {
@@ -701,13 +698,14 @@ const RESULTS_DATA = {
         link: "https://archive.org/search?query=Emma+Jane+Austen"
       },
       {
-        title: { en: "A Little Life", ar: "حياة صغيرة" },
-        author: { en: "Hanya Yanagihara", ar: "هانيا ياناجيهارا" },
-        style: { en: "Emotional Drama", ar: "دراما عاطفية" },
-                pages: 814,
-        description: { en: "A sprawling, devastating novel about four college friends and the deep traumas of one of them.", ar: "رواية مترامية الأطراف ومدمرة عن أربعة أصدقاء جامعيين والصدمات العميقة لأحدهم." },
-        reason: { en: "An exercise in extreme empathy and emotional endurance. You read to feel deeply, and this delivers.", ar: "تمرين في التعاطف الشديد والتحمل العاطفي. أنت تقرأ لتشعر بعمق، وهذا الكتاب يقدم ذلك." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780804172707-L.jpg",
+        title: { en: "Eleanor Oliphant is Completely Fine", ar: "إليانور أوليفانت في حالة جيدة تماماً" },
+      author: { en: "Gail Honeyman", ar: "غيل هونيمن" },
+      description: {
+        en: "A socially awkward woman with a rigid routine finds her life slowly opening up when she befriends a clumsy IT guy.",
+        ar: "امرأة غير اجتماعية ذات روتين صارم تجد حياتها تنفتح ببطء عندما تصادق شاباً غير بارع من قسم تقنية المعلومات."
+      },
+      pages: 336,
+      coverUrl: "https://covers.openlibrary.org/b/isbn/9780735220683-L.jpg",
         link: "https://archive.org/search?query=A+Little+Life"
       }
     ]
@@ -736,7 +734,7 @@ const RESULTS_DATA = {
                 pages: 496,
         description: { en: "A sweeping saga of a Korean family living in Japan through generations, facing exile and discrimination.", ar: "ملحمة شاملة لعائلة كورية تعيش في اليابان عبر الأجيال، وتواجه النفي والتمييز." },
         reason: { en: "A beautifully detailed exploration of immigrant identities and resilience across cultures.", ar: "استكشاف مفصل بشكل جميل لهويات المهاجرين والمرونة عبر الثقافات." },
-        coverUrl: "https://m.media-amazon.com/images/I/81E1528T1eL.jpg",
+        coverUrl: "https://books.google.com/books/content?id=_eFrDQAAQBAJ&printsec=frontcover&img=1&zoom=3",
         link: "https://archive.org/search?query=Pachinko"
       },
       {
@@ -786,7 +784,7 @@ const RESULTS_DATA = {
                 pages: 512,
         description: { en: "A masterpiece chronicling the fall of Moorish Spain and its devastating impact on an Arab family.", ar: "تحفة فنية تؤرخ لسقوط إسبانيا المغاربية وتأثيرها المدمر على عائلة عربية." },
         reason: { en: "An incredible historical journey through a fascinating and tragic era.", ar: "رحلة تاريخية مذهلة عبر حقبة رائعة ومأساوية." },
-        coverUrl: "https://m.media-amazon.com/images/I/81S79j+pL7L.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780815609111-L.jpg",
         link: "https://archive.org/search?query=The+Granada+Trilogy"
       },
       {
@@ -796,7 +794,7 @@ const RESULTS_DATA = {
                 pages: 377,
         description: { en: "A monk's struggles with faith and temptation in 5th century Egypt and Syria.", ar: "صراعات راهب مع الإيمان والإغراء في مصر وسوريا في القرن الخامس." },
         reason: { en: "Rich historical setting that vividly transports you to the ancient Middle East.", ar: "بيئة تاريخية غنية تنقلك بوضوح إلى الشرق الأوسط القديم." },
-        coverUrl: "https://m.media-amazon.com/images/I/41-lU-nL0iL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771442112-L.jpg",
         link: "https://archive.org/search?query=Azazeel"
       },
       {
@@ -816,7 +814,7 @@ const RESULTS_DATA = {
                 pages: 584,
         description: { en: "The story of a young girl in Nazi Germany, narrated by Death himself.", ar: "قصة فتاة صغيرة في ألمانيا النازية، يرويها الموت نفسه." },
         reason: { en: "A uniquely told cultural narrative that captures the humanity within a dark historical period.", ar: "سرد ثقافي فريد يجسد الإنسانية داخل فترة تاريخية مظلمة." },
-        coverUrl: "https://m.media-amazon.com/images/I/81eB+7+CkUL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780375842207-L.jpg",
         link: "https://archive.org/search?query=The+Book+Thief"
       }
     ]
