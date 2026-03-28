@@ -350,7 +350,7 @@ const RESULTS_DATA = {
                 pages: 169,
         description: { en: "A classic post-colonial Arabic novel exploring East-West relations. It unravels dark secrets of identity.", ar: "رواية عربية كلاسيكية عن ما بعد الاستعمار تستكشف العلاقات بين الشرق والغرب. تكشف أسراراً مظلمة للهوية." },
         reason: { en: "Offers profound philosophical insights into cultural conflict. Its dense prose rewards careful reading.", ar: "تقدم رؤى فلسفية عميقة حول الصراع الثقافي. نثرها الكثيف يكافئ القراءة المتأنية." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9781590173029-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/71Y-s21aJtL.jpg",
         link: "https://archive.org/search?query=Season+of+Migration+to+the+North"
       },
       {
@@ -360,7 +360,7 @@ const RESULTS_DATA = {
                 pages: 455,
         description: { en: "An allegorical novel tracing the history of human existence and religion. It's a masterpiece of modern Arabic literature.", ar: "رواية رمزية تتتبع تاريخ الوجود البشري والدين. إنها تحفة من روائع الأدب العربي الحديث." },
         reason: { en: "Deep, symbolic, and thought-provoking. It challenges you to decode its intricate religious allegories.", ar: "عميقة ورمزية ومثيرة للتفكير. تتحداك لفك رموزها الدينية المعقدة." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780385264731-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/41K-mF1e1iL.jpg",
         link: "https://archive.org/search?query=Children+of+the+Alley"
       },
       {
@@ -370,7 +370,7 @@ const RESULTS_DATA = {
                 pages: 107,
         description: { en: "Poetic essays covering various aspects of life and the human condition. A beautiful meditation on existence.", ar: "مقالات شعرية تغطي جوانب مختلفة من الحياة والظروف الإنسانية. تأمل جميل في الوجود." },
         reason: { en: "Offers timeless philosophical wisdom wrapped in beautiful prose. Perfect for slow, contemplative reading.", ar: "يقدم حكمة فلسفية خالدة مغلفة بنثر جميل. مثالي للقراءة البطيئة والمتأملة." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780394404288-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/71eA3P+S5xL.jpg",
         link: "https://archive.org/search?query=The+Prophet+Gibran"
       },
       {
@@ -380,7 +380,7 @@ const RESULTS_DATA = {
                 pages: 136,
         description: { en: "A profound existentialist novel exploring human nature and suffering. A bitter, brilliant monologue.", ar: "رواية وجودية عميقة تستكشف الطبيعة البشرية والمعاناة. مونولوج مرير ورائع." },
         reason: { en: "A brilliant, unfiltered look into the complexity of the human mind. Leaves a lasting intellectual impact.", ar: "نظرة رائعة وغير مفلترة في تعقيد العقل البشري. تترك تأثيراً فكرياً دائماً." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780679734529-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/41I+nU6oQLL.jpg",
         link: "https://archive.org/search?query=Notes+from+Underground"
       }
     ]
@@ -459,7 +459,7 @@ const RESULTS_DATA = {
                 pages: 980,
         description: { en: "A collection of Middle Eastern folk tales compiled in Arabic. Full of genies, magic, and epic quests.", ar: "مجموعة من الحكايات الشعبية الشرق أوسطية. مليئة بالجن والسحر والمهام الملحمية." },
         reason: { en: "The ultimate collection of enchanting and magical escapist stories. It’s the origin of fantasy storytelling.", ar: "المجموعة المطلقة من القصص الساحرة والخيالية. إنه أصل سرد القصص الخيالية." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780140449389-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/51wXb-M5U4L.jpg",
         link: "https://archive.org/search?query=One+Thousand+and+One+Nights"
       },
       {
@@ -469,7 +469,7 @@ const RESULTS_DATA = {
                 pages: 122,
         description: { en: "A chilling futuristic thriller exploring extreme social division in Egypt. A dark but gripping alternate reality.", ar: "قصة إثارة مستقبلية مرعبة تستكشف الانقسام الاجتماعي المتطرف في مصر. واقع بديل مظلم ولكنه مشوق." },
         reason: { en: "A fast-paced reality shift that keeps you completely hooked. An intense form of literary escape.", ar: "تحول سريع الوتيرة للواقع يبقيك منتبهاً تماماً. شكل مكثف من الهروب الأدبي." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9789774088874-L.jpg",
+        coverUrl: "https://m.media-amazon.com/images/I/41a1k8+XpwL.jpg",
         link: "https://archive.org/search?query=Utopia+Ahmed+Khaled"
       },
       {
