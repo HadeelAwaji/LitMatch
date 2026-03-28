@@ -1,0 +1,13 @@
+
+> rest-express@1.0.0 dev:client
+> vite dev --port 5000
+
+[1G[0K
+
+[1;1H[0J
+  [32m[1mVITE[22m v7.3.1[39m  [2mready in [0m[1m328[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.31.93.226:[1m5000[22m/[39m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[RUNTIME_ERROR]{"type":"runtime-error","timestamp":1774688153041,"name":"Error","message":"Cannot read properties of undefined (reading 'en')","stack":"    at Matchmaker /home/runner/workspace/client/src/pages/Matchmaker.tsx:1446:42\n\n\n\n\n\n\n\n\n","loc":{"line":1446,"column":42,"file":"/home/runner/workspace/client/src/pages/Matchmaker.tsx"},"frame":"1444|                      <CardContent className=\"p-6 sm:p-8 md:p-10\">\n1445|                        <h3 className=\"text-2xl sm:text-3xl font-serif font-medium mb-8 sm:mb-10 text-foreground leading-snug\">\n1446|                          {currentQuestion.question[language]}\n   |                                           ^\n1447|                        </h3>\n1448|                        "}
