@@ -360,7 +360,7 @@ const RESULTS_DATA = {
                 pages: 455,
         description: { en: "An allegorical novel tracing the history of human existence and religion. It's a masterpiece of modern Arabic literature.", ar: "رواية رمزية تتتبع تاريخ الوجود البشري والدين. إنها تحفة من روائع الأدب العربي الحديث." },
         reason: { en: "Deep, symbolic, and thought-provoking. It challenges you to decode its intricate religious allegories.", ar: "عميقة ورمزية ومثيرة للتفكير. تتحداك لفك رموزها الدينية المعقدة." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780385264731-L.jpg",
+        coverUrl: "https://books.google.com/books/content?id=Uw9iAAAAMAAJ&printsec=frontcover&img=1&zoom=3",
         link: "https://archive.org/search?query=Children+of+the+Alley"
       },
       {
@@ -409,7 +409,7 @@ const RESULTS_DATA = {
                 pages: 662,
         description: { en: "The legendary tale of a gifted young man who grows to be a notorious wizard. A deeply immersive magical journey.", ar: "الحكاية الأسطورية لشاب موهوب يكبر ليصبح ساحراً سيئ السمعة. رحلة سحرية غامرة بعمق." },
         reason: { en: "Immersive storytelling with a beautifully crafted magic system. A perfect escape from reality.", ar: "سرد قصصي غامر مع نظام سحري مصمم بشكل جميل. ملاذ مثالي من الواقع." },
-        coverUrl: "https://m.media-amazon.com/images/I/91b8oNwaV1L.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780756404741-L.jpg",
         link: "https://archive.org/search?query=The+Name+of+the+Wind"
       },
       {
@@ -419,7 +419,7 @@ const RESULTS_DATA = {
                 pages: 387,
         description: { en: "A phantasmagorical fairy tale set in a magical circus that only opens at night. It's a breathtaking sensory experience.", ar: "حكاية خرافية خيالية تدور أحداثها في سيرك سحري يفتح أبوابه ليلاً فقط. إنها تجربة حسية تخطف الأنفاس." },
         reason: { en: "A rich, dreamlike atmosphere full of magic and wonder. It enchants and transports the reader.", ar: "أجواء غنية وحالمة مليئة بالسحر والعجب. تسحر وتنقل القارئ." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780307739920-L.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780307744432-L.jpg",
         link: "https://archive.org/search?query=The+Night+Circus"
       },
       {
@@ -429,7 +429,7 @@ const RESULTS_DATA = {
                 pages: 310,
         description: { en: "A classic fantasy adventure following a reluctant hero. It's the ultimate journey into Middle-earth.", ar: "مغامرة خيالية كلاسيكية تتبع بطلاً متردداً. إنها الرحلة المطلقة إلى الأرض الوسطى." },
         reason: { en: "The perfect journey into a richly detailed magical world. It’s comforting, adventurous, and perfectly escapist.", ar: "الرحلة المثالية إلى عالم سحري غني بالتفاصيل. إنها مريحة ومغامرة وهروب مثالي." },
-        coverUrl: "https://books.google.com/books/content?id=U799AY3yfqcC&printsec=frontcover&img=1&zoom=3",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780261102217-L.jpg",
         link: "https://archive.org/search?query=The+Hobbit+Tolkien"
       },
       {
@@ -459,7 +459,7 @@ const RESULTS_DATA = {
                 pages: 980,
         description: { en: "A collection of Middle Eastern folk tales compiled in Arabic. Full of genies, magic, and epic quests.", ar: "مجموعة من الحكايات الشعبية الشرق أوسطية. مليئة بالجن والسحر والمهام الملحمية." },
         reason: { en: "The ultimate collection of enchanting and magical escapist stories. It’s the origin of fantasy storytelling.", ar: "المجموعة المطلقة من القصص الساحرة والخيالية. إنه أصل سرد القصص الخيالية." },
-        coverUrl: "https://m.media-amazon.com/images/I/51wXb-M5U4L.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780140449389-L.jpg",
         link: "https://archive.org/search?query=One+Thousand+and+One+Nights"
       },
       {
@@ -489,7 +489,7 @@ const RESULTS_DATA = {
                 pages: 309,
         description: { en: "A young boy discovers he's a wizard and enters a magical world. The ultimate story of hidden magic.", ar: "يكتشف صبي صغير أنه ساحر ويدخل عالماً سحرياً. القصة المطلقة للسحر الخفي." },
         reason: { en: "The ultimate escapist fantasy that feels incredibly real. A comforting world you can always return to.", ar: "الخيال الهروبي المطلق الذي يبدو حقيقياً بشكل لا يصدق. عالم مريح يمكنك دائمًا العودة إليه." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780439708180-L.jpg",
         link: "https://archive.org/search?query=Harry+Potter+and+the+Sorcerers+Stone"
       }
     ]
@@ -578,7 +578,7 @@ const RESULTS_DATA = {
                 pages: 200,
         description: { en: "Islamic perspective on self-help inspired by Dale Carnegie. It blends modern psychology with faith.", ar: "منظور إسلامي لتطوير الذات مستوحى من ديل كارنيجي. يمزج علم النفس الحديث بالإيمان." },
         reason: { en: "Practical spiritual and mental guidance for a better life. Gives you actionable wisdom with a soulful touch.", ar: "إرشادات روحية وعقلية عملية لحياة أفضل. يمنحك حكمة قابلة للتنفيذ بلمسة روحية." },
-        coverUrl: "https://covers.openlibrary.org/b/isbn/9789771427508-L.jpg",
+        coverUrl: "https://books.google.com/books/content?id=xxxxxxxxxxx&printsec=frontcover&img=1&zoom=3",
         link: "https://archive.org/search?query=Renew+Your+Life+Ghazali"
       },
       {
@@ -647,7 +647,7 @@ const RESULTS_DATA = {
                 pages: 273,
         description: { en: "A raw and complex story about two people who constantly orbit each other's lives.", ar: "قصة خام ومعقدة عن شخصين يدوران باستمرار في حياة بعضهما البعض." },
         reason: { en: "An intense exploration of modern love and human connection. It feels incredibly real and vulnerable.", ar: "استكشاف مكثف للحب الحديث والتواصل البشري. يبدو حقيقياً وضعيفاً بشكل لا يصدق." },
-        coverUrl: "https://m.media-amazon.com/images/I/817tHNcyAgL.jpg",
+        coverUrl: "https://covers.openlibrary.org/b/isbn/9780571334650-L.jpg",
         link: "https://archive.org/search?query=Normal+People+Sally+Rooney"
       },
       {
@@ -833,25 +833,54 @@ const shuffleArray = <T,>(array: T[]) => {
   return shuffled;
 };
 
-const BookCover = ({ coverUrl, title, color }: { coverUrl?: string, title: string, color: string }) => {
-  const [imageError, setImageError] = useState(false);
-  
+const OPEN_LIBRARY_ISBN_RE = /covers\.openlibrary\.org\/b\/isbn\/(\d{10,13})/i;
+
+function openLibraryCoverToGoogleBooksFallback(url: string): string | null {
+  const m = url.match(OPEN_LIBRARY_ISBN_RE);
+  if (!m) return null;
+  return `https://books.google.com/books/content?isbn=${m[1]}&printsec=frontcover&img=1&zoom=3`;
+}
+
+const BookCover = ({ coverUrl, title, author, color }: { coverUrl?: string, title: string, author: string, color: string }) => {
+  const [activeSrc, setActiveSrc] = useState(coverUrl ?? "");
+  const [loadFailed, setLoadFailed] = useState(!coverUrl);
+
+  useEffect(() => {
+    setActiveSrc(coverUrl ?? "");
+    setLoadFailed(!coverUrl);
+  }, [coverUrl]);
+
+  const handleImgError = () => {
+    if (coverUrl && activeSrc === coverUrl) {
+      const fallback = openLibraryCoverToGoogleBooksFallback(coverUrl);
+      if (fallback) {
+        setActiveSrc(fallback);
+        return;
+      }
+    }
+    setLoadFailed(true);
+  };
+
   return (
     <div className={`h-[220px] shrink-0 relative flex items-center justify-center overflow-hidden ${color}`}>
-      {!imageError && coverUrl ? (
+      {!loadFailed && activeSrc ? (
         <motion.img 
+          key={activeSrc}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          src={coverUrl} 
+          src={activeSrc} 
           alt={title}
           crossOrigin="anonymous"
           referrerPolicy="no-referrer" 
-          onError={() => setImageError(true)}
+          onError={handleImgError}
           className="w-full h-full object-contain object-center z-20 bg-white dark:bg-[#f8f9fa]"
         />
       ) : (
-        <BookOpen className="w-12 h-12 text-black/20 dark:text-white/20" />
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-2 px-4 text-center">
+          <p className="text-sm font-semibold font-serif text-foreground line-clamp-3 leading-snug">{title}</p>
+          <p className="text-xs text-muted-foreground line-clamp-2">{author}</p>
+        </div>
       )}
     </div>
   )
@@ -861,10 +890,11 @@ const BookCard = ({ book, color, language, t }: any) => {
   const [expanded, setExpanded] = useState(false);
   
   return (
-    <Card className={`flex flex-col h-full border shadow-lg overflow-hidden group transition-all duration-300 ${color.card} ${color.border}`}>
+    <Card className={`flex flex-col h-full border shadow-lg overflow-hidden group transition-all duration-300 ${color.card} ${color.border} ${color.text}`}>
       <BookCover 
         coverUrl={book.coverUrl}
         title={book.title[language]}
+        author={book.author[language]}
         color={color.placeholder}
       />
 
@@ -1296,8 +1326,14 @@ export default function Matchmaker() {
   };
 
 
-  const downloadResultImage = () => {
-    window.print();
+  const downloadResultImage = async () => {
+    const el = document.getElementById("result-capture-area");
+    if (!el) return;
+    const canvas = await html2canvas(el, { useCORS: true });
+    const link = document.createElement("a");
+    link.download = "litmatch-result.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
   };
 
 
@@ -1401,7 +1437,7 @@ export default function Matchmaker() {
           )}
 
           {step === "quiz" && (() => {
-            if (!currentQuestion) return null;
+            if (!currentQuestion?.question || !currentQuestion?.options?.length) return null;
             return (
             <motion.div
               key="quiz"
@@ -1448,17 +1484,17 @@ export default function Matchmaker() {
                   <Card className="border-border/60 shadow-xl overflow-hidden bg-card/80 backdrop-blur-md">
                     <CardContent className="p-6 sm:p-8 md:p-10">
                       <h3 className="text-2xl sm:text-3xl font-serif font-medium mb-8 sm:mb-10 text-foreground leading-snug">
-                        {currentQuestion.question[language]}
+                        {currentQuestion.question?.[language] ?? ""}
                       </h3>
                       
                       <div className="space-y-3 sm:space-y-4">
-                        {currentQuestion.options.map((option, idx) => {
-                          const isSelected = answers[currentQuestion.id] === option.value;
+                        {currentQuestion.options?.map((option, idx) => {
+                          const isSelected = answers[currentQuestion?.id ?? ""] === option?.value;
                           
                           return (
                             <button
                               key={idx}
-                              onClick={() => handleAnswer(option.value as AnswerValue)}
+                              onClick={() => handleAnswer(option?.value as AnswerValue)}
                               className={`w-full text-start p-4 sm:p-6 rounded-xl border group transition-all duration-300 flex items-center gap-4 sm:gap-5 hover:-translate-y-0.5 
                                 ${isSelected 
                                   ? "border-primary bg-primary/5 shadow-sm" 
@@ -1471,10 +1507,10 @@ export default function Matchmaker() {
                                   : "bg-secondary/50 group-hover:bg-primary text-secondary-foreground group-hover:text-primary-foreground"
                                 }`}
                               >
-                                {option.value}
+                                {option?.value}
                               </div>
                               <span className={`text-base sm:text-lg font-medium transition-colors ${isSelected ? "text-primary" : "group-hover:text-primary"}`}>
-                                {option[language]}
+                                {option?.[language] ?? ""}
                               </span>
                             </button>
                           );
@@ -1500,6 +1536,7 @@ export default function Matchmaker() {
               className={`max-w-7xl w-full py-6 sm:py-10 relative z-10 ${theme.text}`}
             >
               <BackgroundDecorations type={resultType} />
+              <div className="relative z-[1]">
               <div className="text-center mb-10 sm:mb-16 space-y-4 sm:space-y-6">
                 <p className={`${theme.text} ${theme.accent} font-medium tracking-widest uppercase text-xs sm:text-sm`}>{t.yourArchetype}</p>
                 <h2 className={`text-4xl sm:text-5xl md:text-7xl font-bold font-serif ${theme.text}`}>
@@ -1619,6 +1656,7 @@ export default function Matchmaker() {
                 >
                   {t.retakeQuiz}
                 </Button>
+              </div>
               </div>
             </motion.div>
           )}
