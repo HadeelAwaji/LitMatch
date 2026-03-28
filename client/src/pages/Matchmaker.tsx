@@ -933,69 +933,186 @@ const BookCard = ({ book, color, language, t }: any) => {
 
 
 
+
 const BackgroundDecorations = ({ type }: { type: AnswerValue }) => {
   return (
-    <div id="personality-bg" className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+    <div id="personality-bg" className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden transition-opacity duration-1500 opacity-100">
       {type === 'A' && (
-        <svg className="w-full h-full opacity-[0.08] absolute inset-0" style={{ color: '#4b3621' }} xmlns="http://www.w3.org/2000/svg">
-          {/* Top Left Open Book */}
-          <path d="M40 80 Q 70 70 100 80 L 100 130 Q 70 120 40 130 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <path d="M100 80 Q 130 70 160 80 L 160 130 Q 130 120 100 130 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <line x1="100" y1="80" x2="100" y2="130" stroke="currentColor" strokeWidth="2"/>
-          {/* Bottom Right Quill */}
-          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 100px) calc(100% - 50px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="#d4af37" strokeWidth="3"/>
-          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 70px) calc(100% - 80px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="#d4af37" strokeWidth="1"/>
-          <path d="M calc(100% - 60px) calc(100% - 100px) Q calc(100% - 90px) calc(100% - 60px) calc(100% - 140px) calc(100% - 40px)" fill="none" stroke="#d4af37" strokeWidth="1"/>
-        </svg>
+        <div className="absolute inset-0 bg-[#1a1008]">
+          {/* Faint grid lines for aged manuscript */}
+          <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'linear-gradient(transparent 99%, #ffffff 1%)', backgroundSize: '100% 20px' }} />
+          
+          {/* Candlelight glow */}
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255, 191, 0, 0.05) 0%, transparent 70%)', transform: 'translate(-30%, -30%)' }} />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255, 191, 0, 0.05) 0%, transparent 70%)', transform: 'translate(30%, 30%)' }} />
+
+          <svg className="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
+            {/* Center: Large Open Book */}
+            <g opacity="0.08" stroke="#d4af37" fill="none" strokeWidth="2" transform="translate(50%, 50%) scale(2) translate(-50, -50)">
+              <path d="M10 80 Q 40 70 50 80 L 50 130 Q 40 120 10 130 Z" />
+              <path d="M50 80 Q 60 70 90 80 L 90 130 Q 60 120 50 130 Z" />
+              <line x1="50" y1="80" x2="50" y2="130" />
+            </g>
+            
+            {/* Bottom-Right: Feather Quill */}
+            <g opacity="0.15" stroke="#d4af37" fill="none" transform="translate(calc(100% - 150px), calc(100% - 150px)) scale(1.5)">
+              <path d="M 20 80 Q 50 50 90 10" strokeWidth="3"/>
+              <path d="M 20 80 Q 40 60 90 10" strokeWidth="1"/>
+              <path d="M 20 80 Q 60 70 90 10" strokeWidth="1"/>
+              <path d="M 60 40 L 70 30" strokeWidth="1"/>
+              <path d="M 50 50 L 65 40" strokeWidth="1"/>
+              <path d="M 40 60 L 60 50" strokeWidth="1"/>
+            </g>
+          </svg>
+        </div>
       )}
 
       {type === 'B' && (
-        <svg className="w-full h-full opacity-[0.10] absolute inset-0" style={{ color: '#1a1a2e' }} xmlns="http://www.w3.org/2000/svg">
-          <rect width="100%" height="100%" fill="currentColor" opacity="0.5" />
-          {/* Top Right Moon */}
-          <path d="M calc(100% - 80px) 100 A 40 40 0 1 0 calc(100% - 40px) 140 A 50 50 0 1 1 calc(100% - 80px) 100 Z" fill="#c0c0c0" />
-          {/* Stars */}
-          {[...Array(25)].map((_, i) => (
-            <text key={i} x={`${Math.random() * 100}%`} y={`${Math.random() * 100}%`} fill="#c0c0c0" fontSize={`${10 + Math.random() * 10}px`}>+</text>
-          ))}
-        </svg>
+        <div className="absolute inset-0 bg-[#050a1a]">
+          {/* Nebula purple glow */}
+          <div className="absolute top-1/2 left-1/2 w-[80vw] h-[80vw] rounded-full" style={{ background: 'radial-gradient(circle, rgba(75, 0, 130, 0.1) 0%, transparent 80%)', transform: 'translate(-50%, -50%)' }} />
+
+          {/* Stars using box-shadow logic generated in JS inline */}
+          <div className="absolute inset-0">
+            {[...Array(80)].map((_, i) => (
+              <div 
+                key={i} 
+                className="absolute rounded-full bg-white" 
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  width: `${Math.max(1, Math.random() * 3)}px`,
+                  height: `${Math.max(1, Math.random() * 3)}px`,
+                  opacity: Math.random() > 0.5 ? 0.8 : 0.4,
+                  boxShadow: Math.random() > 0.8 ? '0 0 4px 1px rgba(173, 216, 230, 0.6)' : 'none'
+                }} 
+              />
+            ))}
+          </div>
+
+          <svg className="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
+            {/* Top-Right: Crescent Moon */}
+            <path d="M calc(100% - 150px) 100 A 60 60 0 1 0 calc(100% - 60px) 190 A 80 80 0 1 1 calc(100% - 150px) 100 Z" fill="#c0c0c0" opacity="0.10" />
+            
+            {/* Constellation lines */}
+            <g opacity="0.05" stroke="#ffffff" strokeWidth="1" fill="none">
+              <polyline points="20%,30% 25%,20% 35%,25% 40%,15%" />
+              <circle cx="20%" cy="30%" r="2" fill="#fff" />
+              <circle cx="25%" cy="20%" r="2" fill="#fff" />
+              <circle cx="35%" cy="25%" r="2" fill="#fff" />
+              <circle cx="40%" cy="15%" r="2" fill="#fff" />
+
+              <polyline points="70%,60% 75%,75% 85%,70% 90%,85%" />
+              <circle cx="70%" cy="60%" r="2" fill="#fff" />
+              <circle cx="75%" cy="75%" r="2" fill="#fff" />
+              <circle cx="85%" cy="70%" r="2" fill="#fff" />
+              <circle cx="90%" cy="85%" r="2" fill="#fff" />
+            </g>
+          </svg>
+        </div>
       )}
 
       {type === 'C' && (
-        <svg className="w-full h-full opacity-[0.12] absolute inset-0" style={{ color: '#ff8c00' }} xmlns="http://www.w3.org/2000/svg">
-          {/* Rising Lines */}
-          <path d="M 10% 90% L 30% 60% L 40% 70% L 70% 30% L 90% 40%" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M 15% 85% L 25% 70% L 45% 75% L 65% 40% L 85% 50%" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.5"/>
-          {/* Sun Rays Top Left */}
-          <circle cx="0" cy="0" r="80" fill="#ffd700" opacity="0.5"/>
-          <line x1="0" y1="0" x2="100" y2="150" stroke="#ffd700" strokeWidth="2"/>
-          <line x1="0" y1="0" x2="150" y2="100" stroke="#ffd700" strokeWidth="2"/>
-          <line x1="0" y1="0" x2="180" y2="50" stroke="#ffd700" strokeWidth="2"/>
-        </svg>
+        <div className="absolute inset-0 bg-[#fffbf0]">
+          {/* Sunrise Glow */}
+          <div className="absolute bottom-0 left-1/2 w-[150vw] h-[150vw] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255, 165, 0, 0.15) 0%, transparent 70%)', transform: 'translate(-50%, 50%)' }} />
+          
+          <svg className="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
+            {/* Light Rays */}
+            <g opacity="0.08" stroke="#ff8c00" strokeWidth="1" fill="none">
+              <line x1="50%" y1="100%" x2="10%" y2="0" />
+              <line x1="50%" y1="100%" x2="30%" y2="0" />
+              <line x1="50%" y1="100%" x2="50%" y2="0" />
+              <line x1="50%" y1="100%" x2="70%" y2="0" />
+              <line x1="50%" y1="100%" x2="90%" y2="0" />
+            </g>
+
+            {/* Pattern: Triangles */}
+            <g opacity="0.05" fill="#ff8c00">
+              {[...Array(30)].map((_, i) => (
+                <polygon key={i} points="-5,5 5,5 0,-5" transform={`translate(${Math.random() * 100}%, ${Math.random() * 100}%) `} />
+              ))}
+            </g>
+
+            {/* Accents: Diamonds in Corners */}
+            <g opacity="0.06" fill="#D4AF37">
+              <polygon points="50,20 80,50 50,80 20,50" />
+              <polygon points="calc(100% - 50px),20 calc(100% - 20px),50 calc(100% - 50px),80 calc(100% - 80px),50" />
+              <polygon points="50,calc(100% - 80px) 80,calc(100% - 50px) 50,calc(100% - 20px) 20,calc(100% - 50px)" />
+              <polygon points="calc(100% - 50px),calc(100% - 80px) calc(100% - 20px),calc(100% - 50px) calc(100% - 50px),calc(100% - 20px) calc(100% - 80px),calc(100% - 50px)" />
+            </g>
+          </svg>
+        </div>
       )}
 
       {type === 'D' && (
-        <svg className="w-full h-full opacity-[0.10] absolute inset-0" style={{ color: '#ffb6c1' }} xmlns="http://www.w3.org/2000/svg">
-          {/* Roses/Flowers */}
-          <path d="M 60 60 Q 70 40 80 60 Q 100 70 80 80 Q 70 100 60 80 Q 40 70 60 60 Z" fill="currentColor"/>
-          <path d="M calc(100% - 60px) calc(100% - 60px) Q calc(100% - 70px) calc(100% - 40px) calc(100% - 80px) calc(100% - 60px) Q calc(100% - 100px) calc(100% - 70px) calc(100% - 80px) calc(100% - 80px) Q calc(100% - 70px) calc(100% - 100px) calc(100% - 60px) calc(100% - 80px) Q calc(100% - 40px) calc(100% - 70px) calc(100% - 60px) calc(100% - 60px) Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-          {/* Petals */}
-          {[...Array(15)].map((_, i) => (
-            <ellipse key={i} cx={`${10 + Math.random() * 80}%`} cy={`${10 + Math.random() * 80}%`} rx="4" ry="8" fill="#f8edeb" transform={`rotate(${Math.random() * 180})`} opacity="0.8"/>
-          ))}
-        </svg>
+        <div className="absolute inset-0 bg-[#fff0f3]">
+          <svg className="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
+            {/* Corners: Roses */}
+            <g opacity="0.12" fill="none" stroke="#d6336c" strokeWidth="2">
+              {/* Top Left */}
+              <g transform="translate(50, 50) scale(1.5)">
+                <path d="M0,0 Q10,-10 20,0 Q30,10 20,20 Q10,30 0,20 Q-10,10 0,0" />
+                <path d="M5,-5 Q10,-15 15,-5 Q20,5 15,15 Q5,25 -5,15 Q-15,5 -5,-5" />
+              </g>
+              {/* Top Right */}
+              <g transform="translate(calc(100% - 50px), 50) scale(1.5)">
+                <path d="M0,0 Q10,-10 20,0 Q30,10 20,20 Q10,30 0,20 Q-10,10 0,0" />
+                <path d="M5,-5 Q10,-15 15,-5 Q20,5 15,15 Q5,25 -5,15 Q-15,5 -5,-5" />
+              </g>
+              {/* Bottom Left */}
+              <g transform="translate(50, calc(100% - 50px)) scale(1.5)">
+                <path d="M0,0 Q10,-10 20,0 Q30,10 20,20 Q10,30 0,20 Q-10,10 0,0" />
+                <path d="M5,-5 Q10,-15 15,-5 Q20,5 15,15 Q5,25 -5,15 Q-15,5 -5,-5" />
+              </g>
+              {/* Bottom Right */}
+              <g transform="translate(calc(100% - 50px), calc(100% - 50px)) scale(1.5)">
+                <path d="M0,0 Q10,-10 20,0 Q30,10 20,20 Q10,30 0,20 Q-10,10 0,0" />
+                <path d="M5,-5 Q10,-15 15,-5 Q20,5 15,15 Q5,25 -5,15 Q-15,5 -5,-5" />
+              </g>
+            </g>
+
+            {/* Floating Petals */}
+            <g opacity="0.08" fill="#d6336c">
+              {[...Array(12)].map((_, i) => (
+                <path key={i} d="M0,0 Q10,-5 20,0 Q10,5 0,0" transform={`translate(${20 + Math.random() * 60}%, ${20 + Math.random() * 60}%) rotate(${Math.random() * 360}) scale(${1 + Math.random()})`} />
+              ))}
+            </g>
+
+            {/* Edge Vines */}
+            <g opacity="0.10" fill="none" stroke="#84a59d" strokeWidth="2">
+              <path d="M 20 0 Q 40 50 20 100 T 20 200 T 20 300 T 20 400 T 20 500 T 20 600 T 20 700 T 20 800 T 20 900 T 20 1000" />
+              <path d="M calc(100% - 20px) 0 Q calc(100% - 40px) 50 calc(100% - 20px) 100 T calc(100% - 20px) 200 T calc(100% - 20px) 300 T calc(100% - 20px) 400 T calc(100% - 20px) 500 T calc(100% - 20px) 600 T calc(100% - 20px) 700 T calc(100% - 20px) 800 T calc(100% - 20px) 900 T calc(100% - 20px) 1000" />
+            </g>
+          </svg>
+        </div>
       )}
 
       {type === 'E' && (
-        <svg className="w-full h-full opacity-[0.08] absolute inset-0" style={{ color: '#556b2f' }} xmlns="http://www.w3.org/2000/svg">
-          {/* Compass Rose */}
-          <path d="M calc(100% - 100px) 100 L calc(100% - 90px) 130 L calc(100% - 60px) 140 L calc(100% - 90px) 150 L calc(100% - 100px) 180 L calc(100% - 110px) 150 L calc(100% - 140px) 140 L calc(100% - 110px) 130 Z" fill="currentColor"/>
-          <circle cx="calc(100% - 100px)" cy="140" r="30" fill="none" stroke="currentColor" strokeWidth="2"/>
-          {/* Travel Routes */}
-          <path d="M 10% 20% Q 30% 10% 40% 30% T 70% 60% T 90% 80%" fill="none" stroke="#8b4513" strokeWidth="2" strokeDasharray="8,8"/>
-          <circle cx="10%" cy="20%" r="4" fill="#8b4513" />
-          <circle cx="90%" cy="80%" r="4" fill="#8b4513" />
-        </svg>
+        <div className="absolute inset-0 bg-[#f5efe0]" style={{ boxShadow: 'inset 0 0 100px rgba(101, 67, 33, 0.4)' }}>
+          <svg className="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
+            {/* Center: Compass Rose */}
+            <g opacity="0.08" fill="#8b4513" transform="translate(50%, 50%) scale(2)">
+              <polygon points="0,-60 15,-15 60,0 15,15 0,60 -15,15 -60,0 -15,-15" />
+              <polygon points="0,-60 0,0 -15,-15" fill="#5c2e0e" />
+              <polygon points="60,0 0,0 15,-15" fill="#5c2e0e" />
+              <polygon points="0,60 0,0 15,15" fill="#5c2e0e" />
+              <polygon points="-60,0 0,0 -15,15" fill="#5c2e0e" />
+              <circle cx="0" cy="0" r="40" fill="none" stroke="#8b4513" strokeWidth="1" />
+            </g>
+
+            {/* Travel Routes */}
+            <g opacity="0.06" fill="none" stroke="#8b4513" strokeWidth="2" strokeDasharray="6,6">
+              <path d="M 10% 20% Q 40% 10% 60% 40% T 90% 80%" />
+              <path d="M 80% 20% Q 60% 30% 40% 70% T 20% 90%" />
+            </g>
+
+            {/* Mountain Range at Bottom */}
+            <g opacity="0.10" fill="#6b705c" transform="translate(0, calc(100% - 100px))">
+              <path d="M0,100 L0,50 L50,10 L100,60 L180,0 L250,70 L350,20 L450,80 L550,30 L650,90 L750,40 L850,80 L1000,20 L1000,100 Z" transform="scale(2, 1)" />
+            </g>
+          </svg>
+        </div>
       )}
     </div>
   );
@@ -1226,7 +1343,7 @@ export default function Matchmaker() {
               <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-2 sm:mb-4 text-primary">
                 <Feather className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
-              <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-foreground ${isRtl ? 'font-amiri' : ''}`}>
+              <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-foreground ${isRtl ? 'font-amiri tracking-[-0.02em]' : ''}`}>
                 {t.heroTitle1} <span className="italic text-primary">{t.heroTitle2}</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-lg mx-auto font-sans leading-relaxed">
