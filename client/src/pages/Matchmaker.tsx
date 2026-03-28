@@ -1045,6 +1045,8 @@ export default function Matchmaker() {
   };
 
   const handleAnswer = (value: AnswerValue) => {
+    if (!QUIZ_QUESTIONS[currentQuestionIndex]) return;
+
     const newAnswers = { ...answers, [QUIZ_QUESTIONS[currentQuestionIndex].id]: value };
     setAnswers(newAnswers);
     setDirection(1);
