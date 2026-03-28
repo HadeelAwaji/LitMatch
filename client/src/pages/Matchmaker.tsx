@@ -78,7 +78,7 @@ const THEMES = {
   A: {
     bg: "bg-[#1a1008]",
     card: "bg-[#2c1e14]",
-    text: "text-white",
+    text: "text-[#fefae0]",
     muted: "text-gray-300",
     accent: "text-[#d4af37]",
     border: "border-[#5c4d3c]",
@@ -89,7 +89,7 @@ const THEMES = {
   B: {
     bg: "bg-[#0b0c10]",
     card: "bg-[#16213e]",
-    text: "text-white",
+    text: "text-[#e8eaf6]",
     muted: "text-gray-300",
     accent: "text-[#8a2be2]",
     border: "border-[#4a4e69]",
@@ -100,8 +100,8 @@ const THEMES = {
   C: {
     bg: "bg-[#fff8e1]",
     card: "bg-white",
-    text: "text-[#3e2723]",
-    muted: "text-[#795548]",
+    text: "text-[#1a0a00]",
+    muted: "text-[#5c3a00]",
     accent: "text-[#f57c00]",
     border: "border-[#ffe0b2]",
     button: "bg-[#f57c00] text-white hover:bg-[#ef6c00]",
@@ -111,8 +111,8 @@ const THEMES = {
   D: {
     bg: "bg-[#fff0f5]",
     card: "bg-white",
-    text: "text-[#4a148c]",
-    muted: "text-[#880e4f]",
+    text: "text-[#2d1b2e]",
+    muted: "text-[#6d3b6e]",
     accent: "text-[#d81b60]",
     border: "border-[#f8bbd0]",
     button: "bg-[#d81b60] text-white hover:bg-[#c2185b]",
@@ -122,8 +122,8 @@ const THEMES = {
   E: {
     bg: "bg-[#efebe9]",
     card: "bg-[#d7ccc8]",
-    text: "text-[#3e2723]",
-    muted: "text-[#5d4037]",
+    text: "text-[#1a0f0a]",
+    muted: "text-[#3e2000]",
     accent: "text-[#558b2f]",
     border: "border-[#bcaaa4]",
     button: "bg-[#558b2f] text-white hover:bg-[#33691e]",
@@ -135,13 +135,16 @@ const THEMES = {
 const QUIZ_QUESTIONS = [
   {
     id: "q1",
-    text: { en: "Why do you pick up a new book?", ar: "لماذا تختار قراءة كتاب جديد؟" },
+    question: {
+      en: "Why do you pick up a new book?",
+      ar: "لماذا تختار قراءة كتاب جديد؟"
+    },
     options: [
-      { value: "A", text: { en: "To challenge my perspective and think deeply", ar: "لتحدي وجهة نظري والتفكير بعمق" } },
-      { value: "B", text: { en: "To escape reality and enter a new world", ar: "للهروب من الواقع ودخول عالم جديد" } },
-      { value: "C", text: { en: "To learn something useful and improve my life", ar: "لتعلم شيء مفيد وتحسين حياتي" } },
-      { value: "D", text: { en: "To feel profound emotions and romance", ar: "للشعور بمشاعر عميقة ورومانسية" } },
-      { value: "E", text: { en: "I want to discover cultures and historical eras I've never experienced", ar: "أريد اكتشاف ثقافات وعصور تاريخية لم أجربها من قبل" } }
+      { value: "A", en: "To challenge my perspective and think deeply", ar: "لتحدي وجهة نظري والتفكير بعمق" },
+      { value: "B", en: "To escape reality and enter a new world", ar: "للهروب من الواقع ودخول عالم جديد" },
+      { value: "C", en: "To learn something useful and improve my life", ar: "لتعلم شيء مفيد وتحسين حياتي" },
+      { value: "D", en: "To feel profound emotions and romance", ar: "للشعور بمشاعر عميقة ورومانسية" },
+      { value: "E", en: "I want to discover cultures and historical eras I've never experienced", ar: "أريد اكتشاف ثقافات وعصور تاريخية لم أجربها من قبل" }
     ]
   },
   {
@@ -897,7 +900,7 @@ const BookCard = ({ book, color, language, t }: any) => {
                 className={`pt-3 border-t overflow-hidden ${color.border}`}
               >
                 <p className={`text-sm leading-relaxed ${color.text}`}>
-                  <span className={`font-semibold block mb-1 ${color.accent}`}>{t.whyItFits}</span>
+                  <span className={`font-semibold block mb-1 ${color.text} ${color.accent}`}>{t.whyItFits}</span>
                   {book.reason[language]}
                 </p>
               </motion.div>
@@ -908,7 +911,7 @@ const BookCard = ({ book, color, language, t }: any) => {
         <div className={`mt-auto flex flex-col gap-3 pt-4 border-t ${color.border}`}>
           <button 
             onClick={() => setExpanded(!expanded)}
-            className={`text-sm font-medium w-full text-center hover:opacity-80 transition-opacity flex justify-center items-center gap-1 ${color.accent}`}
+            className={`text-sm font-medium w-full text-center hover:opacity-80 transition-opacity flex justify-center items-center gap-1 ${color.text} ${color.accent}`}
           >
             {expanded ? t.readLess : t.readMore}
           </button>
@@ -918,7 +921,7 @@ const BookCard = ({ book, color, language, t }: any) => {
             className={`w-full rounded-full transition-all duration-300 font-medium border ${color.buttonOutline} bg-transparent hover:text-white`}
             asChild
           >
-            <a href={book.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+            <a href={book.link} target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center gap-2 ${color.text}`}>
               {t.readBook}
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
@@ -1305,7 +1308,7 @@ export default function Matchmaker() {
     }
   };
 
-  const currentQuestion = QUIZ_QUESTIONS[currentQuestionIndex] || QUIZ_QUESTIONS[0];
+  const currentQuestion = QUIZ_QUESTIONS[currentQuestionIndex] ?? QUIZ_QUESTIONS[0];
   const isRtl = language === "ar";
   const theme = resultType ? THEMES[resultType as keyof typeof THEMES] : THEMES.A;
   
@@ -1397,7 +1400,9 @@ export default function Matchmaker() {
             </motion.div>
           )}
 
-          {step === "quiz" && (
+          {step === "quiz" && (() => {
+            if (!currentQuestion) return null;
+            return (
             <motion.div
               key="quiz"
               className="max-w-3xl w-full"
@@ -1480,7 +1485,8 @@ export default function Matchmaker() {
                 </motion.div>
               </AnimatePresence>
             </motion.div>
-          )}
+            );
+          })()}
 
           {step === "results" && resultType && (
             <motion.div
@@ -1491,15 +1497,15 @@ export default function Matchmaker() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
-              className="max-w-7xl w-full py-6 sm:py-10"
+              className={`max-w-7xl w-full py-6 sm:py-10 relative z-10 ${theme.text}`}
             >
               <BackgroundDecorations type={resultType} />
               <div className="text-center mb-10 sm:mb-16 space-y-4 sm:space-y-6">
-                <p className={`${theme.accent} font-medium tracking-widest uppercase text-xs sm:text-sm`}>{t.yourArchetype}</p>
+                <p className={`${theme.text} ${theme.accent} font-medium tracking-widest uppercase text-xs sm:text-sm`}>{t.yourArchetype}</p>
                 <h2 className={`text-4xl sm:text-5xl md:text-7xl font-bold font-serif ${theme.text}`}>
                   {RESULTS_DATA[resultType as keyof typeof RESULTS_DATA].title[language]}
                 </h2>
-                <p className={`text-lg sm:text-xl ${theme.muted} max-w-2xl mx-auto font-sans leading-relaxed px-4`}>
+                <p className={`text-lg sm:text-xl ${theme.text} ${theme.muted} max-w-2xl mx-auto font-sans leading-relaxed px-4`}>
                   {RESULTS_DATA[resultType as keyof typeof RESULTS_DATA].description[language]}
                 </p>
 
@@ -1509,30 +1515,30 @@ export default function Matchmaker() {
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className={`rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
+                        className={`rounded-full ${theme.text} ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
                       >
                         <Share2 className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                         {language === "en" ? "Share" : "مشاركة"}
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="center" className={`${theme.card} ${theme.border} ${theme.text}`}>
-                      <DropdownMenuItem onClick={copyToClipboard} className="cursor-pointer hover:opacity-80">
+                      <DropdownMenuItem onClick={copyToClipboard} className={`cursor-pointer hover:opacity-80 ${theme.text}`}>
                         {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
                         {t.copyLink}
                       </DropdownMenuItem>
-                      <DropdownMenuItem onClick={shareWhatsApp} className="cursor-pointer hover:opacity-80">
+                      <DropdownMenuItem onClick={shareWhatsApp} className={`cursor-pointer hover:opacity-80 ${theme.text}`}>
                         <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.405-.881-.733-1.476-1.639-1.649-1.937-.173-.298-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .104 5.383.101 11.936c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.447h.006c6.551 0 11.944-5.383 11.947-11.936a11.86 11.86 0 0 0-3.534-8.455"/></svg>
                         {t.shareWhatsApp}
                       </DropdownMenuItem>
-                      <DropdownMenuItem onClick={shareTwitter} className="cursor-pointer hover:opacity-80">
+                      <DropdownMenuItem onClick={shareTwitter} className={`cursor-pointer hover:opacity-80 ${theme.text}`}>
                         <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                         {t.shareX}
                       </DropdownMenuItem>
-                      <DropdownMenuItem onClick={shareInstagram} className="cursor-pointer hover:opacity-80">
+                      <DropdownMenuItem onClick={shareInstagram} className={`cursor-pointer hover:opacity-80 ${theme.text}`}>
                         <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                         {language === "en" ? "Instagram" : "انستغرام"}
                       </DropdownMenuItem>
-                      <DropdownMenuItem onClick={shareLinkedIn} className="cursor-pointer hover:opacity-80">
+                      <DropdownMenuItem onClick={shareLinkedIn} className={`cursor-pointer hover:opacity-80 ${theme.text}`}>
                         <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         {language === "en" ? "LinkedIn" : "لينكد إن"}
                       </DropdownMenuItem>
@@ -1543,7 +1549,7 @@ export default function Matchmaker() {
                     variant="outline" 
                     size="sm" 
                     onClick={downloadResultImage}
-                    className={`print:hidden rounded-full ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
+                    className={`print:hidden rounded-full ${theme.text} ${theme.buttonOutline} border bg-transparent h-9 sm:h-10 text-xs sm:text-sm px-3 sm:px-4`}
                   >
                     <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                     {language === "en" ? "Download My Result" : "تحميل نتيجتي"}
@@ -1555,14 +1561,14 @@ export default function Matchmaker() {
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className={`mt-4 inline-flex flex-col sm:flex-row items-center gap-3 p-4 ${theme.card} rounded-2xl border ${theme.border} text-sm max-w-md mx-auto shadow-md`}
+                    className={`mt-4 inline-flex flex-col sm:flex-row items-center gap-3 p-4 ${theme.card} ${theme.text} rounded-2xl border ${theme.border} text-sm max-w-md mx-auto shadow-md`}
                   >
                     <span className={`font-medium ${theme.text}`}>{t.saveResult}</span>
                     <div className="flex gap-2">
-                      <Button size="sm" onClick={saveToLocalStorage} className={`rounded-full h-8 text-xs ${theme.button}`}>
+                      <Button size="sm" onClick={saveToLocalStorage} className={`rounded-full h-8 text-xs ${theme.text} ${theme.button}`}>
                         {t.yesSave}
                       </Button>
-                      <Button variant="ghost" size="sm" onClick={() => setShowSavePrompt(false)} className={`rounded-full h-8 text-xs ${theme.muted} hover:${theme.text}`}>
+                      <Button variant="ghost" size="sm" onClick={() => setShowSavePrompt(false)} className={`rounded-full h-8 text-xs ${theme.text} ${theme.muted} hover:opacity-90`}>
                         {t.noThanks}
                       </Button>
                     </div>
@@ -1590,7 +1596,7 @@ export default function Matchmaker() {
               <div className="flex justify-center mb-10 sm:mb-16">
                 <Button 
                   onClick={handleShuffle}
-                  className={`print:hidden rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base gap-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 ${theme.button}`}
+                  className={`print:hidden rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base gap-2 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 ${theme.text} ${theme.button}`}
                 >
                   <Shuffle className="w-4 h-4 sm:w-5 sm:h-5" />
                   {t.shuffleBooks}
@@ -1601,7 +1607,7 @@ export default function Matchmaker() {
                 <Button 
                   variant="outline" 
                   onClick={goBackToQuiz}
-                  className={`rounded-full px-5 sm:px-6 py-5 sm:py-6 text-sm sm:text-base gap-2 w-full sm:w-auto ${theme.buttonOutline} bg-transparent`}
+                  className={`rounded-full px-5 sm:px-6 py-5 sm:py-6 text-sm sm:text-base gap-2 w-full sm:w-auto ${theme.text} ${theme.buttonOutline} bg-transparent`}
                 >
                   <RefreshCcw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   {t.goBack}
@@ -1609,7 +1615,7 @@ export default function Matchmaker() {
                 <Button 
                   variant="ghost" 
                   onClick={resetQuizToHome}
-                  className={`rounded-full px-5 sm:px-6 py-5 sm:py-6 text-sm sm:text-base gap-2 w-full sm:w-auto ${theme.muted} hover:${theme.text} hover:bg-black/5 dark:hover:bg-white/5`}
+                  className={`rounded-full px-5 sm:px-6 py-5 sm:py-6 text-sm sm:text-base gap-2 w-full sm:w-auto ${theme.text} ${theme.muted} hover:opacity-90 hover:bg-black/5 dark:hover:bg-white/5`}
                 >
                   {t.retakeQuiz}
                 </Button>
@@ -1619,7 +1625,7 @@ export default function Matchmaker() {
         </AnimatePresence>
       </main>
       
-      <footer className={`w-full py-4 sm:py-6 text-center text-xs sm:text-sm transition-colors duration-1000 ${step === 'results' ? theme.muted : 'text-muted-foreground'}`}>
+      <footer className={`w-full py-4 sm:py-6 text-center text-xs sm:text-sm transition-colors duration-1000 ${step === 'results' ? `${theme.text} ${theme.muted}` : 'text-muted-foreground'}`}>
         {t.footerMadeWith}
       </footer>
     </div>
