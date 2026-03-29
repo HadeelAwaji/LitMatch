@@ -1,5 +1,7 @@
 # 📖 LitMatch — AI Book Matchmaker
 
+![LitMatch Preview](./screenshots/booksresults.png)
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -21,6 +23,14 @@
 * **Immersive UX:** Each archetype features a unique, "maximalist" themed world with custom transitions powered by Framer Motion.
 * **Zero-Friction Privacy:** A purely client-side application—no sign-up, no database, and no personal data collection required.
 * **Dynamic Result Sharing:** Users can save or share their result cards as images directly from the browser.
+
+---
+
+## 📸 Screenshots
+
+| Archetype Discovery | Tailored Recommendations |
+|:---:|:---:|
+| ![Archetype](./screenshots/MotivationakSeeker.png) | ![Recommendations](./screenshots/recommendations.png) |
 
 ---
 
