@@ -1327,28 +1327,29 @@ export default function Matchmaker() {
 
 
  const downloadResultImage = async () => {
-  const el = document.getElementById("result-capture-area");
-  if (!el) return;
-
-  const canvas = await html2canvas(el, {
-    useCORS: true,
-    scale: 2, // improves quality + fixes some blank exports
-  });
-
-  canvas.toBlob((blob) => {
-    if (!blob) return;
-
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-
-    link.href = url;
-    link.download = "litmatch-result.png";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-
-    URL.revokeObjectURL(url);
-  });
+  try {
+    const el = document.getElementById("result-capture-area");
+    if (!el) return;
+    const canvas = await html2canvas(el, {
+      useCORS: true,
+      allowTaint: true,
+      scale: 2,
+      ignoreElements: (element: Element) => element.id === 'personality-bg'
+    });
+    canvas.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "litmatch-result.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    });
+  } catch (error) {
+    window.print();
+  }
 };
 
 
