@@ -30,7 +30,7 @@
 
 | Archetype Discovery | Tailored Recommendations |
 |:---:|:---:|
-| ![Archetype](./screenshots/MotivationakSeeker.png) | ![Recommendations](./screenshots/recommendations.png) |
+| <img src="./screenshots/MotivationakSeeker.png" height="250"> | <img src="./screenshots/recommendations.png" height="250"> |
 
 ---
 
