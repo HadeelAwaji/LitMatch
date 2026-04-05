@@ -1,4 +1,4 @@
-# 📖 LitMatch — AI Book Matchmaker
+# 📖 LitMatch — Personality-Based Book Matchmaker
 
 ![LitMatch Preview](./screenshots/booksresults.png)
 
