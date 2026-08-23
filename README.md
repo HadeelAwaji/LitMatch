@@ -21,7 +21,7 @@
 * **5 Reader Archetypes:** Discover identities like *The Deep Thinker*, *The Motivational Seeker*, or *The Cultural Explorer*.
 * **Bilingual & RTL Support:** Fully localized experience in English and Arabic, featuring high-quality Right-to-Left (RTL) layout transitions.
 * **Immersive UX:** Each archetype features a unique, "maximalist" themed world with custom transitions powered by Framer Motion.
-* **Zero-Friction Privacy:** A purely client-side application—no sign-up, no database, and no personal data collection required.
+* **Privacy-First Experience:** No sign-up, database, or personal data collection. Users can choose whether to save their result locally on their device for future visits.
 * **Dynamic Result Sharing:** Users can save or share their result cards as images directly from the browser.
 
 ---
